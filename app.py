@@ -40,6 +40,11 @@ def register():
             flash("Passwords do not match")
             return redirect(url_for("register"))
 
+        if request.form.get("username") or request.form.get(
+            "password") != request.form.get("pattern"):
+            flash("Usernames and passwords must only contain letters and/or numbers.")
+            return redirect(url_for("register"))
+
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
