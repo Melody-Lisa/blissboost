@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
     integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
@@ -16,13 +19,14 @@
     <!-- Navigation bar -->
     <nav>
         <div class="nav-wrapper cyan darken-3">
-          <a href="#!" class="brand-logo">Logo</a>
+          <a href="#!" class="brand-logo center"><img src="static/images/blissboost_logo.png"></a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="#">Sass</a></li>
-            <li><a href="#">Components</a></li>
-            <li><a href="#">Javascript</a></li>
-            <li><a href="#">Mobile</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Sign Out</a></li>
+            <li><a href="#">Sign In</a></li>
+            <li><a href="#">Register</a></li>
           </ul>
         </div>
       </nav>
@@ -36,7 +40,8 @@
       </ul>
       </header>
 
-      <main>
+      <main class="container">
+        <h1 class="center cyan-text text-darken-4">BlissBoost</h1>
     {% block content %}
     {% endblock %}
     </main>
