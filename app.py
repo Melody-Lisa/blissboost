@@ -18,10 +18,9 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_posts")
-def get_posts():
+def home():
     posts = mongo.db.posts.find()
-    return render_template('posts.html', posts=posts)
+    return render_template('index.html', posts=posts)
 
 
 @app.route("/register", methods=["GET", "POST"])
