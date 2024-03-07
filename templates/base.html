@@ -19,7 +19,7 @@
     <!-- Navigation bar -->
     <nav>
         <div class="nav-wrapper cyan darken-3">
-          <a href="#!" class="brand-logo center"><img src="static/images/blissboost_logo.png"></a>
+          <a href="#!" class="brand-logo center"><img src="{{ url_for('static', filename='images/blissboost_logo.png') }}"></a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
           <ul class="right hide-on-med-and-down">
             {% if session.user %}
