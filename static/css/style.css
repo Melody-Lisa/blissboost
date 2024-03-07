@@ -3,6 +3,11 @@ body {
     font-weight: 200;
 }
 
+nav li a,
+.sidenav li a {
+    color: white;
+}
+
 h1 {
     font-family: 'Kaushan Script', cursive;
     font-weight: 400;
