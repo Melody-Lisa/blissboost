@@ -8,7 +8,11 @@ nav li a,
     color: white;
 }
 
-h1 {
+.flashes h4 {
+    line-height: 1;
+}
+
+h1, h2, h3 {
     font-family: 'Kaushan Script', cursive;
     font-weight: 400;
 }
