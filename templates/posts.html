@@ -3,20 +3,22 @@
 
 <div class="row">
     {% for post in posts %}
-        <div class="col s12 m6 offset-1">
-          <div class="card large mt-5 mb-3 shadow cyan darken-1">
+    <div class="col s12 m6 offset-1">
+        <div class="card large mt-5 mb-3 shadow cyan darken-3">
             <div class="card-image">
-              <img src="{{ url_for('static', filename='images/background.jpg') }}">
-              <span class="card-title black-text"><strong>{{ post.post_title }}</strong></span>
+                <img src="{{ url_for('static', filename='images/background.jpg') }}">
+                <span class="card-title black-text"><strong>{{ post.post_title }}</strong></span>
             </div>
             <div class="card-content">
-              <p>{{ post.post_description }}</p>
+                <br>
+                <p>{{ post.post_description }}</p>
+                <br>
             </div>
-            <div class="card-action right-align">
-              <p>- User</p>
+            <div class="card-footer center-align cyan darken-1">
+                <p>- User</p>
             </div>
-          </div>
         </div>
+    </div>
     {% endfor %}
 </div>
 

@@ -25,3 +25,17 @@ h1, h2, h3 {
     font-weight: 400;
     margin-top: 5px;
 }
+
+.card, .card-content {
+    border-radius: 25px;
+}
+
+.card-image {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.card-footer {
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
