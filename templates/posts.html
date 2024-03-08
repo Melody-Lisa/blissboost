@@ -1,10 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="row">
     {% for post in posts %}
-        {{ post.post_title }}<br>
-        {{ post.theme_name }}<br>
-        {{ post.post_description }}<br>
+    <div class="col s12 m6">
+        <div class="card mt-5 mb-3 shadow">
+            <h5 class="card-header">
+                {{ post.post_title }}
+            </h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    {{ post.theme_name }}
+                </li>
+                <li class="list-group-item">
+                    Image here?
+                </li>
+            </ul>
+            <div class="card-body">
+                <p class="card-text">
+                    {{ post.post_description }}
+                </p>
+            </div>
+        </div>
+    </div>
     {% endfor %}
+
+</div>
+</div>
+</div>
 
 {% endblock %}

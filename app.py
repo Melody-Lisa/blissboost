@@ -19,8 +19,7 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def home():
-    posts = mongo.db.posts.find()
-    return render_template('index.html', posts=posts)
+    return render_template('index.html')
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -99,6 +98,13 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/posts")
+def posts():
+    posts = mongo.db.posts.find()
+    return render_template(
+        'posts.html', posts=posts)
 
 
 if __name__ == "__main__":
