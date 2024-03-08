@@ -3,30 +3,21 @@
 
 <div class="row">
     {% for post in posts %}
-    <div class="col s12 m6">
-        <div class="card mt-5 mb-3 shadow">
-            <h5 class="card-header">
-                {{ post.post_title }}
-            </h5>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                    {{ post.theme_name }}
-                </li>
-                <li class="list-group-item">
-                    Image here?
-                </li>
-            </ul>
-            <div class="card-body">
-                <p class="card-text">
-                    {{ post.post_description }}
-                </p>
+        <div class="col s12 m6 offset-1">
+          <div class="card large mt-5 mb-3 shadow cyan darken-1">
+            <div class="card-image">
+              <img src="{{ url_for('static', filename='images/background.jpg') }}">
+              <span class="card-title black-text"><strong>{{ post.post_title }}</strong></span>
             </div>
+            <div class="card-content">
+              <p>{{ post.post_description }}</p>
+            </div>
+            <div class="card-action right-align">
+              <p>- User</p>
+            </div>
+          </div>
         </div>
-    </div>
     {% endfor %}
-
-</div>
-</div>
 </div>
 
 {% endblock %}
