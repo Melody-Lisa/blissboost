@@ -26,7 +26,7 @@ h1, h2, h3, .card-title {
     margin-top: 5px;
 }
 
-.card, .card-content {
+.card, .card-content, .card-panel, .btn-large {
     border-radius: 25px;
 }
 
