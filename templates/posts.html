@@ -3,24 +3,31 @@
 
 <div class="row">
     {% for post in posts %}
-    <div class="col s12 m6 offset-1">
-        <div class="card large mt-5 mb-3 shadow cyan darken-3">
-            <div class="card-image">
-                <img src="{{ url_for('static', filename='images/background.jpg') }}">
-                <span class="card-title black-text"><strong>{{ post.post_title }}</strong></span>
+    <div class="col s12 m4">
+
+        <div class="card sticky-action medium mt-5 mb-3 shadow cyan darken-3">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="hoverable activator" src="{{ url_for('static', filename='images/background.jpg') }}">
             </div>
+
             <div class="card-content">
-                <span class="right">{{ post.theme_name }}</span>
-                <br>
-                <p>{{ post.post_description }}</p>
-                <br>
+                <span class="card-title activator grey-text text-darken-4">{{ post.post_title }}<i
+                        class="hoverable right fa-solid fa-ellipsis-vertical"></i></span>
+                <p>{{ post.theme_name }}</p>
             </div>
-            <div class="card-footer center-align cyan darken-1">
-                <p>- User</p>
+
+            <div class="card-action">
+                -User
+            </div>
+
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">{{ post.post_title }}<i
+                        class="material-icons right">close</i></span>
+                <p>{{ post.post_description }}</p>
             </div>
         </div>
     </div>
-    {% endfor %}
+{% endfor %}
 </div>
 
 {% endblock %}

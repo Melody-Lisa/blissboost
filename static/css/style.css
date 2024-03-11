@@ -35,7 +35,7 @@ h1, h2, h3, .card-title {
     border-top-right-radius: 25px;
 }
 
-.card-footer {
+.card-footer, .card-action {
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
 }
