@@ -1,110 +1,321 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# BlissBoost
 
-Welcome Melody Shutt,
+<img src="#" alt="An image representing how the site looks across different devices of varying size.">
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+By Melody Lisa.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+[View the live project here.](https://blissboost-079490cc3274.herokuapp.com)
 
-## Gitpod Reminders
+This is the documentation for BlissBoost - a social media site aimed towards spreading positivity in all aspects of life. The site has been built using HTML5, CSS3 with materialize templating, MongoDB and Python with Jinja templating for the Milestone 3 backend development project for Code Institute's web development diploma.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+******
 
-`python3 -m http.server`
+## Contents
 
-A blue button should appear to click: _Make Public_,
+* [User Experience (UX)](#user-experience---ux)
+  * [Strategy](#strategy)
+    * [User Goals](#user-goals)
+    * [Site Owner Goals](#site-owner-goals)
+    * [User Stories](#user-stories)
+  * [Scope](#scope)
+  * [Structure](#structure)
+  * [Skeleton](#skeleton)
+* [User Interface (UI) Design](#user-interface---design)
+  * [Typography](#typography)
+  * [Colours](#colours)
+* [Features](#features)
+    * [Header](#header)
+    * [Main](#main)
+    * [Modals](#modals)
+    * [Footer](#footer)
+    * [404 Page](#404-page)
+* [Future Implementations](#future-implementations)
+* [Accessibility](#accessibility)
+  * [Alt Text](#alt-text)
+  * [Aria Labels](#aria-labels)
+  * [Colours](#colours-1)
+  * [Fonts](#fonts)
+* [Technologies Used](#technologies-used)
+  * [Languages](#languages)
+  * [Frameworks, Libraries, and Programs Used](#frameworks-libraries-and-programs-used)
+* [Deployment & Local Development](#deployment--local-development)
+  * [Deployment](#deployment)
+  * [Local Development](#local-development)
+    * [How to Fork](#how-to-fork)
+    * [How to Clone](#how-to-clone)
+* [Testing](#testing)
+* [Credits](#credits)
+  * [Code Used](#code-used)
+  * [Content](#content)
+  * [Media](#media)
+  * [Achnowledgements](#acknowledgements)
+ 
 
-Another blue button should appear to click: _Open Browser_.
+<sup><sub>[*Back to top*](#contents)</sup></sub>
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+-----
 
-A blue button should appear to click: _Make Public_,
+## User Experience - UX
 
-Another blue button should appear to click: _Open Browser_.
+### Strategy
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+#### User Goals
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+
+
+#### Site Owner Goals
+
+
+
+#### User Stories
+
+
+
+<sup><sub>[*Back to top*](#contents)</sup></sub>
+
+-----
+
+### Scope
+
+
+
+<sup><sub>[*Back to top*](#contents)</sup></sub>
+
+-----
+
+### Structure
+
+
+
+<sup><sub>[*Back to top*](#contents)</sup></sub>
+
+-----
+
+### Skeleton
+
+#### Wireframes
+
+All wireframes have been created with [Figma](https://figma.com/).
+
+<details><summary>BlissBoost Desktop Wireframe</summary>
+<img src="#" alt="Desktop wireframe made with figma">
+</details>
+
+<details><summary>BlissBoost Tablet Wireframe</summary>
+<img src="#" alt="Tablet wireframe made with figma">
+</details>
+
+<details><summary>BlissBoost Mobile Wireframe</summary>
+<img src="#" alt="Mobile wireframe made with figma">
+</details>
+
+<sup><sub>[*Back to top*](#contents)</sup></sub>
+
+-----
+
+## User Interface - Design
+
+### Surface
+
+#### Typography
+
+Fonts have been imported from [Google Fonts](https://fonts.google.com/).
+
+
+#### Colours
+
+The colour scheme for the site was kept simple and chosen through materialize color picker to keep styling as seamless and easy as possible.
+
+
+<details><summary>Main colour scheme for the site</summary>
+<img src="#" alt="Colour pallet made with figma features..">
+</details>
+
+Colour scheme images made with [figma](https://figma.com).
+
+<sup><sub>[*Back to top*](#contents)</sup></sub>
+
+-------
+
+## Features
+
+### Favicon
+
+<details><summary>Favicon</summary>
+<img src="#" alt="The favicon for the site, #">
+</details>
+
+The favicon for the site #. The favicon was created using [favicon.io](https://favicon.io/).
+
+
+### Header
+
+<details><summary>Navbar</summary>
+<img src="#" alt="The navigation featured at the top of the page #">
+</details>
+
+The navigation bar at the top of each page features the brand logo along with different links depending on whether you are signed in or not.
+
+For users not logged in to the site, the home, sign in and register pages are available. Once a user logs in to the site they have access to their personal profile and the community page where they can view posts that have been made to the site.
+
+<details><summary>Header</summary>
+<img src="#" alt="The header featured at the top of the page below the header.'">
+</details>
+
+### Footer
+
+<details><summary>Footer</summary>
+<img src="#" alt="The footer featured at the bottom of the page, this contains the social media links and copyright information.">
+</details>
+
+The footer contains the copyright information and social media links. The social media links open in a new tab.
+
+### Home
+
+### Register
+
+### Log In
+
+### Profile
+
+### Community
+
+### 404 Page
+
+<details><summary>404 Page</summary>
+<img src="#" alt="The 404 page that is shown when the user types in an incorrect url.">
+</details>
+
+The 404 page is a custom page that redirects the user to the main page if they type in an incorrect url.
+
+<sup><sub>[*Back to top*](#contents)</sup></sub>
 
 ------
 
-## Release History
+## Future Implementations
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**September 20 2023:** Update Python version to 3.9.17.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+<sup><sub>[*Back to top*](#contents)</sup></sub>
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+-----
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## Accessibility
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### Alt Text
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+Alternative text has been included for all images across the site.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### Aria Labels
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+Aria labels have been included for all links across the site with modals labelled by their headings.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Colours
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+The colours across the site have been kept simple with 
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Fonts
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+<sup><sub>[*Back to top*](#contents)</sup></sub>
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+-------
 
-------
+## Technologies Used
 
-## FAQ about the uptime script
+### Languages
 
-**Why have you added this script?**
+- HTML
+- CSS - with materialize templating
+- Python - with jinja templating
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+### Frameworks, Libraries, and Programs Used
 
-**How will this affect me?**
+* [MongoDB](https://www.mongodb.com) - The database used for storing information for the site.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+* [Heroku](https://www.heroku.com) - For website deployment.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+* [Materialize v1.0.0](https://materializecss.com) - The framework for the website. Additional CSS styling was also implemented in style.css.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+* [favicon](https://favicon.io/) - To create the favicon for the site.
 
-**So….?**
+* [Figma](https://figma.com/) - For wireframes and other graphics in readme.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+* [Font Awesome](https://fontawesome.com/) - For the iconography on the website.
 
-**Can I opt out?**
+* Git - For version control.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+* [Github](https://github.com/) - To save and store the files for the website.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+* Google Dev Tools - To troubleshoot and test features, solve issues with responsiveness and styling.
 
-**Anything more?**
+* [JS Hint](https://jshint.com/) - To check the javascript code for errors.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+* [Google Fonts](https://fonts.google.com/) - To import the fonts used on the website.
 
----
+* [Bing Create](https://www.bing.com/images/create) - For background image and logo generation.
 
-Happy coding!
+* [Red Ketchup](https://redketchup.io/image-resizer) - To convert background image to webp format.
+
+* Samsung Talkback - To test accessibility.
+
+* [UI.dev](https://ui.dev/amiresponsive) - To show the site on a range of screen sizes.
+
+* [W3C Markup Validation Service](https://validator.w3.org/) - To validate HTML and CSS code.
+
+<sup><sub>[*Back to top*](#contents)</sup></sub>
+
+-------
+
+## Deployment & Local Development
+
+### Deployment
+
+
+
+<sup><sub>[*Back to top*](#contents)</sup></sub>
+
+-----
+
+## Testing
+
+Please see [testing.md](testing.md) for all testing elements of this site.
+
+<sup><sub>[*Back to top*](#contents)</sup></sub>
+
+-----
+
+## Credits
+
+### Code Used
+
+* [Materialize](https://materializecss.com): Code from this page was used and adapted to create various features across the site, including the navbar, footer, cards for different sections of pages and floating action buttons.
+
+* 
+
+
+### Content
+
+
+* [Melody Lisa](https://github.com/Melody-Lisa): All other content created by the developer.
+
+### Media
+
+* [Bing Create](https://www.bing.com/images/create): This image generator was used to create the site's logo and background image.
+
+* [UI.dev](https://ui.dev/amiresponsive): Used to generate images that showcase the responsive design within the readme file.
+
+### Acknowledgements
+
+* Amy Richardson - Cohort Facilitator: For providing great resources to help with everyone's projects through weekly stand ups.
+ 
+* Class June 2023: Everyone in my class channel on slack who is involved with the stand ups and group chat for contributing to the great atmosphere and supportive environment.
+ 
+* The wider slack community: For quick responses to various issues and questions I had at all stages of the project.
+ 
+* Friends and Family: For helping me to test my site on various devices and provide feedback.
+
+<sup><sub>[*Back to top*](#contents)</sup></sub>
