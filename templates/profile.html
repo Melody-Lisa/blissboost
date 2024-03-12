@@ -7,22 +7,23 @@
         <div class="card">
             <div class="card-image">
                 <img src="{{ url_for('static', filename='images/background.jpg') }}">
-                <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                        class="fa-solid fa-circle-plus cyan text-darken-4"></i>add</i></a>
+
             </div>
             <div class="card-content">
                 <span class="card-title">{{ username }}'s Profile</span>
-                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                    require little markup to use effectively.</p>
+                <p>Name</p>
+                <p>DOB</p>
             </div>
         </div>
     </div>
+
+
     <div class="col s12 m6 offset-m1">
         <h2 class="header">About Me</h2>
         <div class="card horizontal">
             <div class="card-stacked">
                 <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information.</p>
+                    <p>About</p>
                 </div>
                 <div class="card-action">
                     <a href="#">This is a link</a>
@@ -31,6 +32,17 @@
         </div>
     </div>
 </div>
+
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large deep-orange lighten-2">
+        <i class="fa-solid fa-ellipsis"></i>
+    </a>
+    <ul>
+      <li><a href="#"
+         class="btn-floating"><i class="fa-solid fa-user-pen"></i></a></li>
+      <li><a class="btn-floating"><i class="fa-solid fa-image"></i></a></li>
+    </ul>
+  </div>
 
 
 {% endblock %}

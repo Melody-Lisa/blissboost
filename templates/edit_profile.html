@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center">Edit Profile</h3>
+
+<div class="row">
+    <form class="col s12 m8 offset-m2" method="POST" action="#">
+        <div class="card-panel">
+
+            <div class="row">
+                <!-- Name -->
+                <div class="input-field col s12 m6">
+                    <i class="fa-solid fa-signature prefix cyan-text text-darken-4"></i>
+                    <input id="name" name="name" type="text" class="validate" minlength="0" maxlength="50"
+                        class="validate" autocomplete="nickname">
+                    <label for="name">Name</label>
+                </div>
+                
+                <!-- DOB -->
+                <div class="input-field col s12 m6">
+                    <i class="fa-solid fa-calendar prefix cyan-text text-darken-4"></i>
+                    <input id="dob" name="dob" type="text" class="datepicker">
+                    <label for="dob">Date of Birth</label>
+                </div>
+            </div>
+
+            <!-- About -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fa-regular fa-address-card prefix cyan-text text-darken-4"></i>
+                    <textarea id="about" name="about" class="validate materialize-textarea"
+                     minlength="0" maxlength="500"></textarea>
+                    <label for="about">About</label>
+                </div>
+            </div>
+
+            <!-- Save Profile Info -->
+            <div class="row">
+                <button type="submit" class="col s6 offset-m3 btn-large cyan darken-4 text-shadow">
+                    Save <i class="fa-solid fa-check"></i>
+                </button>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+{% endblock %}
