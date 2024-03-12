@@ -38,7 +38,7 @@
         <i class="fa-solid fa-ellipsis"></i>
     </a>
     <ul>
-      <li><a href="#"
+      <li><a href="{{ url_for('edit_profile', username=session['user']) }}"
          class="btn-floating"><i class="fa-solid fa-user-pen"></i></a></li>
       <li><a class="btn-floating"><i class="fa-solid fa-image"></i></a></li>
     </ul>

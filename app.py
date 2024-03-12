@@ -100,6 +100,41 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/edit_profile/<username>", methods=["GET", "POST"])
+def edit_profile(username):
+    # grab session user's username from the db
+    logged_in_username = session.get("user")
+    
+    if logged_in_username:
+        if logged_in_username == username:
+            if request.method == "POST":
+                # Update user details
+                edit_data = {
+                    "name": request.form.get("name").capitalize(),
+                    "dob": request.form.get("dob"),
+                    "about": request.form.get("about"),
+                }
+
+                # Perform the update operation
+                mongo.db.users.update_one({"username": username}, {"$set": edit_data})
+
+                flash("User details updated successfully")
+                return redirect(url_for("profile", username=username))
+
+            edit = mongo.db.users.find_one({"username": username})
+            if edit:
+                return render_template("edit_profile.html", edit=edit)
+            else:
+                flash("User not found")
+                return redirect(url_for("home"))
+        else:
+            flash("You are not authorized to edit this profile")
+            return redirect(url_for("home"))
+    else:
+        flash("You are not signed in")
+        return redirect(url_for("login"))
+
+
 @app.route("/posts")
 def posts():
     posts = mongo.db.posts.find()
