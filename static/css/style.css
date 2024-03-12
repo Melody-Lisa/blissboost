@@ -11,21 +11,30 @@ body {
     flex: 1 0 auto;
   }
 
+  /* Navbar */
 nav li a,
 .sidenav li a {
     color: white;
 }
 
+/* Flash messages */
 .flashes h4 {
     line-height: 1;
 }
 
+/* Typography */
 h1, h2, h3, .card-title {
     font-family: 'Kaushan Script', cursive;
     font-weight: 400;
     margin-top: 5px;
 }
 
+/* Buttons and links */
+.mb-2 {
+    margin-bottom: 5px;
+}
+
+/* Cards and content */
 .card, .card-content, .card-panel, .btn-large {
     border-radius: 25px;
 }
