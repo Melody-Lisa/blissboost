@@ -10,4 +10,5 @@
         done: "Select"
       }
     });
+    $('.modal').modal();
   });
