@@ -19,7 +19,10 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def home():
-    return render_template('index.html')
+    if "user" in session:
+        return redirect(url_for("profile", user=session["user"]))
+    else:
+        return render_template('index.html')
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -66,7 +69,7 @@ def login():
                     flash("Welcome back, {}".format(
                         request.form.get("username")))
                     return redirect(url_for(
-                        "profile", username=session["user"]))
+                        "profile", user=session["user"]))
             else:
                 # invalid password match
                 flash("Invalid username or password")
