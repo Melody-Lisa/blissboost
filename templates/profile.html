@@ -6,11 +6,11 @@
     <div class="col s12 m4">
         <div class="card">
             <div class="card-image">
-                {% if user.photo_url %}
-					<img class="profile circle" src="#" alt="Profile Picture">
-					{% else %}
-					<img class="profile circle" src="{{ url_for('static', filename='images/default_user.jpg') }}" alt="Profile Picture">
-					{% endif %}
+                {% if user.profile_pic_name %}
+					<img src="{{ url_for('file', filename=user.profile_pic_name) }}" alt="Profile Picture">
+				{% else %}
+					<img src="{{ url_for('static', filename='images/default_user.jpg') }}" alt="Profile Picture">
+				{% endif %}
 
             </div>
             <div class="card-content">
@@ -49,17 +49,21 @@
     </ul>
   </div>
 
-<!-- Modal -->
-<div id="pic_upload" name="pic_upload" class="modal">
-    <div class="modal-content">
-      <h4 class="center">Upload Photo URL</h4>
-      <form method="POST" action="#" enctype="multipart/form-data">
-        <input type="file" name="profile_pic">
-      </form>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Done</a>
-    </div>
+  <!-- Modal -->
+  <div id="pic_upload" name="pic_upload" class="modal">
+      <div class="modal-content">
+          <h4 class="center">Upload Photo URL</h4>
+          <form method="POST" action="{{ url_for('pics') }}">
+              <div class="input-field">
+                  <input type="text" id="profile_pic_url" name="profile_pic_url" required>
+                  <label for="profile_pic_url">Image URL</label>
+              </div>
+              <input type="submit" value="Upload" class="btn">
+          </form>
+      </div>
+      <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+      </div>
   </div>
 
 {% endblock %}

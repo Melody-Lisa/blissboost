@@ -1,9 +1,12 @@
 import os
 from flask import (
-    Flask, flash, render_template, redirect, request, session, url_for)
+    Flask, flash, render_template,
+     redirect, request, session, url_for, send_from_directory, abort)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import (
+    generate_password_hash, check_password_hash)
+from werkzeug.utils import secure_filename
 if os.path.exists("env.py"):
     import env
 
@@ -93,6 +96,49 @@ def profile(user):
         return render_template("profile.html", user=user_data)
 
     return redirect("login")
+
+
+def is_valid_image_url(url):
+    # List of common image file extensions
+    image_extensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp']
+
+    # Check if the URL ends with a known image file extension
+    for extension in image_extensions:
+        if url.lower().endswith(extension):
+            return True
+    
+    return False
+
+
+@app.route("/pics", methods=["POST"])
+def pics():
+    if 'user' in session:
+        user = session['user']
+        profile_pic_url = request.form.get('profile_pic_url')
+
+        # Check if the provided URL is not empty and is a valid image URL
+        if profile_pic_url:
+            # Save the URL to the user's profile
+            mongo.db.users.update_one({'username': user}, {"$set": {'profile_pic_url': profile_pic_url}})
+            return redirect(url_for("profile", user=user))
+        else:
+            flash("Please provide a valid image URL")
+            return redirect(url_for("profile", user=user))
+    else:
+        flash("You can't edit this page, please log in.")
+        return redirect(url_for("login"))
+
+
+@app.route('/file/<filename>')
+def file(filename):
+    if filename:
+        file_data = mongo.send_file(filename)
+        if file_data:
+            return file_data
+        else:
+            abort(404)  # File not found
+    else:
+        abort(400)  # Bad request (missing filename)
 
 
 @app.route("/logout")
