@@ -123,7 +123,7 @@ def edit_profile(user):
 
             edit = mongo.db.users.find_one({"username": user})
             if edit:
-                return render_template("edit_profile.html", edit=edit)
+                return render_template("edit_profile.html", user=edit)
             else:
                 flash("User not found")
                 return redirect(url_for("home"))
