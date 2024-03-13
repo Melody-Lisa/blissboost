@@ -25,7 +25,7 @@
           <ul class="right hide-on-med-and-down">
             {% if session.user %}
               <li><a href="{{ url_for('posts') }}">Community</a></li>
-              <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+              <li><a href="{{ url_for('profile', user=session['user']) }}">Profile</a></li>
               <li><a href="{{ url_for('logout') }}">Sign Out</a></li>
             {% else %}
               <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -39,7 +39,7 @@
       <ul class="sidenav cyan darken-4" id="mobile-demo">
         {% if session.user %}
           <li><a href="{{ url_for('posts') }}">Community</a></li>
-          <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+          <li><a href="{{ url_for('profile', user=session['user']) }}">Profile</a></li>
           <li><a href="{{ url_for('logout') }}">Sign Out</a></li>
         {% else %}
           <li><a href="{{ url_for('home') }}">Home</a></li>

@@ -80,14 +80,14 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/profile/<username>", methods={"GET", "POST"})
-def profile(username):
+@app.route("/profile/<user>", methods={"GET", "POST"})
+def profile(user):
     # grab session user's username from the db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+    user_data = mongo.db.users.find_one(
+        {"username": session["user"]})
 
-    if session["user"]:
-        return render_template("profile.html", username=username)
+    if user_data:
+        return render_template("profile.html", user=user_data)
 
     return redirect("login")
 
@@ -100,13 +100,13 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/edit_profile/<username>", methods=["GET", "POST"])
-def edit_profile(username):
+@app.route("/edit_profile/<user>", methods=["GET", "POST"])
+def edit_profile(user):
     # grab session user's username from the db
     logged_in_username = session.get("user")
     
     if logged_in_username:
-        if logged_in_username == username:
+        if logged_in_username == user:
             if request.method == "POST":
                 # Update user details
                 edit_data = {
@@ -116,12 +116,12 @@ def edit_profile(username):
                 }
 
                 # Perform the update operation
-                mongo.db.users.update_one({"username": username}, {"$set": edit_data})
+                mongo.db.users.update_one({"username": user}, {"$set": edit_data})
 
                 flash("User details updated successfully")
-                return redirect(url_for("profile", username=username))
+                return redirect(url_for("profile", user=user))
 
-            edit = mongo.db.users.find_one({"username": username})
+            edit = mongo.db.users.find_one({"username": user})
             if edit:
                 return render_template("edit_profile.html", edit=edit)
             else:
