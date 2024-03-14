@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+<h2 class="header center">Community Posts</h2>
+
 <div class="row">
     {% for post in posts %}
     <div class="col s12 m4">
@@ -29,5 +31,16 @@
     </div>
 {% endfor %}
 </div>
+
+<!-- Floating Action Button -->
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large deep-orange lighten-2">
+        <i class="fa-solid fa-ellipsis"></i>
+    </a>
+    <ul>
+      <li><a href="{{ url_for('edit_profile', user=session['user']) }}"
+         class="btn-floating"><i class="fa-solid fa-user-pen"></i></a></li>
+    </ul>
+  </div>
 
 {% endblock %}

@@ -14,9 +14,17 @@
             </div>
 
             <div class="card-content cyan darken-3 white-text">
-                <span class="card-title">{{ user.username }}'s Profile</span>
-                <p>{{ user.name }}</p>
-                <p>{{ user.dob }}</p>
+                <span class="card-title">{{ user.username.capitalize() }}'s Profile</span>
+                <p>
+                    {% if user.name %}
+                        {{ user.name.capitalize() }}
+                    {% endif %}
+                </p>
+                <p>
+                    {% if user.dob %}
+                        {{ user.dob }}
+                    {% endif %}
+                </p>
             </div>
         </div>
     </div>
@@ -27,7 +35,10 @@
         <div class="card horizontal">
             <div class="card-stacked">
                 <div class="card-content">
-                    <p>{{ user.about }}</p>
+                    <p>
+                        {% if user.about %}
+                            {{ user.about }}
+                        {% endif %}</p>
                 </div>
                 <div class="card-action">
                     <a href="#">This is a link</a>

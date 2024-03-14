@@ -6,7 +6,7 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import (
     generate_password_hash, check_password_hash)
-from werkzeug.utils import secure_filename
+from datetime import datetime
 if os.path.exists("env.py"):
     import env
 
@@ -58,13 +58,14 @@ def register():
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
+            "created_at": datetime.now()
         }
         mongo.db.users.insert_one(register)
 
         # put the new user into session cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration successful!")
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("profile", user=session["user"]))
     return render_template("register.html")
 
 
@@ -172,11 +173,31 @@ def edit_profile(user):
         return redirect(url_for("login"))
 
 
-@app.route("/posts")
-def posts():
+@app.route("/get_posts")
+def get_posts():
     posts = mongo.db.posts.find()
     return render_template(
         'posts.html', posts=posts)
+
+
+@app.route("/add_post")
+def add_post():
+    if request.method == "POST":
+        
+        post = {
+            "theme_name": request.form.get("theme_name"),
+            "post_title": request.form.get("post_title"),
+            "post_description": request.form.get("post_description"),
+            "post_image": request.form.get("theme_image"),
+            "post_date": datetime.now(),
+            "created_by": session["user"]
+        }
+        mongo.db.tasks.insert_one(post)
+        flash("Post Successfully Added")
+        return redirect(url_for("get_posts"))
+
+    themes = mongo.db.themes.find().sort("theme_name", 1)
+    return render_template("add_post.html", themes=themes)
 
 
 if __name__ == "__main__":
