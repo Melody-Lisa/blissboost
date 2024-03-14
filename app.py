@@ -19,6 +19,17 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+def is_valid_image_url(url):
+    # List of common image file extensions
+    image_extensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp']
+
+    # Check if the URL ends with a known image file extension
+    for extension in image_extensions:
+        if url.lower().endswith(extension):
+            return True
+    
+    return False
+
 
 @app.route("/")
 def home():
@@ -86,6 +97,14 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/logout")
+def logout():
+    #remove user from session cookies
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
+
+
 @app.route("/profile/<user>", methods={"GET", "POST"})
 def profile(user):
     # grab session user's username from the db
@@ -98,55 +117,24 @@ def profile(user):
     return redirect("login")
 
 
-def is_valid_image_url(url):
-    # List of common image file extensions
-    image_extensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp']
-
-    # Check if the URL ends with a known image file extension
-    for extension in image_extensions:
-        if url.lower().endswith(extension):
-            return True
-    
-    return False
-
-
-@app.route("/pics", methods=["POST"])
-def pics():
+@app.route("/upload_pics", methods=["POST"])
+def upload_pics():
     if 'user' in session:
         user = session['user']
         profile_pic_url = request.form.get('profile_pic_url')
 
         # Check if the provided URL is not empty and is a valid image URL
-        if profile_pic_url:
+        if profile_pic_url != "" and is_valid_image_url(profile_pic_url):
             # Save the URL to the user's profile
             mongo.db.users.update_one({'username': user}, {"$set": {'profile_pic_url': profile_pic_url}})
             return redirect(url_for("profile", user=user))
         else:
-            flash("Please provide a valid image URL")
-            return redirect(url_for("profile", user=user))
+            flash("Please enter a valid image URL")
+        
+        return redirect(url_for("profile", user=user))
     else:
         flash("You can't edit this page, please log in.")
         return redirect(url_for("login"))
-
-
-@app.route('/file/<filename>')
-def file(filename):
-    if filename:
-        file_data = mongo.send_file(filename)
-        if file_data:
-            return file_data
-        else:
-            abort(404)  # File not found
-    else:
-        abort(400)  # Bad request (missing filename)
-
-
-@app.route("/logout")
-def logout():
-    #remove user from session cookies
-    flash("You have been logged out")
-    session.pop("user")
-    return redirect(url_for("login"))
 
 
 @app.route("/edit_profile/<user>", methods=["GET", "POST"])
