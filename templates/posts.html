@@ -9,22 +9,33 @@
 
         <div class="card sticky-action medium mt-5 mb-3 shadow cyan darken-3">
             <div class="card-image waves-effect waves-block waves-light">
-                <img class="hoverable activator" src="{{ url_for('static', filename='images/background.jpg') }}">
+                <img class="hoverable activator"
+                 src="{{ url_for('static', filename='images/background.jpg') }}">
             </div>
 
             <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">{{ post.post_title }}<i
-                        class="hoverable right fa-solid fa-ellipsis-vertical"></i></span>
-                <p>{{ post.theme_name }}</p>
+                <span class="card-title activator grey-text text-darken-4">
+                    {{ post.post_title.capitalize() }}
+                    <i class="hoverable right fa-solid fa-ellipsis-vertical"></i>
+                </span>
+                <p>{{ post.theme_name.capitalize() }}</p>
             </div>
 
             <div class="card-action">
-                {{ post.created_by }}
+                <span>Created by: <strong>{{ post.created_by.capitalize() }}</strong>
+                     on: {{ post.post_date.strftime("%d %B, %Y") }}
+                </span>
             </div>
 
             <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">{{ post.post_title }}<i
-                        class="material-icons right">close</i></span>
+                <span class="card-title activator grey-text text-darken-4">
+                    {% if post.post_title %}
+                        {{ post.post_title.capitalize() }}
+                    {% else %}
+                        No Title
+                    {% endif %}
+                    <i class="hoverable right fa-solid fa-ellipsis-vertical"></i>
+                </span>
                 <p>{{ post.post_description }}</p>
             </div>
         </div>
@@ -38,7 +49,7 @@
         <i class="fa-solid fa-ellipsis"></i>
     </a>
     <ul>
-      <li><a href="{{ url_for('edit_profile', user=session['user']) }}"
+      <li><a href="{{ url_for('add_post') }}"
          class="btn-floating"><i class="fa-solid fa-user-pen"></i></a></li>
     </ul>
   </div>

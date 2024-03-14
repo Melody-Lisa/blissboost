@@ -176,23 +176,24 @@ def edit_profile(user):
 @app.route("/get_posts")
 def get_posts():
     posts = mongo.db.posts.find()
+
     return render_template(
         'posts.html', posts=posts)
 
 
-@app.route("/add_post")
+@app.route("/add_post", methods=["GET", "POST"])
 def add_post():
     if request.method == "POST":
         
         post = {
-            "theme_name": request.form.get("theme_name"),
-            "post_title": request.form.get("post_title"),
-            "post_description": request.form.get("post_description"),
-            "post_image": request.form.get("theme_image"),
-            "post_date": datetime.now(),
-            "created_by": session["user"]
+            'theme_name': request.form.get('theme_name'),
+            'theme_image': request.form.get('theme_image'),
+            'post_title': request.form.get('post_title'),
+            'post_description': request.form.get('post_description'),
+            'post_date': datetime.now(),
+            'created_by': session["user"]
         }
-        mongo.db.tasks.insert_one(post)
+        mongo.db.posts.insert_one(post)
         flash("Post Successfully Added")
         return redirect(url_for("get_posts"))
 

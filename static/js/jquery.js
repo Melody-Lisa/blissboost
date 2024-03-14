@@ -11,4 +11,5 @@
       }
     });
     $('.modal').modal();
+    $('select').formSelect();
   });
