@@ -39,7 +39,7 @@ h1, h2, h3, h4, .card-title {
     border-radius: 25px;
 }
 
-.card-image {
+.card-image, .card-image img.profile-pic {
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
 }

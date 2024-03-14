@@ -7,9 +7,9 @@
         <div class="card">
             <div class="card-image">
                 {% if user.profile_pic_url %}
-					<img src="{{ user.profile_pic_url }}" alt="Profile Picture">
+					<img class="profile-pic" src="{{ user.profile_pic_url }}" alt="Profile Picture">
 				{% else %}
-					<img src="{{ url_for('static', filename='images/default_user.jpg') }}" alt="Profile Picture">
+					<img class="profile-pic" src="{{ url_for('static', filename='images/default_user.jpg') }}" alt="Profile Picture">
 				{% endif %}
             </div>
 
