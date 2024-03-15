@@ -203,8 +203,22 @@ def add_post():
 
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
-    post = mongo.db.posts.find_one({"_id":ObjectId(post_id)})
+    if request.method == "POST":
+        submit = {
+            '$set': {
+                'theme_name': request.form.get('theme_name'),
+                'theme_image': request.form.get('theme_image'),
+                'post_title': request.form.get('post_title'),
+                'post_description': request.form.get('post_description'),
+                'post_date': datetime.now(),
+                'created_by': session["user"]
+            }
+        }
+        mongo.db.posts.update_one({"_id": ObjectId(post_id)}, submit)
+        flash("Post Successfully Updated")
+        return redirect(url_for("get_posts"))
 
+    post = mongo.db.posts.find_one({"_id":ObjectId(post_id)})
     themes = mongo.db.themes.find().sort("theme_name", 1)
     return render_template("edit_post.html", post=post, themes=themes)
 
