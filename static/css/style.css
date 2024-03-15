@@ -34,6 +34,11 @@ h1, h2, h3, h4, .card-title {
     margin-bottom: 5px;
 }
 
+.btn {
+    margin: 10px;
+    border-radius: 25px;
+}
+
 /* Cards and content */
 .card, .card-content, .card-panel, .btn-large, 
 .card-image, .card-image img.profile-pic {
