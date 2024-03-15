@@ -230,6 +230,14 @@ def delete_post(post_id):
     return redirect(url_for("get_posts"))
 
 
+@app.route("/delete_user/<user_id>", methods=["POST"])
+def delete_user(user_id):
+    mongo.db.users.delete_one({"_id": ObjectId(user_id)})
+    flash("Sorry to see you leave! Come back soon, okay?")
+    session.pop("user")
+    return redirect(url_for("home"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),

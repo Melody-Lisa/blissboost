@@ -46,6 +46,11 @@
                 </button>
             </div>
 
+            <a href="{{ url_for('profile', user=session['user']) }}"
+            class="deep-orange-text text-lighten-2 text-shadow hoverable right" >
+            Cancel
+           </a>
+
         </div>
     </form>
 </div>
