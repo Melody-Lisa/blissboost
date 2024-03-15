@@ -13,6 +13,12 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
+# Define the custom 404 error handler
+@app.errorhandler(404)
+def page_not_found(error):
+    # Render the 404.html template with any necessary context
+    return render_template('404.html'), 404
+
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
