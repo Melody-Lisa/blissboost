@@ -28,10 +28,13 @@
 
                 <span class="right-align">
                     {% if session["user"] == post.created_by %}
-                    <a href="{{ url_for('edit_post', post_id=post._id) }}">
-                        <i class="right fa-solid fa-pen-to-square
+                        <a href="{{ url_for('edit_post', post_id=post._id) }}">
+                            <i class="right fa-solid fa-pen-to-square
+                             deep-orange-text text-lighten-2 hoverable"></i>
+                        </a>
+                    {% else %}
+                        <i class="right fa-regular fa-heart
                          deep-orange-text text-lighten-2 hoverable"></i>
-                    </a>
                     {% endif %}
                 </span>
             </div>
