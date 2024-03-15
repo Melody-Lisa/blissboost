@@ -5,12 +5,25 @@
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
         <div class="card-panel">
             <h3 class="row center cyan-text text-darken-4">Register</h3>
+
+            <!-- Log In -->
+            <div class="row no-margin">
+                <div class="col s12">
+                    <p class="center-align">Already have an account?
+                         <a href="{{ url_for('login') }}"
+                          class="deep-orange-text text-darken-2">
+                          <strong>Log In!</strong></a></p>
+                </div>
+            </div>
+
+            <!-- Username -->
             <div class="row">
-                <!-- Username -->
                 <div class="input-field col s12">
                     <i class="fa-regular fa-face-smile prefix cyan-text text-darken-4"></i>
-                    <input id="username" name="username" type="text" class="validate" minlength="5"
-                    maxlength="15" pattern="^[a-zA-Z0-9]{5-15}" class="validate" required autocomplete="username">
+                    <input id="username" name="username"
+                     type="text" class="validate" minlength="5" maxlength="15"
+                        pattern="^[a-zA-Z0-9]{5-15}" class="validate"
+                         required autocomplete="username">
                     <label for="username">Username</label>
                 </div>
             </div>
@@ -19,8 +32,9 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-lock prefix cyan-text text-darken-4"></i>
-                    <input id="password" name="password" type="password" class="validate" 
-                    minlength="8" pattern="^[a-zA-Z0-9]{8-20}" class="validate" required>
+                    <input id="password" name="password"
+                     type="password" class="validate" minlength="8"
+                        pattern="^[a-zA-Z0-9]{8-20}" class="validate" required>
                     <label for="password">Password</label>
                 </div>
             </div>
@@ -29,8 +43,9 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-check prefix cyan-text text-darken-4"></i>
-                    <input id="confirm_password" name="confirm_password" type="password" 
-                    minlength="8" class="validate" required>
+                    <input id="confirm_password" name="confirm_password"
+                     type="password" minlength="8" class="validate"
+                        required>
                     <label for="password2">Confirm Password</label>
                 </div>
             </div>
@@ -41,16 +56,12 @@
                     Register <i class="fas fa-sign-in-alt"></i>
                 </button>
             </div>
-            <small class="right red-text text-darken-3"><strong>* Usernames and passwords must only contain letters and/or numbers.</strong></small>
+            <small class="right red-text text-darken-3">
+                <strong>* Usernames and passwords must only contain letters
+                    and/or numbers.</strong></small>
         </div>
-</div>
 </form>
-</div>
 
-<div class="row">
-    <div class="col s12">
-        <p class="center-align">Already have an account? <a href="{{ url_for('login') }}" class="deep-orange-text text-darken-2"><strong>Log In!</strong></a></p>
-    </div>
 </div>
 
 {% endblock %}
