@@ -21,15 +21,15 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-folder-open prefix cyan-text text-darken-4"></i>
-                        <select id="theme_name" name="theme_name" class="validate" required>
+                        <select id="theme_name" name="theme_data" class="validate" required>
                             <option value="" disabled>Choose Theme</option>
                             {% for theme in themes %}
                             {% if theme.theme_name == post.theme_name %}
-                            <option value="{{ theme.theme_name }}" selected>
+                            <option value="{{ theme.theme_name }}|{{ theme.theme_image }}" selected>
                                 {{- theme.theme_name.capitalize() -}}
                             </option>
                             {% else %}
-                            <option value="{{ theme.theme_name }}">
+                            <option value="{{ theme.theme_name }}|{{ theme.theme_image }}">
                                 {{- theme.theme_name.capitalize() -}}
                             </option>
                             {% endif %}

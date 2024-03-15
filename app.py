@@ -190,10 +190,12 @@ def get_posts():
 @app.route("/add_post", methods=["GET", "POST"])
 def add_post():
     if request.method == "POST":
-        
+        theme_data = request.form.get('theme_data').split('|')
+        theme_name = theme_data[0]
+        theme_image = theme_data[1]
         post = {
-            'theme_name': request.form.get('theme_name'),
-            'theme_image': request.form.get('theme_image'),
+            'theme_name': theme_name,
+            'theme_image': theme_image,
             'post_title': request.form.get('post_title'),
             'post_description': request.form.get('post_description'),
             'post_date': datetime.now(),
@@ -210,16 +212,20 @@ def add_post():
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
     if request.method == "POST":
+        theme_data = request.form.get('theme_data').split('|')
+        theme_name = theme_data[0]
+        theme_image = theme_data[1]
         submit = {
             '$set': {
-                'theme_name': request.form.get('theme_name'),
-                'theme_image': request.form.get('theme_image'),
+                'theme_name': theme_name,
+                'theme_image': theme_image,
                 'post_title': request.form.get('post_title'),
                 'post_description': request.form.get('post_description'),
                 'post_date': datetime.now(),
                 'created_by': session["user"]
             }
         }
+
         mongo.db.posts.update_one({"_id": ObjectId(post_id)}, submit)
         flash("Post Successfully Updated")
         return redirect(url_for("get_posts"))
