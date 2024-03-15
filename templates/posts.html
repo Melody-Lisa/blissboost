@@ -15,10 +15,10 @@
 
             <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4">
-                    {{ post.post_title.capitalize() }}
+                    {{ post.post_title }}
                     <i class="hoverable right fa-solid fa-ellipsis-vertical"></i>
                 </span>
-                <p>{{ post.theme_name.capitalize() }}</p>
+                <p>{{ post.theme_name }}</p>
             </div>
 
             <div class="card-action">
@@ -29,7 +29,7 @@
                 <span class="right-align">
                     <a href="{{ url_for('edit_post', post_id=post._id) }}">
                         <i class="right fa-solid fa-pen-to-square
-                         deep-orange-text text-lighten-2"></i>
+                         deep-orange-text text-lighten-2 hoverable"></i>
                     </a>
                 </span>
             </div>

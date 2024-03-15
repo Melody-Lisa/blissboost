@@ -41,7 +41,7 @@ h1, h2, h3, h4, .card-title {
 
 /* Cards and content */
 .card, .card-content, .card-panel, .btn-large, 
-.card-image, .card-image img.profile-pic {
+.card-image, .card-image img.profile-pic, .modal {
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
 }
