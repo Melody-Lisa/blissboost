@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center">Edit Post</h3>
+
+<div class="row">
+    <form class="col s12 m8 offset-m2" method="POST"
+     action="{{ url_for('edit_post', post_id=post._id) }}">
+
+        <div class="card-panel">
+
+            <!-- Post Title -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fa-solid fa-pen prefix cyan-text text-darken-4"></i>
+                    <input id="post_title" name="post_title" type="text"
+                     class="validate" minlength="0"
+                        maxlength="50" class="validate" required>
+                    <label for="post_title">Title</label>
+                </div>
+
+            <!-- Theme Selection -->
+			<div class="row">
+				<div class="input-field col s12">
+                    <i class="fas fa-folder-open prefix cyan-text text-darken-4"></i>
+					<select id="theme_name" name="theme_name" class="validate" required>
+                        <option value="" disabled selected>Choose Theme</option>
+                        {% for theme in themes %}
+                            <option value="{{ theme.theme_name }}">
+                                {{- theme.theme_name.capitalize() -}}
+                            </option>
+                        {% endfor %}
+                    </select>
+					<label for="theme_name">Post Theme</label>
+				</div>
+			</div>
+
+            <!-- Post Description -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fa-solid fa-align-justify prefix cyan-text text-darken-4"></i>
+                    <textarea id="post_description" name="post_description"
+                     class="validate materialize-textarea" minlength="0"
+                        maxlength="500" required></textarea>
+                    <label for="post_description">Your Post Here</label>
+                </div>
+            </div>
+
+            <!-- Edit Post -->
+            <div class="row">
+                <button type="submit"
+                 class="col s6 offset-s3 btn-large cyan darken-4 text-shadow center-align">
+                    Edit Post <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+{% endblock %}

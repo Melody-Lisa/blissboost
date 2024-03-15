@@ -201,6 +201,14 @@ def add_post():
     return render_template("add_post.html", themes=themes)
 
 
+@app.route("/edit_post/<post_id>", methods=["GET", "POST"])
+def edit_post(post_id):
+    post = mongo.db.posts.find_one({"_id":ObjectId(post_id)})
+
+    themes = mongo.db.themes.find().sort("theme_name", 1)
+    return render_template("edit_post.html", post=post, themes=themes)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),
