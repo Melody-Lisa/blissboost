@@ -49,3 +49,35 @@ h1, h2, h3, h4, .card-title {
 .no-margin {
     margin: 0;
 }
+
+/* Footer */
+.copyright {
+    display: inline;
+    padding-left: 5%;
+    color: white;
+}
+
+.fa-solid {
+    font-size: x-large;
+}
+
+.socials {
+    display: inline;
+    float: right;
+    padding-right: 5%;
+    letter-spacing: 10px;
+    font-size: x-large;
+}
+
+.socials a {
+    color: white;
+    transition: 1s;
+}
+
+.linked:hover {
+    color: #0072b1;
+}
+
+.git:hover {
+    color: #6e5494;
+}
