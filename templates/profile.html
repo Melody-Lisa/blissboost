@@ -50,26 +50,26 @@
 
 <!-- Floating Action Button -->
 <div class="fixed-action-btn">
-    <a class="btn-floating btn-large deep-orange lighten-2">
+    <a class="btn-floating btn-large deep-orange lighten-2 hoverable">
         <i class="fa-solid fa-ellipsis"></i>
     </a>
     <ul>
         <!-- Edit Profile -->
         <li>
             <a href="{{ url_for('edit_profile', user=session['user']) }}"
-             class="btn-floating">
+             class="btn-floating hoverable">
                 <i class="fa-solid fa-user-pen"></i>
             </a>
         </li>
         <!-- Upload Image -->
         <li>
-            <a data-target="pic_upload" class="btn-floating modal-trigger">
+            <a data-target="pic_upload" class="btn-floating modal-trigger hoverable">
                 <i class="fa-solid fa-image"></i>
             </a>
         </li>
         <!-- Delete User -->
         <li>
-            <a data-target="delete_user" class="btn-floating modal-trigger red">
+            <a data-target="delete_user" class="btn-floating modal-trigger red hoverable">
                 <i class="fa-solid fa-trash white-text"></i>
             </a>
         </li>
