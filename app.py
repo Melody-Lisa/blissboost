@@ -321,19 +321,19 @@ def get_themes():
 @app.route("/add_theme", methods=["GET", "POST"])
 def add_theme():
     if request.method == "POST":
-        if session.user|lower == "admin"|lower:
+        if session['user'].lower() == "admin":
             theme = {
                 "theme_name": request.form.get("theme_name"),
                 "theme_image": request.form.get("theme_image")
             }
             mongo.db.themes.insert_one(theme)
             flash("New Theme Added")
-            return redirect(url_for("get_categories"))
+            return redirect(url_for("get_themes"))
 
         flash("You are not authorised to add themes.")
         return redirect(url_for("home"))
 
-    return render_template("add_category.html")
+    return render_template("add_theme.html")
 
 
 if __name__ == "__main__":
