@@ -62,7 +62,7 @@
                             </div>
                             <div class="collapsible-body collapsible-main">
                                 <div class="image-container">
-                                    <img class="collapsible-img" src="{{ post.theme_image }}">
+                                    <img class="collapsible-img" src="{{ post.theme_image }}" alt="Theme image">
                                     <div class="overlay">
                                         <span class="post-description">{{ post.post_description }}</span>
                                     </div>
@@ -86,7 +86,8 @@
     <ul>
         <!-- Edit Profile -->
         <li>
-            <a href="{{ url_for('edit_profile', user=session['user']) }}" class="btn-floating hoverable">
+            <a href="{{ url_for('edit_profile', user=session['user']) }}"
+             class="btn-floating hoverable">
                 <i class="fa-solid fa-user-pen"></i>
             </a>
         </li>
@@ -98,7 +99,8 @@
         </li>
         <!-- Delete User -->
         <li>
-            <a data-target="delete_user" class="btn-floating modal-trigger red darken-3 hoverable">
+            <a data-target="delete_user"
+             class="btn-floating modal-trigger red darken-3 hoverable">
                 <i class="fa-solid fa-trash white-text"></i>
             </a>
         </li>
@@ -132,7 +134,8 @@
     <div class="modal-content">
         <h4 class="center white-text">Delete Account?</h4>
 
-        <form method="POST" action="{{ url_for('delete_user', user_id=user._id) }}" class="center-align">
+        <form method="POST" action="{{ url_for('delete_user', user_id=user._id) }}"
+         class="center-align">
             <input type="submit" value="Delete" class="red hoverable text-shadow">
         </form>
     </div>
