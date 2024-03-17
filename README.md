@@ -294,7 +294,7 @@ Please see [testing.md](testing.md) for all testing elements of this site.
 
 * [Materialize](https://materializecss.com): Code from this page was used and adapted to create various features across the site, including the navbar, footer, cards for different sections of pages and floating action buttons.
 
-* 
+* [https://github.com/adampgiles/CI_PP3_MT](Mini Tales): Code from this CI project used to create the like buttons functionality.
 
 
 ### Content
