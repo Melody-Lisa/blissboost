@@ -112,16 +112,26 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/profile/<user>", methods={"GET", "POST"})
+@app.route("/profile/<user>", methods=["GET", "POST"])
 def profile(user):
-    # grab session user's username from the db
-    user_data = mongo.db.users.find_one(
-        {"username": session["user"]})
+    # Fetch user data based on the provided username
+    user_data = mongo.db.users.find_one({"username": user})
 
     if user_data:
-        return render_template("profile.html", user=user_data)
+        # Retrieve the liked post ObjectIds
+        liked_post_ids = user_data.get("post_likes", [])
+        
+        # Fetch the details of the liked posts
+        liked_posts = []
+        for post_id in liked_post_ids:
+            post_details = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+            if post_details:
+                liked_posts.append(post_details)
 
-    return redirect("login")
+        return render_template("profile.html", user=user_data, liked_posts=liked_posts)
+    else:
+        flash("User not found")
+        return redirect(url_for("home"))
 
 
 @app.route("/upload_pics", methods=["POST"])

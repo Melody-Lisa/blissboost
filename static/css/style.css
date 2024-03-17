@@ -40,8 +40,9 @@ h1, h2, h3, h4, .card-title {
 }
 
 /* Cards and content */
-.card, .card-content, .card-panel, .btn-large, 
-.card-image, .card-image img.profile-pic, .modal {
+.card, .card-content, .card-panel, .btn-large,
+ .card-image, .card-image img.profile-pic,
+ .modal {
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
 }
@@ -52,7 +53,10 @@ h1, h2, h3, h4, .card-title {
 
 .post-image {
     height: 233px;
-    position: relative; /* Make the card image container relative */
+    position: relative;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .edit-button {
@@ -60,6 +64,40 @@ h1, h2, h3, h4, .card-title {
     top: 10px; /* Adjust top position as needed */
     left: 10px; /* Adjust left position as needed */
     z-index: 1; /* Ensure the edit button is above the image */
+}
+
+.collapsible-header {
+    display: flex;
+    justify-content:
+    space-between;
+    align-items: center;
+}
+
+.collapsible-main {
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+}
+
+.collapsible-img {
+    width: 100%;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Enable vertical scrollbar if needed */
+    max-height: 100%; /* Adjust height to fit within the image container */
 }
 
 /* Footer */
