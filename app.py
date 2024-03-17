@@ -256,10 +256,14 @@ def edit_post(post_id):
                 'theme_image': theme_image,
                 'post_title': request.form.get('post_title'),
                 'post_description': request.form.get('post_description'),
-                'post_date': datetime.now(),
-                'created_by': session["user"]
+                'post_date': datetime.now()
             }
         }
+
+        # Exclude 'created_by' field from the update operation
+        #Created_by does not get changed if an admin edits
+        if 'created_by' in session:
+            submit['$set']['created_by'] = session['user']
 
         mongo.db.posts.update_one({"_id": ObjectId(post_id)}, submit)
         flash("Post Successfully Updated")

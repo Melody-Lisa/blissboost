@@ -28,7 +28,7 @@
     <div class="col s12 m4">
         <div class="card sticky-action medium mt-5 mb-3 shadow cyan darken-3">
             <div class="card-image post-image waves-effect waves-block waves-light">
-                {% if session["user"] == post.created_by %}
+                {% if session["user"] == post.created_by or session["user"] == "admin" %}
                 <!-- Render edit button for the post owner -->
                 <a href="{{ url_for('edit_post', post_id=post._id) }}">
                     <i class="edit-button fa-solid fa-pen-to-square
