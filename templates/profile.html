@@ -32,6 +32,7 @@
 
     <div class="col s12 m6 offset-m1">
         <h2 class="header">About Me</h2>
+
         <div class="card horizontal">
             <div class="card-stacked">
                 <div class="card-content">
@@ -69,46 +70,51 @@
         </li>
         <!-- Delete User -->
         <li>
-            <a data-target="delete_user" class="btn-floating modal-trigger red hoverable">
+            <a data-target="delete_user" class="btn-floating modal-trigger red darken-3 hoverable">
                 <i class="fa-solid fa-trash white-text"></i>
             </a>
         </li>
     </ul>
-  </div>
+</div>
 
-  <!-- Upload Modal -->
-  <div id="pic_upload" name="pic_upload" class="modal cyan darken-3">
-      <div class="modal-content center-align">
-          <h4 class="center white-text">Upload Photo URL</h4>
-          <form method="POST" action="{{ url_for('upload_pics') }}">
-              <div class="input-field">
-                  <input type="text" id="profile_pic_url" name="profile_pic_url" required>
-                  <label for="profile_pic_url">Image URL</label>
-              </div>
-              <input type="submit" value="Upload" class="btn">
-          </form>
-      </div>
-      <div class="modal-footer cyan darken-4">
-          <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text">
-            Close
+<!-- Upload Modal -->
+<div id="pic_upload" name="pic_upload" class="modal cyan darken-3">
+    <div class="modal-content center-align">
+        <h4 class="center white-text">Upload Photo URL</h4>
+
+        <form method="POST" action="{{ url_for('upload_pics') }}">
+            <div class="input-field">
+                <input type="text" id="profile_pic_url" name="profile_pic_url" required>
+                <label for="profile_pic_url">Image URL</label>
+            </div>
+
+            <input type="submit" value="Upload" class="btn deep-orange hoverable">
+        </form>
+    </div>
+
+    <div class="modal-footer cyan darken-4">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text">
+            <strong>Cancel</strong>
         </a>
-      </div>
-  </div>
+    </div>
+</div>
 
 <!-- Delete User Modal -->
 <div id="delete_user" name="delete_user" class="modal cyan darken-3">
     <div class="modal-content">
         <h4 class="center white-text">Delete Account?</h4>
+
         <form method="POST"
          action="{{ url_for('delete_user', user_id=user._id) }}" class="center-align">
             <input type="submit" value="Delete"
              class="red hoverable text-shadow">
         </form>
     </div>
+
     <div class="modal-footer cyan darken-4">
         <a href="#!"
          class="modal-close waves-effect waves-green btn-flat white-text">
-            Cancel
+            <strong>Cancel</strong>
         </a>
     </div>
 </div>

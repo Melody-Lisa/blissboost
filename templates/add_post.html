@@ -18,6 +18,7 @@
                         maxlength="25" class="validate" required>
                     <label for="post_title">Title</label>
                 </div>
+            </div>
 
             <!-- Theme Selection -->
 			<div class="row">
@@ -49,10 +50,16 @@
             <!-- Save Post -->
             <div class="row">
                 <button type="submit"
-                 class="col s6 offset-s3 btn-large cyan darken-4 text-shadow center-align">
+                 class="col s6 offset-s3 btn-large cyan darken-4 text-shadow">
                     Save Post <i class="fa-solid fa-check"></i>
                 </button>
             </div>
+
+            <!-- Cancel -->
+            <a href="{{ url_for('get_posts') }}"
+            class="deep-orange-text text-lighten-2 text-shadow hoverable right" >
+            <strong>Cancel</strong>
+           </a>
 
         </div>
     </form>

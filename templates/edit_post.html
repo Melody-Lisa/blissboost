@@ -16,28 +16,29 @@
                         class="validate" value="{{ post.post_title }}" required>
                     <label for="post_title">Title</label>
                 </div>
+            </div>
 
-                <!-- Theme Selection -->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-folder-open prefix cyan-text text-darken-4"></i>
-                        <select id="theme_name" name="theme_data" class="validate" required>
-                            <option value="" disabled>Choose Theme</option>
+            <!-- Theme Selection -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-folder-open prefix cyan-text text-darken-4"></i>
+                    <select id="theme_name" name="theme_data" class="validate" required>
+                        <option value="" disabled>Choose Theme</option>
                             {% for theme in themes %}
-                            {% if theme.theme_name == post.theme_name %}
-                            <option value="{{ theme.theme_name }}|{{ theme.theme_image }}" selected>
-                                {{- theme.theme_name.capitalize() -}}
-                            </option>
-                            {% else %}
-                            <option value="{{ theme.theme_name }}|{{ theme.theme_image }}">
-                                {{- theme.theme_name.capitalize() -}}
-                            </option>
-                            {% endif %}
+                                {% if theme.theme_name == post.theme_name %}
+                                    <option value="{{ theme.theme_name }}|{{ theme.theme_image }}" selected>
+                                        {{- theme.theme_name.capitalize() -}}
+                                    </option>
+                                {% else %}
+                                    <option value="{{ theme.theme_name }}|{{ theme.theme_image }}">
+                                        {{- theme.theme_name.capitalize() -}}
+                                    </option>
+                                {% endif %}
                             {% endfor %}
-                        </select>
-                        <label for="theme_name">Post Theme</label>
-                    </div>
+                    </select>
+                    <label for="theme_name">Post Theme</label>
                 </div>
+            </div>
 
                 <!-- Post Description -->
                 <div class="row">
@@ -46,7 +47,7 @@
                         <textarea id="post_description" name="post_description" class="validate materialize-textarea"
                             minlength="0" maxlength="500" required>
                         {{- post.post_description -}}
-                    </textarea>
+                        </textarea>
                         <label for="post_description">Your Post Here</label>
                     </div>
                 </div>
@@ -54,21 +55,25 @@
                 <!-- Edit Post -->
                 <div class="row">
                     <div class="col s12 center-align">
-                        <!-- Cancel -->
-                        <a href="{{ url_for('get_posts') }}"
-                         class="btn cyan darken-4 text-shadow" >
-                         <i class="fa-solid fa-backward text-shadow"></i>
-                        </a>
                         <!-- Submit -->
                         <button type="submit"
                          class="btn-large cyan darken-4 text-shadow center-align">
                             Edit <i class="fa-solid fa-pen-to-square"></i>
                         </button>
-                        <!-- Delete -->
-                        <a data-target="delete_post" class="btn cyan darken-4 text-shadow modal-trigger">
-                            <i class="fa-solid fa-trash red-text"></i></i></a>
                     </div>
                 </div>
+
+                <!-- Delete Post -->
+                <a data-target="delete_post"
+                 class="modal-trigger red-text text-darken-3 text-shadow hoverable left">
+                    <strong>Delete</strong>
+                </a>
+
+                <!-- Cancel -->
+                <a href="{{ url_for('get_posts') }}"
+                 class="deep-orange-text text-lighten-2 text-shadow hoverable right" >
+                    <strong>Cancel</strong>
+                </a>
 
             </div>
     </form>

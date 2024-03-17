@@ -8,8 +8,8 @@
      action="{{ url_for('edit_profile', user=user.username) }}">
         <div class="card-panel">
 
+        <!-- Name -->
             <div class="row">
-                <!-- Name -->
                 <div class="input-field col s12 m6">
                     <i class="fa-solid fa-signature prefix cyan-text text-darken-4"></i>
                     <input id="name" name="name" type="text" value="{{ user.name }}"
@@ -46,10 +46,11 @@
                 </button>
             </div>
 
+            <!-- Cancel -->
             <a href="{{ url_for('profile', user=session['user']) }}"
-            class="deep-orange-text text-lighten-2 text-shadow hoverable right" >
-            Cancel
-           </a>
+             class="deep-orange-text text-lighten-2 text-shadow hoverable right" >
+                <strong>Cancel</strong>
+            </a>
 
         </div>
     </form>
