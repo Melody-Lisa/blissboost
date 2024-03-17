@@ -3,6 +3,24 @@
 
 <h2 class="header center">Community Posts</h2>
 
+<div class="container">
+    <form action="{{ url_for('search') }}" method="POST">
+        <div class="row valign-wrapper center-align">
+            <div class="input-field col s6 offset-s3 search">
+                <i class="fas fa-search prefix cyan-text text-darken-4"></i>
+                <input id="query" name="query" type="text" class="validate" required>
+                <label for="query" class="center-align black-text">Search Posts</label>
+            </div>
+            <div class="col s4">
+                <button type="submit" class="btn"><i class="fas fa-search"></i> 
+                </button>
+                <a href="{{ url_for('get_posts') }}" class="btn-small deep-orange lighten-2">
+                    <i class="fas fa-repeat"></i></a>
+            </div>
+        </div>
+    </form>
+</div>
+
 <div class="row">
     {% for post in posts %}
     <div class="col s12 m4">

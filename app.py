@@ -45,6 +45,7 @@ def home():
         return render_template('index.html')
 
 
+# Create User, Log In and Log out routes.
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -112,6 +113,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+# Routes relating to CRUD user's profiles
 @app.route("/profile/<user>", methods=["GET", "POST"])
 def profile(user):
     # Fetch user data based on the provided username
@@ -189,12 +191,35 @@ def edit_profile(user):
         return redirect(url_for("login"))
 
 
+@app.route("/delete_user/<user_id>", methods=["POST"])
+def delete_user(user_id):
+    mongo.db.users.delete_one({"_id": ObjectId(user_id)})
+    flash("Sorry to see you leave! Come back soon, okay?")
+    session.pop("user")
+    return redirect(url_for("home"))
+
+
+# All Routes relating to CRUD community posts
 @app.route("/get_posts")
 def get_posts():
-    posts = mongo.db.posts.find()
+    posts = list(mongo.db.posts.find())
 
     return render_template(
         'posts.html', posts=posts)
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    if request.method == "POST":
+        # Handle form submission via POST request
+        query = request.form.get("query")
+        posts = list(mongo.db.posts.find({"$text": {"$search": query}}))
+    else:
+        # Handle form submission via GET request (e.g., when clicking on pagination links)
+        query = request.args.get("query")
+        posts = list(mongo.db.posts.find({"$text": {"$search": query}}))
+
+    return render_template('posts.html', posts=posts)
 
 
 @app.route("/add_post", methods=["GET", "POST"])
@@ -284,14 +309,6 @@ def delete_post(post_id):
     mongo.db.posts.delete_one({"_id": ObjectId(post_id)})
     flash("Post Successfully Deleted")
     return redirect(url_for("get_posts"))
-
-
-@app.route("/delete_user/<user_id>", methods=["POST"])
-def delete_user(user_id):
-    mongo.db.users.delete_one({"_id": ObjectId(user_id)})
-    flash("Sorry to see you leave! Come back soon, okay?")
-    session.pop("user")
-    return redirect(url_for("home"))
 
 
 if __name__ == "__main__":
