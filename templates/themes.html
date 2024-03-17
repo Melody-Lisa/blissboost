@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align">Manage Categories</h3>
+
+<div class="row">
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_theme') }}" class="btn-large cyan darken-3 text-shadow">
+            Add Theme <i class="fas fa-plus-square white-text right"></i>
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    {% for theme in themes %}
+        <div class="col s12 m3">
+            <div class="card cyan darken-3 text-shadow center-align">
+                <div class="card-content white-text">
+                    <span class="card-title">{{ theme.theme_name }}</span>
+                </div>
+                <div class="card-action">
+                    <a href="#" class="btn deep-orange lighten-2 hoverable">Edit</a>
+                    <a href="#" class="btn red darken-3 hoverable">Delete</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

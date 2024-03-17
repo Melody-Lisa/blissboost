@@ -36,6 +36,9 @@
             <li><a href="{{ url_for('get_posts') }}">Community</a></li>
             <li><a href="{{ url_for('profile', user=session['user']) }}">Profile</a></li>
             <li><a href="{{ url_for('logout') }}">Sign Out</a></li>
+            {% if session.user|lower == "admin"|lower %}
+              <li><a href="{{ url_for('get_themes') }}">Manage Themes</a></li>
+            {% endif %}
           {% else %}
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('login') }}">Log In</a></li>
@@ -51,6 +54,9 @@
         <li><a href="{{ url_for('get_posts') }}">Community</a></li>
         <li><a href="{{ url_for('profile', user=session['user']) }}">Profile</a></li>
         <li><a href="{{ url_for('logout') }}">Sign Out</a></li>
+        {% if session.user|lower == "admin"|lower %}
+          <li><a href="{{ url_for('get_themes') }}">Manage Themes</a></li>
+        {% endif %}
       {% else %}
         <li><a href="{{ url_for('home') }}">Home</a></li>
         <li><a href="{{ url_for('login') }}">Log In</a></li>

@@ -311,6 +311,31 @@ def delete_post(post_id):
     return redirect(url_for("get_posts"))
 
 
+# Routes relating to admin access
+@app.route("/get_themes")
+def get_themes():
+    themes = list(mongo.db.themes.find().sort("theme_name", 1))
+    return render_template("themes.html", themes=themes)
+
+
+@app.route("/add_theme", methods=["GET", "POST"])
+def add_theme():
+    if request.method == "POST":
+        if session.user|lower == "admin"|lower:
+            theme = {
+                "theme_name": request.form.get("theme_name"),
+                "theme_image": request.form.get("theme_image")
+            }
+            mongo.db.themes.insert_one(theme)
+            flash("New Theme Added")
+            return redirect(url_for("get_categories"))
+
+        flash("You are not authorised to add themes.")
+        return redirect(url_for("home"))
+
+    return render_template("add_category.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),
