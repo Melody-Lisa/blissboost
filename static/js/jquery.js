@@ -12,5 +12,4 @@
     });
     $('.modal').modal();
     $('select').formSelect();
-    $('.carousel').carousel();
   });

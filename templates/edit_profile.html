@@ -8,13 +8,13 @@
      action="{{ url_for('edit_profile', user=user.username) }}">
         <div class="card-panel">
 
-        <!-- Name -->
+            <!-- Name -->
             <div class="row">
                 <div class="input-field col s12 m6">
                     <i class="fa-solid fa-signature prefix cyan-text text-darken-4"></i>
                     <input id="name" name="name" type="text" value="{{ user.name }}"
                      class="validate" minlength="0"
-                        maxlength="50" class="validate" autocomplete="nickname">
+                        maxlength="50" class="validate">
                     <label for="name">Name</label>
                 </div>
 

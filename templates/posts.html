@@ -4,6 +4,7 @@
 <h2 class="header center">Community Posts</h2>
 
 <div class="container">
+    <!-- Search Bar -->
     <form action="{{ url_for('search') }}" method="POST">
         <div class="row valign-wrapper center-align">
             <div class="input-field col s6 offset-s3 search">
@@ -22,9 +23,9 @@
 </div>
 
 <div class="row">
+
     {% for post in posts %}
     <div class="col s12 m4">
-
         <div class="card sticky-action medium mt-5 mb-3 shadow cyan darken-3">
             <div class="card-image post-image waves-effect waves-block waves-light">
                 {% if session["user"] == post.created_by %}
@@ -52,6 +53,7 @@
                 </span>
 
                 <span class="right-align">
+                    <!-- Liked posts code taken and edited from Mini Tales Project -->
                     {% if post._id|string in session["liked"] %}
                         <!-- Render liked heart icon if the post is liked -->
                         <a href="{{ url_for('like_post', _id=post._id) }}">
@@ -73,11 +75,7 @@
 
             <div class="card-reveal">
                 <span class="card-title activator grey-text text-darken-4">
-                    {% if post.post_title %}
                         {{ post.post_title.capitalize() }}
-                    {% else %}
-                        No Title
-                    {% endif %}
                     <i class="hoverable right fa-solid fa-ellipsis-vertical"></i>
                 </span>
                 <p>{{ post.post_description }}</p>

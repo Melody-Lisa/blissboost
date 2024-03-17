@@ -60,10 +60,10 @@ h1, h2, h3, h4, .card-title {
 }
 
 .edit-button {
-    position: absolute; /* Position the edit button absolutely */
-    top: 10px; /* Adjust top position as needed */
-    left: 10px; /* Adjust left position as needed */
-    z-index: 1; /* Ensure the edit button is above the image */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
 }
 
 .collapsible-header {
@@ -96,8 +96,8 @@ h1, h2, h3, h4, .card-title {
     color: white;
     padding: 10px;
     box-sizing: border-box;
-    overflow-y: auto; /* Enable vertical scrollbar if needed */
-    max-height: 100%; /* Adjust height to fit within the image container */
+    overflow-y: auto;
+    max-height: 100%;
 }
 
 .search {

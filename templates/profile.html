@@ -7,9 +7,11 @@
         <div class="card">
             <div class="card-image">
                 {% if user.profile_pic_url %}
-                <img class="profile-pic" src="{{ user.profile_pic_url }}" alt="Profile Picture">
+                <img class="profile-pic" src="{{ user.profile_pic_url }}"
+                 alt="Profile Picture">
                 {% else %}
-                <img class="profile-pic" src="{{ url_for('static', filename='images/default_user.jpg') }}"
+                <img class="profile-pic"
+                 src="{{ url_for('static', filename='images/default_user.jpg') }}"
                     alt="Profile Picture">
                 {% endif %}
             </div>
@@ -30,17 +32,16 @@
         </div>
     </div>
 
-
     <div class="col s12 m6 offset-m1">
-
         <div class="card horizontal">
             <div class="card-stacked">
                 <div class="card-content">
                     <h2 class="header center">About Me</h2>
                     <p>
                         {% if user.about %}
-                        {{ user.about }}
-                        {% endif %}</p>
+                            {{ user.about }}
+                        {% endif %}
+                    </p>
                 </div>
                 <div class="card-action">
                     <h3>Liked Posts</h3>
