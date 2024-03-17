@@ -235,6 +235,40 @@ def edit_post(post_id):
     return render_template("edit_post.html", post=post, themes=themes)
 
 
+@app.route("/like_post/<_id>", methods=["GET", "POST"])
+def like_post(_id):
+    _id = _id
+    liked = mongo.db.users.find_one({
+        "username": session["user"]}).get("post_likes", [])
+
+    if _id in liked:
+        # Unlike post
+        mongo.db.users.update_one({
+            "username": session["user"]}, {"$pull": {"post_likes": _id}})
+        mongo.db.posts.update_one({
+            "_id": ObjectId(_id)}, {"$inc": {"post_likes": -1}})
+    else:
+        # Like post
+        mongo.db.users.update_one({
+            "username": session["user"]}, {"$push": {"post_likes": _id}})
+        mongo.db.posts.update_one({
+            "_id": ObjectId(_id)}, {"$inc": {"post_likes": 1}})
+
+    # Get updated likes count for the post
+    post_likes_count = mongo.db.posts.find_one({"_id": ObjectId(_id)})["post_likes"]
+
+    # If likes count is 0, remove the post_likes field from the document
+    if post_likes_count == 0:
+        mongo.db.posts.update_one({"_id": ObjectId(_id)}, {"$unset": {"post_likes": ""}})
+
+    # Update session['liked'] to reflect the latest liked posts
+    liked = mongo.db.users.find_one({
+        "username": session["user"]}).get("post_likes", [])
+    session["liked"] = liked
+    
+    return redirect(request.referrer)
+
+
 @app.route("/delete_post/<post_id>", methods=["POST"])
 def delete_post(post_id):
     mongo.db.posts.delete_one({"_id": ObjectId(post_id)})

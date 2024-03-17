@@ -9,6 +9,13 @@
 
         <div class="card sticky-action medium mt-5 mb-3 shadow cyan darken-3">
             <div class="card-image post-image waves-effect waves-block waves-light">
+                {% if session["user"] == post.created_by %}
+                <!-- Render edit button for the post owner -->
+                <a href="{{ url_for('edit_post', post_id=post._id) }}">
+                    <i class="edit-button fa-solid fa-pen-to-square
+                     deep-orange-text text-lighten-2 hoverable"></i>
+                </a>
+                {% endif %}
                 <img class="hoverable activator"
                  src="{{ post.theme_image }}">
             </div>
@@ -27,16 +34,23 @@
                 </span>
 
                 <span class="right-align">
-                    {% if session["user"] == post.created_by %}
-                        <a href="{{ url_for('edit_post', post_id=post._id) }}">
-                            <i class="right fa-solid fa-pen-to-square
-                             deep-orange-text text-lighten-2 hoverable"></i>
+                    {% if post._id|string in session["liked"] %}
+                        <!-- Render liked heart icon if the post is liked -->
+                        <a href="{{ url_for('like_post', _id=post._id) }}">
+                            <i class="right fa-solid fa-heart deep-orange-text text-lighten-2 hoverable"></i>
+                            <!-- Display the total likes count -->
+                            <span class="right">{{ post.post_likes }}</span>
                         </a>
                     {% else %}
-                        <i class="right fa-regular fa-heart
-                         deep-orange-text text-lighten-2 hoverable"></i>
+                        <!-- Render unliked heart icon if the post is not liked -->
+                        <a href="{{ url_for('like_post', _id=post._id) }}">
+                            <i class="right fa-regular fa-heart deep-orange-text text-lighten-2 hoverable"></i>
+                            <!-- Display the total likes count -->
+                            <span class="right">{{ post.post_likes }}</span>
+                        </a>
                     {% endif %}
                 </span>
+
             </div>
 
             <div class="card-reveal">

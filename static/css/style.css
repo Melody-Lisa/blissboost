@@ -52,6 +52,14 @@ h1, h2, h3, h4, .card-title {
 
 .post-image {
     height: 233px;
+    position: relative; /* Make the card image container relative */
+}
+
+.edit-button {
+    position: absolute; /* Position the edit button absolutely */
+    top: 10px; /* Adjust top position as needed */
+    left: 10px; /* Adjust left position as needed */
+    z-index: 1; /* Ensure the edit button is above the image */
 }
 
 /* Footer */
