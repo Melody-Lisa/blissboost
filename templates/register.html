@@ -32,23 +32,29 @@
 
             <!-- Password -->
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s11">
                     <i class="fa-solid fa-lock prefix cyan-text text-darken-4"></i>
                     <input id="password" name="password"
                      type="password" class="validate" minlength="8"
                         pattern="^[a-zA-Z0-9]{8-20}" class="validate" required>
                     <label for="password">Password</label>
                 </div>
+                <div class="col s1">
+                    <i class="fa-solid fa-eye-slash" onclick="visibility(event)"></i>
+                </div>
             </div>
 
             <!-- confirm password -->
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s11">
                     <i class="fas fa-check prefix cyan-text text-darken-4"></i>
                     <input id="confirm_password" name="confirm_password"
                      type="password" minlength="8" class="validate"
                         required>
                     <label for="password2">Confirm Password</label>
+                </div>
+                <div class="col s1">
+                    <i class="fa-solid fa-eye-slash" onclick="visibility(event)"></i>
                 </div>
             </div>
 
