@@ -352,11 +352,19 @@ def edit_theme(theme_id):
         return redirect(url_for("get_themes"))
 
     theme = mongo.db.themes.find_one({"_id": ObjectId(theme_id)})
-    
-    # Fetch all themes
+
     themes = mongo.db.themes.find()
     
     return render_template("edit_theme.html", theme=theme)
+
+
+@app.route("/delete_theme/<theme_id>", methods=["GET", "POST"])
+def delete_theme(theme_id):
+    theme = mongo.db.themes.find_one({"_id": ObjectId(theme_id)})
+    if theme:
+        mongo.db.themes.delete_one({"_id": ObjectId(theme_id)})
+        flash("Theme Successfully Deleted")
+    return redirect(url_for("get_themes"))
 
 
 if __name__ == "__main__":

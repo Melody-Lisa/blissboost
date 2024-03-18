@@ -20,8 +20,9 @@
                     <img class="theme_preview" src="{{ theme.theme_image }}" alt="{{ theme.theme_name }}" style="max-width: 100%;">
                 </div>
                 <div class="card-action">
-                    <a href="{{ url_for('edit_theme', theme_id=theme._id) }}" class="btn deep-orange lighten-2 hoverable">Edit</a>
-                    <a href="#" class="btn red darken-3 hoverable">Delete</a>
+                    <a href="{{ url_for('edit_theme', theme_id=theme._id) }}" class="btn deep-orange lighten-2 hoverable">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </a>
                 </div>
             </div>
         </div>

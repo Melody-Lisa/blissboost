@@ -32,6 +32,12 @@
                             </button>
                         </div>
 
+                        <!-- Delete Theme -->
+                        <a data-target="delete_theme"
+                         class="modal-trigger red-text text-darken-3 text-shadow hoverable left">
+                            <strong>Delete</strong>
+                        </a>
+
                         <!-- Cancel -->
                         <a href="{{ url_for('get_themes') }}"
                         class="deep-orange-text text-lighten-2 text-shadow hoverable right" >
@@ -42,5 +48,23 @@
             </div>
         </div>
     </div>
+
+<!-- Delete Theme Modal -->
+<div id="delete_theme" name="delete_theme" class="modal cyan darken-3">
+    <div class="modal-content">
+        <h4 class="center white-text">Delete Theme?</h4>
+        <form method="POST"
+         action="{{ url_for('delete_theme', theme_id=theme._id) }}" class="center-align">
+            <input type="submit" value="Delete"
+             class="red hoverable text-shadow">
+        </form>
+    </div>
+    <div class="modal-footer cyan darken-4">
+        <a href="#!"
+         class="modal-close waves-effect waves-green btn-flat white-text">
+            Cancel
+        </a>
+    </div>
+</div>
 
 {% endblock %}
