@@ -100,6 +100,11 @@ h1, h2, h3, h4, .card-title {
     max-height: 100%;
 }
 
+.theme_preview {
+max-width: 100%;
+height: 150px;
+}
+
 .search {
     background: radial-gradient(circle at center, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 100%);
     background: -webkit-radial-gradient(center, circle cover, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 100%);

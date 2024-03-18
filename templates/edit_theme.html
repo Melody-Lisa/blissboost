@@ -1,40 +1,42 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Add Theme</h3>
+    <h3 class="center-align">Edit Theme</h3>
 
     <div class="container">
         <div class="row center-align">
             <div class="col s12">
                 <div class="card-panel">
-                    <form method="POST" action="{{ url_for('add_theme') }}">
+                    <form method="POST" action="{{ url_for('edit_theme', theme_id=theme._id) }}">
                         <!-- Theme Name -->
                         <div class="input-field">
                             <i class="fas fa-folder-open prefix cyan-text text-darken-4"></i>
                             <input id="theme_name" name="theme_name" minlength="3" maxlength="25" type="text"
-                                class="validate" required>
+                                class="validate" value="{{ theme.theme_name }}" required>
                             <label for="theme_name">Theme Name</label>
                         </div>
     
                         <!-- Theme Image -->
                         <div class="input-field">
                             <i class="fa-solid fa-image prefix cyan-text text-darken-4"></i>
-                            <input type="text" id="theme_image" name="theme_image" required>
+                            <input type="text" id="theme_image" name="theme_image" value="{{ theme.theme_image }}" required>
                             <label for="theme_image">Image URL</label>
                         </div>
+
+                        <img class="theme_preview" src="{{ theme.theme_image }}" alt="{{ theme.theme_name }}" style="max-width: 100%;">
     
                         <!-- submit button -->
                         <div class="center-align">
                             <button type="submit" class="btn-large text-shadow">
-                                Add Theme <i class="fas fa-plus-square right"></i>
+                                Edit Theme <i class="fas fa-plus-square right"></i>
                             </button>
                         </div>
 
                         <!-- Cancel -->
                         <a href="{{ url_for('get_themes') }}"
-                         class="deep-orange-text text-lighten-2 text-shadow hoverable right" >
-                                <strong>Cancel</strong>
-                        </a>
+                        class="deep-orange-text text-lighten-2 text-shadow hoverable right" >
+                           <strong>Cancel</strong>
+                       </a>
                     </form>
                 </div>
             </div>

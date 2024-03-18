@@ -340,6 +340,25 @@ def add_theme():
     return render_template("add_theme.html")
 
 
+@app.route("/edit_theme/<theme_id>", methods=["GET", "POST"])
+def edit_theme(theme_id):
+    if request.method == "POST":
+        submit = {
+            "theme_name": request.form.get("theme_name"),
+            "theme_image": request.form.get("theme_image")
+        }
+        mongo.db.themes.update_one({"_id": ObjectId(theme_id)}, {"$set": submit})
+        flash("Theme Successfully Updated")
+        return redirect(url_for("get_themes"))
+
+    theme = mongo.db.themes.find_one({"_id": ObjectId(theme_id)})
+    
+    # Fetch all themes
+    themes = mongo.db.themes.find()
+    
+    return render_template("edit_theme.html", theme=theme)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),
