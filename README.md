@@ -199,6 +199,31 @@ All wireframes have been created with [Figma](https://figma.com/).
 <img src="static/documents/blissboost_editprofile_mobile.png" alt="Mobile edit profile wireframe made with figma">
 </details>
 
+<details><summary>BlissBoost Add and Edit Posts Wireframes</summary>
+<img src="static/documents/blissboost_addeditpost_desktop.png" alt="Desktop add edit post wireframe made with figma">
+<img src="static/documents/blissboost_addeditpost_tablet.png" alt="Tablet add edit post wireframe made with figma">
+<img src="static/documents/blissboost_addeditpost_mobile.png" alt="Mobile add edit post wireframe made with figma">
+The add and edit post pages will be almost identical, with just the addition of "Delete" link in edit post page.
+</details>
+
+<details><summary>BlissBoost Manage Themes Wireframes</summary>
+<img src="static/documents/blissboost_themes_desktop.png" alt="Desktop manage themes wireframe made with figma">
+<img src="static/documents/blissboost_themes_tablet.png" alt="Tablet manage themes wireframe made with figma">
+<img src="static/documents/blissboost_themes_mobile.png" alt="Mobile manage themes wireframe made with figma">
+</details>
+
+<details><summary>BlissBoost Add Theme Wireframes</summary>
+<img src="static/documents/blissboost_addtheme_desktop.png" alt="Desktop add theme wireframe made with figma">
+<img src="static/documents/blissboost_addtheme_tablet.png" alt="Tablet add theme wireframe made with figma">
+<img src="static/documents/blissboost_addtheme_mobile.png" alt="Mobile add theme wireframe made with figma">
+</details>
+
+<details><summary>BlissBoost Edit Theme Wireframes</summary>
+<img src="static/documents/blissboost_edittheme_desktop.png" alt="Desktop edit theme wireframe made with figma">
+<img src="static/documents/blissboost_edittheme_tablet.png" alt="Tablet edit theme wireframe made with figma">
+<img src="static/documents/blissboost_edittheme_mobile.png" alt="Mobile edit theme wireframe made with figma">
+</details>
+
 <sup><sub>[*Back to top*](#contents)</sup></sub>
 
 -----
