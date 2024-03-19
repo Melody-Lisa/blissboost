@@ -90,7 +90,46 @@ In addition to user goals:
 
 ### Scope
 
+Taking all of the above into account I decided I would need 5 main pages that users can navigate to from the navbar plus 3 pages for adding and editing information:
 
+- __Home Page:__ When users first navigate to the site they are taken to the index.html page, this provides information to the user about the purpose of the site and it's core values. There is a call to action here for users to register an account or log in. Once a user is logged in, they are redirected to their profile as the "home" instead.
+
+- __Register__: Here users can create their account. This is a simple form that asks them to create a username and password, with an extra password field for validation. Users can hide or unhide their password input for accessibility.
+
+- __Log In:__ Here users who already have an account can log in to view their profile and the community page. They are prompted to enter their username and password. Users can hide or unhide their password input for accessibility.
+
+- __Profile Page:__ Here users can upload a photo url via the upload modal and delete their profile, as well as view posts that they have liked from the community page. In this current version of the site the user is the only person who can view their profile.
+
+    - __Edit Profile:__: From the user's profile page they can also click a link to edit profile information. Here they can add their name, date of birth and write some information about themselves.
+
+- __Community Posts:__ Here the users can view posts made by anyone on the site, search for posts based on theme or username, like posts to be saved to their profile, use the floating action button to navigate to create their own posts, and navigate to edit posts using the edit button that appears only if they have created the post.
+
+    - __Add Post:__ Using the floating action button, users navigate to the add post page. Here they can write a title, choose a theme, and write a post description. Themes come with their own custom image that shows up when the post is created.
+
+    - __Edit Post__: When viewing your own post, an edit button appears in the top corner of the post card. Here users can navigate to the edit post page. This is similar to the add post page, with current post information stored within the input fields.
+
+As well as these main pages, Admin can access 3 additional pages as well as edit any post on the site.
+
+- __Manage Themes:__ Here admin can view all themes that users can post under as well as a preview of the theme images that appear within posts. They can navigate to add, edit, and delete themes. The delete theme button opens a modal to confirm deletion.
+
+    - __Add Theme:__ This takes admin to a simple form where they can input the theme name and upload an image url for the new theme.
+
+    - __Edit Theme:__ This takes admin to a form similar to add theme, but the information for the current theme is available in the input fields.
+
+|**Navbar?**| **Logged Out** | **Logged In (non-admin)** | **Logged In (admin)** |
+| ----------| -------------- | ------------------------- | --------------------- |
+| Yes       | Home           | Home                      | Home                  |
+| Yes       | ---            | Community                 | Community             |
+| No        | ---            | Add Post                  | Add Post              |
+| No        | ---            | Edit Post (created_by)    | Edit Post (Any)       |
+| Yes       | ---            | Profile                   | Profile               |
+| No        | ---            | Edit Profile              | Edit Profile          |
+| Yes       | Register       | ---                       | ---                   |
+| Yes       | Sign In        | ---                       | ---                   |
+| Yes       | ---            | Sign Out                  | Sign Out              |
+| Yes       | ---            | -------                   | Manage Themes         |
+| No        | ---            | -------                   | Add Theme             |
+| No        | ---            | -------                   | Edit Theme            |
 
 <sup><sub>[*Back to top*](#contents)</sup></sub>
 
