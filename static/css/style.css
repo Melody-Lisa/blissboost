@@ -39,6 +39,10 @@ h1, h2, h3, h4, .card-title {
     border-radius: 25px;
 }
 
+.s1 {
+    line-height: 75px;
+}
+
 /* Cards and content */
 .card, .card-content, .card-panel, .btn-large,
  .card-image, .card-image img.profile-pic,
@@ -144,4 +148,13 @@ height: 150px;
 
 .git:hover {
     color: #6e5494;
+}
+
+
+/* Media Queries */
+
+@media (max-width: 480px) {
+    #eyeIcon {
+        font-size: 14px; /* Adjust size for smaller screens */
+    }
 }
