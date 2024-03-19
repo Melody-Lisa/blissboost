@@ -166,19 +166,37 @@ All wireframes have been created with [Figma](https://figma.com/).
 <details><summary>BlissBoost Home Wireframes</summary>
 <img src="static/documents/blissbost_home_desktop.png" alt="Desktop homepage wireframe made with figma">
 <img src="static/documents/blissbost_home_tablet.png" alt="Tablet homepage wireframe made with figma">
-<img src="static/documents/blissbost_home_mobile.png" alt="Mobile homepage wireframe made with figma">
+<img src="static/documents/blissboost_home_mobile.png" alt="Mobile homepage wireframe made with figma">
 </details>
 
 <details><summary>BlissBoost Register Wireframes</summary>
-<img src="static/documents/blissbost_register_desktop.png" alt="Desktop Register wireframe made with figma">
-<img src="static/documents/blissbost_register_tablet.png" alt="Tablet Register wireframe made with figma">
-<img src="static/documents/blissbost_register_mobile.png" alt="Mobile Register wireframe made with figma">
+<img src="static/documents/blissboost_register_desktop.png" alt="Desktop Register wireframe made with figma">
+<img src="static/documents/blissboost_register_tablet.png" alt="Tablet Register wireframe made with figma">
+<img src="static/documents/blissboost_register_mobile.png" alt="Mobile Register wireframe made with figma">
 </details>
 
 <details><summary>BlissBoost Login Wireframes</summary>
-<img src="static/documents/blissbost_login_desktop.png" alt="Desktop log in wireframe made with figma">
-<img src="static/documents/blissbost_login_tablet.png" alt="Tablet log in wireframe made with figma">
-<img src="static/documents/blissbost_login_mobile.png" alt="Mobile log in wireframe made with figma">
+<img src="static/documents/blissboost_login_desktop.png" alt="Desktop log in wireframe made with figma">
+<img src="static/documents/blissboost_login_tablet.png" alt="Tablet log in wireframe made with figma">
+<img src="static/documents/blissboost_login_mobile.png" alt="Mobile log in wireframe made with figma">
+</details>
+
+<details><summary>BlissBoost Profile Wireframes</summary>
+<img src="static/documents/blissboost_profile_desktop.png" alt="Desktop profile wireframe made with figma">
+<img src="static/documents/blissboost_profile_tablet.png" alt="Tablet profile wireframe made with figma">
+<img src="static/documents/blissboost_profile_tablet.png" alt="Mobile profile wireframe made with figma">
+</details>
+
+<details><summary>BlissBoost Community Posts Wireframes</summary>
+<img src="static/documents/blissboost_community_desktop.png" alt="Desktop community wireframe made with figma">
+<img src="static/documents/blissboost_community_tablet.png" alt="Tablet community wireframe made with figma">
+<img src="static/documents/blissboost_community_mobile.png" alt="Mobile community wireframe made with figma">
+</details>
+
+<details><summary>BlissBoost Edit Profile Wireframes</summary>
+<img src="static/documents/blissboost_editprofile_desktop.png" alt="Desktop edit profile wireframe made with figma">
+<img src="static/documents/blissboost_editprofile_tablet.png" alt="Tablet edit profile wireframe made with figma">
+<img src="static/documents/blissboost_editprofile_mobile.png" alt="Mobile edit profile wireframe made with figma">
 </details>
 
 <sup><sub>[*Back to top*](#contents)</sup></sub>
