@@ -116,9 +116,19 @@ As well as these main pages, Admin can access 3 additional pages as well as edit
 
     - __Edit Theme:__ This takes admin to a form similar to add theme, but the information for the current theme is available in the input fields.
 
+<sup><sub>[*Back to top*](#contents)</sup></sub>
+
+-----
+
+### Structure
+
+#### Site Structure
+
+The navigation bar for the site will take users to all main sections of the site with some non-navigation links implemented for adding or editing content. Content deletion is implemented using modals for confirmation. The navbar brand logo will take logged out users to the home page and logged in users to their profile page.
+
 |**Navbar?**| **Logged Out** | **Logged In (non-admin)** | **Logged In (admin)** |
 | ----------| -------------- | ------------------------- | --------------------- |
-| Yes       | Home           | Home                      | Home                  |
+| Yes       | Home           | ----                      | ----                  |
 | Yes       | ---            | Community                 | Community             |
 | No        | ---            | Add Post                  | Add Post              |
 | No        | ---            | Edit Post (created_by)    | Edit Post (Any)       |
@@ -131,13 +141,17 @@ As well as these main pages, Admin can access 3 additional pages as well as edit
 | No        | ---            | -------                   | Add Theme             |
 | No        | ---            | -------                   | Edit Theme            |
 
-<sup><sub>[*Back to top*](#contents)</sup></sub>
+<details><summary>Logged Out Navbar</summary>
+<img src="static/documents/loggedoutnavbar.png" alt="Navbar for logged out users: Home, Log In, Register.">
+</details>
 
------
+<details><summary>Logged In Navbar</summary>
+<img src="static/documents/loggedinnavbar.png" alt="Navbar for logged in users: Community, Profile, Log Out">
+</details>
 
-### Structure
-
-
+<details><summary>Admin Navbar</summary>
+<img src="static/documents/adminnavbar.png" alt="Navbar for admin: Community, Profile, Log Out, Manage Themes.">
+</details>
 
 <sup><sub>[*Back to top*](#contents)</sup></sub>
 
@@ -149,16 +163,22 @@ As well as these main pages, Admin can access 3 additional pages as well as edit
 
 All wireframes have been created with [Figma](https://figma.com/).
 
-<details><summary>BlissBoost Desktop Wireframe</summary>
-<img src="#" alt="Desktop wireframe made with figma">
+<details><summary>BlissBoost Home Wireframes</summary>
+<img src="static/documents/blissbost_home_desktop.png" alt="Desktop homepage wireframe made with figma">
+<img src="static/documents/blissbost_home_tablet.png" alt="Tablet homepage wireframe made with figma">
+<img src="static/documents/blissbost_home_mobile.png" alt="Mobile homepage wireframe made with figma">
 </details>
 
-<details><summary>BlissBoost Tablet Wireframe</summary>
-<img src="#" alt="Tablet wireframe made with figma">
+<details><summary>BlissBoost Register Wireframes</summary>
+<img src="static/documents/blissbost_register_desktop.png" alt="Desktop Register wireframe made with figma">
+<img src="static/documents/blissbost_register_tablet.png" alt="Tablet Register wireframe made with figma">
+<img src="static/documents/blissbost_register_mobile.png" alt="Mobile Register wireframe made with figma">
 </details>
 
-<details><summary>BlissBoost Mobile Wireframe</summary>
-<img src="#" alt="Mobile wireframe made with figma">
+<details><summary>BlissBoost Login Wireframes</summary>
+<img src="static/documents/blissbost_login_desktop.png" alt="Desktop log in wireframe made with figma">
+<img src="static/documents/blissbost_login_tablet.png" alt="Tablet log in wireframe made with figma">
+<img src="static/documents/blissbost_login_mobile.png" alt="Mobile log in wireframe made with figma">
 </details>
 
 <sup><sub>[*Back to top*](#contents)</sup></sub>
