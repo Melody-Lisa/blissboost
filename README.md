@@ -102,7 +102,7 @@ Taking all of the above into account I decided I would need 5 main pages that us
 
     - __Edit Profile:__: From the user's profile page they can also click a link to edit profile information. Here they can add their name, date of birth and write some information about themselves.
 
-- __Community Posts:__ Here the users can view posts made by anyone on the site, search for posts based on theme or username, like posts to be saved to their profile, use the floating action button to navigate to create their own posts, and navigate to edit posts using the edit button that appears only if they have created the post.
+- __Community Posts:__ Here the users can view posts made by anyone on the site, search for posts based on post title, theme or username, like posts to be saved to their profile, use the floating action button to navigate to create their own posts, and navigate to edit posts using the edit button that appears only if they have created the post.
 
     - __Add Post:__ Using the floating action button, users navigate to the add post page. Here they can write a title, choose a theme, and write a post description. Themes come with their own custom image that shows up when the post is created.
 
