@@ -52,19 +52,19 @@
                                 <!-- Liked Post Title -->
                                 {{ post.post_title }}
 
-                                {% if post._id|string in session["liked"] %}
-                                    <!-- Render liked heart icon if the post is liked -->
-                                    <a href="{{ url_for('like_post', _id=post._id) }}">
-                                        <i class="right fa-solid fa-trash-can deep-orange-text
-                                         text-lighten-2 hoverable"></i>
-                                    </a>
-                                {% endif %}
+                                <!-- Render liked heart icon if the post is liked -->
+                                <a href="{{ url_for('like_post', _id=post._id) }}">
+                                    <i class="right fa-solid fa-trash-can deep-orange-text
+                                     text-lighten-2 hoverable"></i>
+                                </a>
                             </div>
+                            
                             <div class="collapsible-body collapsible-main">
                                 <div class="image-container">
                                     <img class="collapsible-img" src="{{ post.theme_image }}" alt="Theme image">
                                     <div class="overlay">
-                                        <span class="post-description">{{ post.post_description }}</span>
+                                        <span class="post-description">
+                                            {{ post.post_description }}</span>
                                     </div>
                                 </div>
                             </div>

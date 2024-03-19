@@ -28,9 +28,10 @@
     <!-- Navigation bar -->
     <nav>
       <div class="nav-wrapper cyan darken-3">
-        <a href="#!" class="brand-logo center"><img
+        <a href="{{ url_for('home') }}" class="brand-logo center"><img
             src="{{ url_for('static', filename='images/blissboost_logo.png') }}"></a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+          <i class="fa-solid fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
           {% if session.user %}
             <li><a href="{{ url_for('get_posts') }}">Community</a></li>
