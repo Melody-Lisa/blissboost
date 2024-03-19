@@ -1,6 +1,6 @@
 # BlissBoost
 
-<img src="#" alt="An image representing how the site looks across different devices of varying size.">
+<img src="static/documents/blissboost_responsive.png" alt="An image representing how the site looks across different devices of varying size.">
 
 By Melody Lisa.
 
@@ -59,19 +59,30 @@ This is the documentation for BlissBoost - a social media site aimed towards spr
 
 ### Strategy
 
+This project was built as a milestone project on my Diploma in Web Application Development with [Code Institute](https://codeinstitute.net/) as a learning tool for interactive frontend development and my first project using Python and Flask and so there was no specific client. However, in order to create a more professional product I treated it as a real-world application inspired by social media. The aim was to create a site that spreads positive and uplifting messages that users can like and look back on when they want a boost. 
 
 
 #### User Goals
 
+- Create an account on the site.
+- Add personal details and information onto a personal profile.
+- View and create posts on the community page.
+- Edit or delete personal posts.
+- Like posts from the community page to view on their profile.
+- Delete personal account when no longer in use.
 
+#### Site Admin Goals
 
-#### Site Owner Goals
+In addition to user goals:
 
-
+- Edit or delete any post from the community page.
+- Add, edit or delete post themes from the theme management page.
 
 #### User Stories
 
-
+- I want to be able to create my profile and edit it to my liking.
+- I want to view all posts created on the site and like my favourite ones.
+- I want to be able to see my liked posts in one place on my profile to read later.
 
 <sup><sub>[*Back to top*](#contents)</sup></sub>
 
