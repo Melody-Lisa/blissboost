@@ -376,7 +376,25 @@ Here users can view their profile. Using the floating action button they can edi
 <img src="static/documents/blissboost_communityfab.png" alt="Floating action button.">
 </details>
 
-Here users can view and search for posts that anyone has made on the site. Users can add their own post using the floating action button. Each of the post cards have an action to view the full post and users can like posts to be saved to their profile. If a user has created the post, an additional icon appears in the top corner for users to edit their profile. From the edit profile page users can also delete their profile.
+<details><summary>Add Post</summary>
+<img src="static/documents/blissboost_addpost.png" alt="Blissboost add post page.">
+
+<img src="static/documents/blissboost_addpostmessage.png" alt="Add post flash message.">
+</details>
+
+<details><summary>Edit Post</summary>
+<img src="static/documents/blissboost_editpost.png" alt="Blissboost edit post page.">
+
+<img src="static/documents/blissboost_editpostmessage.png" alt="Edit post flash message.">
+</details>
+
+<details><summary>Delete Post</summary>
+<img src="static/documents/blissboost_deletepost.png" alt="Delete post modal.">
+
+<img src="static/documents/blissboost_deletepostmessage.png" alt="Delete post flash message.">
+</details>
+
+Here users can view and search for posts that anyone has made on the site. Users can add their own post using the floating action button. Each of the post cards have an action to view the full post and users can like posts to be saved to their profile. If a user has created the post, an additional icon appears in the top corner for users to edit their profile. From the edit profile page users can also delete their post. A modal pops up asking the user to confirm post deletion.
 
 ### Admin Pages
 
