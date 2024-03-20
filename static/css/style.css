@@ -24,6 +24,16 @@ h1, h2, h3, h4, .card-title {
     margin-top: 5px;
 }
 
+.nav-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.center-line {
+    width: 50%;
+    margin: 0 auto; /* This centers the element horizontally */
+    border-top: 1px solid white; /* Adjust color and thickness as needed */
+}
+
 /* Flash messages */
 .flashes h4 {
     line-height: 1;
