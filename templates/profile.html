@@ -36,7 +36,7 @@
         <div class="card horizontal">
             <div class="card-stacked">
                 <div class="card-content">
-                    <h2 class="header center">About Me</h2>
+                    <h3 class="header center">About Me</h3>
                     <p>
                         {% if user.about %}
                             {{ user.about }}
@@ -44,7 +44,7 @@
                     </p>
                 </div>
                 <div class="card-action">
-                    <h3>Liked Posts</h3>
+                    <h3 class="center">Liked Posts</h3>
                     <ul class="collapsible cyan darken-4">
                         {% for post in liked_posts %}
                         <li>
