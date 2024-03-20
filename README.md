@@ -242,17 +242,21 @@ The add and edit post pages will be almost identical, with just the addition of 
 
 Fonts have been imported from [Google Fonts](https://fonts.google.com/).
 
+- [Kaushan Script](https://fonts.google.com/specimen/Kaushan+Script?query=Kaushan): This font is used for the headings across the site with "cursive" used as the back up font style. This font was chosen for its easy-to-read cursive script, which adds a touch of fun and whimsy while fitting the theme of the website, creating a harmonious and engaging visual experience for visitors.
+
+- [Mukta](https://fonts.google.com/specimen/Mukta?query=Mukta): This font is used for all other text on the site with "sans-serif" used as the back up font style. This font was chosen due to its simplicity, ensuring easy readability while maintaining a relaxed and approachable tone, suited to the website's style without being overly formal.
+
 
 #### Colours
 
-The colour scheme for the site was kept simple and chosen through materialize color picker to keep styling as seamless and easy as possible.
+The colour scheme for the site was kept simple and chosen through materialize color picker to keep styling as seamless and easy as possible. Various shades of cyan are used for navbars, cards and text areas, alternating with white background cards and text areas. The text across the site is white for cyan backgrounds and black for white backgrounds. Shades of deep orange are used to accent flash messages and various action buttons across the site with red shades used for any buttons or links where a user can delete any information pushed to the database.
 
 
 <details><summary>Main colour scheme for the site</summary>
-<img src="#" alt="Colour pallet made with figma features..">
+<img src="static/documents/blissboost_color_scheme.png" alt="Colour pallet made with figma features deep orange lighten 2, cyan darken 3, cyan darken 4, red and red darken 3">
 </details>
 
-Colour scheme images made with [figma](https://figma.com).
+Colour scheme images made with [figma](https://figma.com) using screenshots from [materialize](https://materializecss.com).
 
 <sup><sub>[*Back to top*](#contents)</sup></sub>
 
@@ -263,19 +267,23 @@ Colour scheme images made with [figma](https://figma.com).
 ### Favicon
 
 <details><summary>Favicon</summary>
-<img src="#" alt="The favicon for the site, #">
+<img src="static/images/favicon.ico" alt="The favicon for the site, a cyan circle with white 'BB' lettering">
 </details>
 
-The favicon for the site #. The favicon was created using [favicon.io](https://favicon.io/).
+The favicon for the site. The favicon was created using [favicon.io](https://favicon.io/).
 
 
 ### Header
 
 <details><summary>Navbar</summary>
-<img src="#" alt="The navigation featured at the top of the page #">
+<img src="static/documents/loggedoutnavbar.png" alt="The navigation featured at the top of the page for logged out users.">
+
+<img src="static/documents/loggedinnavbar.png" alt="The navigation featured at the top of the page for logged in users.">
+
+<img src="static/documents/adminnavbar.png" alt="The navigation featured at the top of the page for admin users.">
 </details>
 
-The navigation bar at the top of each page features the brand logo along with different links depending on whether you are signed in or not.
+The navigation bar at the top of each page features the brand logo along with different links depending on whether you are signed in or not. The navbar links collapse into a sidebar for smaller screens.
 
 For users not logged in to the site, the home, sign in and register pages are available. Once a user logs in to the site they have access to their personal profile and the community page where they can view posts that have been made to the site.
 
