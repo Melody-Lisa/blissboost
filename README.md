@@ -355,12 +355,30 @@ On this page users can input their username and password to log in. A message wi
 </details>
 
 <details><summary>Delete Profile</summary>
-<img src="static/documents/blissboost_deleteprofile" alt="Blissboost edit profile page.">
+<img src="static/documents/blissboost_deleteaccount" alt="Blissboost edit profile page.">
 </details>
 
 Here users can view their profile. Using the floating action button they can edit their profile, upload a profile picture url and delete their account. Users are flashed a message when they successfully edit their profile or upload a photo. The liked posts section shows the user which posts they have liked, with an option to unlike and remove them from their profile. When selecting the button to delete their profile, a modal appears asking the user to confirm deletion. 
 
 ### Community
+
+<details><summary>Community Posts</summary>
+<img src="static/documents/blissboost_communityposts.png" alt="Blissboost community page.">
+
+<img src="static/documents/blissboost_posts.png" alt="Post actions.">
+
+<img src="static/documents/blissboost_search.png" alt="Search bar functionality.">
+
+<img src="static/documents/blissboost_likepost.png" alt="Liked post icon.">
+
+<img src="static/documents/blissboost_editpostbutton.png" alt="Post with edit button.">
+
+<img src="static/documents/blissboost_communityfab.png" alt="Floating action button.">
+</details>
+
+Here users can view and search for posts that anyone has made on the site. Users can add their own post using the floating action button. Each of the post cards have an action to view the full post and users can like posts to be saved to their profile. If a user has created the post, an additional icon appears in the top corner for users to edit their profile. From the edit profile page users can also delete their profile.
+
+### Admin Pages
 
 ### 404 Page
 
