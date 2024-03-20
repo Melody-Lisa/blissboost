@@ -87,7 +87,10 @@
 <!-- Delete Post Modal -->
 <div id="delete_post" name="delete_post" class="modal cyan darken-3">
     <div class="modal-content">
+        
         <h4 class="center white-text">Delete Post?</h4>
+        <p class="center white-text">This action cannot be reversed.</p>
+
         <form method="POST"
          action="{{ url_for('delete_post', post_id=post._id) }}" class="center-align">
             <input type="submit" value="Delete"
