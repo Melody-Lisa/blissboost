@@ -281,6 +281,8 @@ The favicon for the site. The favicon was created using [favicon.io](https://fav
 <img src="static/documents/loggedinnavbar.png" alt="The navigation featured at the top of the page for logged in users.">
 
 <img src="static/documents/adminnavbar.png" alt="The navigation featured at the top of the page for admin users.">
+
+<img src="static/documents/blissboost_sidenav.png" alt="The navigation featured at the top of the page for admin users.">
 </details>
 
 The navigation bar at the top of each page features the brand logo along with different links depending on whether you are signed in or not. The navbar links collapse into a sidebar for smaller screens.
