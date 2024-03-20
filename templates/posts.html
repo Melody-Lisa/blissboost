@@ -7,13 +7,14 @@
     <!-- Search Bar -->
     <form action="{{ url_for('search') }}" method="POST">
         <div class="row valign-wrapper center-align">
-            <div class="input-field col s6 offset-s3 search">
+            <div class="input-field col s6 offset-s3">
+                <div class="search">
                 <i class="fas fa-search prefix cyan-text text-darken-4"></i>
-                <input id="query" name="query" type="text" class="validate" required>
+                <input id="query" name="query" type="text" class="center validate" required>
                 <label for="query" class="center-align black-text">Search Posts</label>
-            </div>
-            <div class="col s4">
-                <button type="submit" class="btn"><i class="fas fa-search"></i> 
+                </div>
+
+                <button type="submit" class="btn-small"><i class="fas fa-search"></i> 
                 </button>
                 <a href="{{ url_for('get_posts') }}" class="btn-small deep-orange lighten-2">
                     <i class="fas fa-repeat"></i></a>
