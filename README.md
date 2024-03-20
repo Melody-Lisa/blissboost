@@ -273,7 +273,7 @@ Colour scheme images made with [figma](https://figma.com) using screenshots from
 The favicon for the site. The favicon was created using [favicon.io](https://favicon.io/).
 
 
-### Header
+### Navbar
 
 <details><summary>Navbar</summary>
 <img src="static/documents/loggedoutnavbar.png" alt="The navigation featured at the top of the page for logged out users.">
@@ -282,32 +282,83 @@ The favicon for the site. The favicon was created using [favicon.io](https://fav
 
 <img src="static/documents/adminnavbar.png" alt="The navigation featured at the top of the page for admin users.">
 
-<img src="static/documents/blissboost_sidenav.png" alt="The navigation featured at the top of the page for admin users.">
+<img src="static/documents/blissboost_sidenav.png" alt="The sidenav featured on smaller screens.">
 </details>
 
 The navigation bar at the top of each page features the brand logo along with different links depending on whether you are signed in or not. The navbar links collapse into a sidebar for smaller screens.
 
 For users not logged in to the site, the home, sign in and register pages are available. Once a user logs in to the site they have access to their personal profile and the community page where they can view posts that have been made to the site.
 
-<details><summary>Header</summary>
-<img src="#" alt="The header featured at the top of the page below the header.'">
-</details>
-
 ### Footer
 
 <details><summary>Footer</summary>
-<img src="#" alt="The footer featured at the bottom of the page, this contains the social media links and copyright information.">
+<img src="static/documents/blissboost_footer.png" alt="The footer featured at the bottom of the page, this contains the social media links and copyright information.">
+
+<img src="static/documents/linkedin_hover.png" alt="The footer featured at the bottom of the page, this contains the social media links and copyright information.">
+
+<img src="static/documents/github_hover.png" alt="The footer featured at the bottom of the page, this contains the social media links and copyright information.">
+
 </details>
 
-The footer contains the copyright information and social media links. The social media links open in a new tab.
+The footer contains the copyright information and social media links. Each of the links has a hover effect that fades each icon into its logo color. The social media links open in a new tab.
 
 ### Home
 
+<details><summary>Home</summary>
+<img src="static/documents/blissboost_home.png" alt="Blissboost home page.">
+</details>
+
+Here users can use buttons to register or log in to the site.
+
 ### Register
+
+<details><summary>Register</summary>
+<img src="static/documents/blissboost_register.png" alt="Blissboost register page.">
+
+<img src="static/documents/username_exists.png" alt="Username exists message.">
+
+<img src="static/documents/unmatched_password.png" alt="Passwords don't match message.">
+
+<img src="static/documents/registration_successful.png" alt="Registration successful message.">
+</details>
+
+Here users can input a username and password with password validation. There is a link that directs users to the log in page if they already have an account. If a username already exists or the passwords do not match a message will flash to let the user know. If a user enters correct details they are redirected to their profile page with a flash message confirming their successful registration.
 
 ### Log In
 
+<details><summary>Log In</summary>
+<img src="static/documents/blissboost_login.png" alt="Blissboost log in page.">
+
+<img src="static/documents/invalid_username_password.png" alt="Invalid username or password message">
+
+<img src="static/documents/welcome_back.png" alt="Welcome back message">
+</details>
+
+On this page users can input their username and password to log in. A message will flash if they enter incorrect details. If the user correctly enters their details they are redirected to their profile page with a flash message welcoming them back.
+
 ### Profile
+
+<details><summary>Profile</summary>
+<img src="static/documents/blissboost_profile.png" alt="Blissboost profile page.">
+
+<img src="static/documents/blissbooost_liked.png" alt="Liked posts section.">
+
+<img src="static/documents/blissboost_fab.png" alt="Floating action button.">
+</details>
+
+<details><summary>Edit Profile</summary>
+<img src="static/documents/blissboost_editprofile.png" alt="Blissboost edit profile page.">
+
+<img src="static/documents/blissboost_updatesuccessful.png" alt="Blissboost successful profile edit message.">
+
+<img src="static/documents/blissboost_upload_photo.png" alt="Upload photo modal">
+</details>
+
+<details><summary>Delete Profile</summary>
+<img src="static/documents/blissboost_deleteprofile" alt="Blissboost edit profile page.">
+</details>
+
+Here users can view their profile. Using the floating action button they can edit their profile, upload a profile picture url and delete their account. Users are flashed a message when they successfully edit their profile or upload a photo. The liked posts section shows the user which posts they have liked, with an option to unlike and remove them from their profile. When selecting the button to delete their profile, a modal appears asking the user to confirm deletion. 
 
 ### Community
 
