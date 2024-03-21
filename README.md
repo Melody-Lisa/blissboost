@@ -473,42 +473,40 @@ The colours across the site have been kept simple with
 ### Languages
 
 - HTML
-- CSS - with materialize templating
+- CSS
+- Jquery
+- Javascript
 - Python - with jinja templating
 
-### Frameworks, Libraries, and Programs Used
+### Frameworks
 
-* [MongoDB](https://www.mongodb.com) - The database used for storing information for the site.
+- [Flask](https://pypi.org/project/Flask/) - Micro framework for site templating.
+- [Materialize v1.0.0](https://materializecss.com) - The framework for the website.
 
-* [Heroku](https://www.heroku.com) - For website deployment.
+### Libraries
 
-* [Materialize v1.0.0](https://materializecss.com) - The framework for the website. Additional CSS styling was also implemented in style.css.
+- [Font Awesome](https://fontawesome.com/) - For the iconography on the website.
+- [Jinja](https://jinja.palletsprojects.com/en/3.1.x/) - Templating engine.
+- [Google Fonts](https://fonts.google.com/) - To import the fonts used on the website.
 
-* [favicon](https://favicon.io/) - To create the favicon for the site.
+### Programs
 
-* [Figma](https://figma.com/) - For wireframes and other graphics in readme.
+- [Bing Create](https://www.bing.com/images/create) - For background image and logo generation.
+- [Favicon](https://favicon.io/) - To create the favicon for the site.
+- [Figma](https://figma.com/) - For wireframes and other graphics in readme.
+- [Git](https://git-scm.com/) - For version control.
+- [Google Dev Tools](https://developers.google.com/web/tools/chrome-devtools) - To troubleshoot and test features, solve issues with responsiveness and styling.
+- [Heroku](https://www.heroku.com) - For website deployment.
+- [MongoDB](https://www.mongodb.com) - The database used for storing information for the site.
+- [Pip](https://pypi.org/project/pip/) - To install Python packages.
+- [Red Ketchup](https://redketchup.io/image-resizer) - To convert background image to webp format.
 
-* [Font Awesome](https://fontawesome.com/) - For the iconography on the website.
+### Testing and Validation Tools
 
-* Git - For version control.
-
-* [Github](https://github.com/) - To save and store the files for the website.
-
-* Google Dev Tools - To troubleshoot and test features, solve issues with responsiveness and styling.
-
-* [JS Hint](https://jshint.com/) - To check the javascript code for errors.
-
-* [Google Fonts](https://fonts.google.com/) - To import the fonts used on the website.
-
-* [Bing Create](https://www.bing.com/images/create) - For background image and logo generation.
-
-* [Red Ketchup](https://redketchup.io/image-resizer) - To convert background image to webp format.
-
-* Samsung Talkback - To test accessibility.
-
-* [UI.dev](https://ui.dev/amiresponsive) - To show the site on a range of screen sizes.
-
-* [W3C Markup Validation Service](https://validator.w3.org/) - To validate HTML and CSS code.
+- Samsung Talkback - To test accessibility.
+- [JS Hint](https://jshint.com/) - To check the JavaScript code for errors.
+- [UI.dev](https://ui.dev/amiresponsive) - To show the site on a range of screen sizes.
+- [W3C Markup Validation Service](https://validator.w3.org/) - To validate HTML and CSS code.
 
 <sup><sub>[*Back to top*](#contents)</sup></sub>
 
