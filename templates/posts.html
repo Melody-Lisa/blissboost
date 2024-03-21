@@ -55,14 +55,16 @@
                     {% if post._id|string in session["liked"] %}
                         <!-- Render liked heart icon if the post is liked -->
                         <a href="{{ url_for('like_post', _id=post._id) }}">
-                            <i class="right fa-solid fa-heart deep-orange-text text-lighten-2 hoverable" aria-label="Unlike Post"></i>
+                            <i class="right fa-solid fa-heart deep-orange-text text-lighten-2 hoverable"
+                             aria-label="Unlike Post"></i>
                             <!-- Display the total likes count -->
                             <span class="right">{{ post.post_likes }}</span>
                         </a>
                     {% else %}
                         <!-- Render unliked heart icon if the post is not liked -->
                         <a href="{{ url_for('like_post', _id=post._id) }}">
-                            <i class="right fa-regular fa-heart deep-orange-text text-lighten-2 hoverable" aria-label="Like Post"></i>
+                            <i class="right fa-regular fa-heart deep-orange-text text-lighten-2 hoverable"
+                             aria-label="Like Post"></i>
                             <!-- Display the total likes count -->
                             <span class="right">{{ post.post_likes }}</span>
                         </a>
@@ -74,7 +76,8 @@
             <div class="card-reveal">
                 <span class="card-title activator grey-text text-darken-4">
                         {{ post.post_title.capitalize() }}
-                    <i class="hoverable right fa-solid fa-ellipsis-vertical" aria-label="Close Post Details"></i>
+                    <i class="hoverable right fa-solid fa-ellipsis-vertical"
+                     aria-label="Close Post Details"></i>
                 </span>
                 <p>{{ post.post_description }}</p>
             </div>
