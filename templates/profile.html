@@ -73,22 +73,20 @@
 </div>
 
 <!-- Floating Action Button -->
-<div class="fixed-action-btn" aria-label="Actions">
+<div class="fixed-action-btn" role="menu" aria-haspopup="true" aria-expanded="false" aria-label="Actions">
     <a class="btn-floating btn-large deep-orange lighten-2 hoverable">
         <i class="fa-solid fa-ellipsis"></i>
     </a>
     <ul>
         <!-- Edit Profile -->
         <li>
-            <a href="{{ url_for('edit_profile', user=session['user']) }}"
-             class="btn-floating hoverable" aria-label="Edit Profile">
+            <a href="{{ url_for('edit_profile', user=session['user']) }}" class="btn-floating hoverable" aria-label="Edit Profile">
                 <i class="fa-solid fa-user-pen"></i>
             </a>
         </li>
         <!-- Upload Image -->
         <li>
-            <a data-target="pic_upload" class="btn-floating modal-trigger hoverable"
-             aria-label="Upload Image">
+            <a data-target="pic_upload" class="btn-floating modal-trigger hoverable" aria-label="Upload Image">
                 <i class="fa-solid fa-image"></i>
             </a>
         </li>
