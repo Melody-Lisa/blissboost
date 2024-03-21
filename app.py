@@ -1,3 +1,8 @@
+'''
+Code Institute non-relational database management systems module used to set up the app
+and ensure CRUD functionality.
+'''
+
 import os
 from flask import (
     Flask, flash, render_template,
@@ -13,7 +18,7 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
-# Define the custom 404 error handler
+# Define the custom 404 error handler learnt from stackoverflow
 @app.errorhandler(404)
 def page_not_found(error):
     # Render the 404.html template with any necessary context
