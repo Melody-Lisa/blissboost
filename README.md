@@ -28,16 +28,18 @@ This is the documentation for BlissBoost - a social media site aimed towards spr
     * [Typography](#typography)
     * [Colours](#colours)
 * [Features](#features)
-    * [Favicon](#favicon)
-    * [Navbar](#navbar)
-    * [Footer](#footer)
-    * [Home](#home)
-    * [Register](#register)
-    * [Log In](#log-in)
-    * [Profile](#profile)
-    * [Community](#community)
-    * [Admin Pages](#admin-pages)
-    * [404 Page](#404-page)
+    * [Site Features](#site-features)
+      * [Favicon](#favicon)
+      * [Navbar](#navbar)
+      * [Footer](#footer)
+      * [Home](#home)
+      * [Register](#register)
+      * [Log In](#log-in)
+      * [Profile](#profile)
+      * [Community](#community)
+      * [Admin Pages](#admin-pages)
+      * [404 Page](#404-page)
+    * [Defensive Programming](#defensive-programming)
 * [Future Implementations](#future-implementations)
 * [Accessibility](#accessibility)
   * [Alt Text](#alt-text)
@@ -276,7 +278,9 @@ Colour scheme images made with [figma](https://figma.com) using screenshots from
 
 ## Features
 
-### Favicon
+### Site Features
+
+#### Favicon
 
 <details><summary>Favicon</summary>
 <img src="static/images/favicon.ico" alt="The favicon for the site, a cyan circle with white 'BB' lettering">
@@ -285,7 +289,7 @@ Colour scheme images made with [figma](https://figma.com) using screenshots from
 The favicon for the site. The favicon was created using [favicon.io](https://favicon.io/).
 
 
-### Navbar
+#### Navbar
 
 <details><summary>Navbar</summary>
 <img src="static/documents/loggedoutnavbar.png" alt="The navigation featured at the top of the page for logged out users.">
@@ -301,7 +305,7 @@ The navigation bar at the top of each page features the brand logo along with di
 
 For users not logged in to the site, the home, sign in and register pages are available. Once a user logs in to the site they have access to their personal profile and the community page where they can view posts that have been made to the site.
 
-### Footer
+#### Footer
 
 <details><summary>Footer</summary>
 <img src="static/documents/blissboost_footer.png" alt="The footer featured at the bottom of the page, this contains the social media links and copyright information.">
@@ -314,7 +318,7 @@ For users not logged in to the site, the home, sign in and register pages are av
 
 The footer contains the copyright information and social media links. Each of the links has a hover effect that fades each icon into its logo color. The social media links open in a new tab.
 
-### Home
+#### Home
 
 <details><summary>Home</summary>
 <img src="static/documents/blissboost_home.png" alt="Blissboost home page.">
@@ -322,7 +326,7 @@ The footer contains the copyright information and social media links. Each of th
 
 Here users can use buttons to register or log in to the site.
 
-### Register
+#### Register
 
 <details><summary>Register</summary>
 <img src="static/documents/blissboost_register.png" alt="Blissboost register page.">
@@ -336,7 +340,7 @@ Here users can use buttons to register or log in to the site.
 
 Here users can input a username and password with password validation. There is a link that directs users to the log in page if they already have an account. If a username already exists or the passwords do not match a message will flash to let the user know. If a user enters correct details they are redirected to their profile page with a flash message confirming their successful registration.
 
-### Log In
+#### Log In
 
 <details><summary>Log In</summary>
 <img src="static/documents/blissboost_login.png" alt="Blissboost log in page.">
@@ -348,7 +352,7 @@ Here users can input a username and password with password validation. There is 
 
 On this page users can input their username and password to log in. A message will flash if they enter incorrect details. If the user correctly enters their details they are redirected to their profile page with a flash message welcoming them back.
 
-### Profile
+#### Profile
 
 <details><summary>Profile</summary>
 <img src="static/documents/blissboost_profile.png" alt="Blissboost profile page.">
@@ -372,7 +376,7 @@ On this page users can input their username and password to log in. A message wi
 
 Here users can view their profile. Using the floating action button they can edit their profile, upload a profile picture url and delete their account. Users are flashed a message when they successfully edit their profile or upload a photo. The liked posts section shows the user which posts they have liked, with an option to unlike and remove them from their profile. When selecting the button to delete their profile, a modal appears asking the user to confirm deletion. 
 
-### Community
+#### Community
 
 <details><summary>Community Posts</summary>
 <img src="static/documents/blissboost_communityposts.png" alt="Blissboost community page.">
@@ -408,7 +412,7 @@ Here users can view their profile. Using the floating action button they can edi
 
 Here users can view and search for posts that anyone has made on the site. Users can add their own post using the floating action button. Each of the post cards have an action to view the full post and users can like posts to be saved to their profile. If a user has created the post, an additional icon appears in the top corner for users to edit their profile. From the edit profile page users can also delete their post. A modal pops up asking the user to confirm post deletion.
 
-### Admin Pages
+#### Admin Pages
 
 <details><summary>Admin Posts View</summary>
 <img src="static/documents/blissboost_adminposts.png" alt="Admins can edit any post on the community page.">
@@ -430,13 +434,25 @@ Here users can view and search for posts that anyone has made on the site. Users
 <img src="static/documents/blissboost_themedeleted.png" alt="Deleted theme message for admin.">
 </details>
 
-### 404 Page
+#### 404 Page
 
 <details><summary>404 Page</summary>
 <img src="static/documents/blissboost_404.png" alt="The 404 page that is shown when the user types in an incorrect url.">
 </details>
 
 The 404 page is a custom page that redirects the user to the main page if they type in an incorrect url.
+
+### Defensive Programming
+
+Because there are aspects of the site where certain users cannot access, defensive programming has been put into place throughout the various routes on the site to ensure that anyone with a link cannot edit other users' posts unless they are an admin, or access any admin areas. Conditional checks have been put into place to ensure that a user is the creator of their own post or an admin before allowing access. If users don't have access to a certain page or if they are not logged in, they are redirected either to their profile page or the home page.
+
+<details><summary>Unauthorised Post Edit</summary>
+<img src="static/documents/blissboost_notyourpost.png" alt="The unauthorised post edit message.">
+</details>
+
+<details><summary>Unauthorised Admin Area</summary>
+<img src="static/documents/blissboost_notadmin.png" alt="The unauthorised admin area message.">
+</details>
 
 <sup><sub>[*Back to top*](#contents)</sup></sub>
 
