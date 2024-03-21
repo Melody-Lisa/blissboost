@@ -34,13 +34,13 @@
                      deep-orange-text text-lighten-2 hoverable" aria-label="Edit Post"></i>
                 </a>
                 {% endif %}
-                <img class="hoverable activator" src="{{ post.theme_image }}" alt="{{ post.theme_name }}" aria-label="Theme Image">
+                <img class="hoverable activator" src="{{ post.theme_image }}" alt="{{ post.theme_name }}" aria-label="Theme Image. Expand post details.">
             </div>
 
             <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4">
                     {{ post.post_title.capitalize() }}
-                    <i class="hoverable right fa-solid fa-ellipsis-vertical" aria-label="Expand Post Details"></i>
+                    <i class="hoverable right fa-solid fa-ellipsis-vertical"></i>
                 </span>
                 <p>{{ post.theme_name.capitalize() }}</p>
             </div>
