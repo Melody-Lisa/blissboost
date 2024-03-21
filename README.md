@@ -452,7 +452,7 @@ Due to the nature of the site there are many features that can be added that can
 
 - Allow users to comment on each other's posts.
 
-
+- Code [here](https://www.geeksforgeeks.org/python-404-error-handling-in-flask/) includes functionality to redirect a user to the home page automatically from the 404 page. This would be an interesting feature to add in future.
 
 <sup><sub>[*Back to top*](#contents)</sup></sub>
 
