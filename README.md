@@ -398,6 +398,22 @@ Here users can view and search for posts that anyone has made on the site. Users
 
 ### Admin Pages
 
+<details><summary>Admin Posts View</summary>
+<img src="static/documents/blissboost_adminposts.png" alt="Admins can edit any post on the community page.">
+</details>
+
+<details><summary>Admin Manage Themes</summary>
+<img src="static/documents/blissboost_getthemes.png" alt="Get themes page for admin.">
+
+<img src="static/documents/blissboost_addtheme.png" alt="Add themes page for admin.">
+
+<img src="static/documents/blissboost_themeadded.png" alt="Theme added message for admin.">
+
+<img src="static/documents/blissboost_edittheme.png" alt="Edit themes page for admin.">
+
+<img src="static/documents/blissboost_themeupdated.png" alt="Updated theme message for admin.">
+</details>
+
 ### 404 Page
 
 <details><summary>404 Page</summary>
