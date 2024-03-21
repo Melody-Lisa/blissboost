@@ -15,19 +15,28 @@ This is the documentation for BlissBoost - a social media site aimed towards spr
 * [User Experience (UX)](#user-experience---ux)
   * [Strategy](#strategy)
     * [User Goals](#user-goals)
-    * [Site Owner Goals](#site-owner-goals)
+    * [Site Admin Goals](#site-admin-goals)
     * [User Stories](#user-stories)
   * [Scope](#scope)
   * [Structure](#structure)
+    * [Site Structure](#site-structure)
+    * [Database Structure](#database-structure)
   * [Skeleton](#skeleton)
+    * [Wireframes](#wireframes)
 * [User Interface (UI) Design](#user-interface---design)
-  * [Typography](#typography)
-  * [Colours](#colours)
+  * [Surface](#surface)
+    * [Typography](#typography)
+    * [Colours](#colours)
 * [Features](#features)
-    * [Header](#header)
-    * [Main](#main)
-    * [Modals](#modals)
+    * [Favicon](#favicon)
+    * [Navbar](#navbar)
     * [Footer](#footer)
+    * [Home](#home)
+    * [Register](#register)
+    * [Log In](#log-in)
+    * [Profile](#profile)
+    * [Community](#community)
+    * [Admin Pages](#admin-pages)
     * [404 Page](#404-page)
 * [Future Implementations](#future-implementations)
 * [Accessibility](#accessibility)
@@ -37,10 +46,14 @@ This is the documentation for BlissBoost - a social media site aimed towards spr
   * [Fonts](#fonts)
 * [Technologies Used](#technologies-used)
   * [Languages](#languages)
-  * [Frameworks, Libraries, and Programs Used](#frameworks-libraries-and-programs-used)
+  * [Frameworks](#frameworks)
+  * [Libraries](#libraries)
+  * [Programs](#programs)
+  * [Testing and Validation Tools](#testing-and-validation-tools)
 * [Deployment & Local Development](#deployment--local-development)
-  * [Deployment](#deployment)
-  * [Local Development](#local-development)
+  * [MongoDB Non-Relational Database](#mongodb-non-relational-database)
+  * [Heroku Deployment](#heroku-deployment)
+  * [Local Deployment](#local-deployment)
     * [How to Fork](#how-to-fork)
     * [How to Clone](#how-to-clone)
 * [Testing](#testing)
@@ -48,8 +61,7 @@ This is the documentation for BlissBoost - a social media site aimed towards spr
   * [Code Used](#code-used)
   * [Content](#content)
   * [Media](#media)
-  * [Achnowledgements](#acknowledgements)
- 
+  * [Acknowledgements](#acknowledgements)
 
 <sup><sub>[*Back to top*](#contents)</sup></sub>
 
@@ -628,9 +640,13 @@ Please see [testing.md](testing.md) for all testing elements of this site.
 
 ### Code Used
 
+* [Code Institute non-relational database management systems module](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+NRDB_L5+2022_Q3/courseware/58bca0e827fc46bc862c5e2aeec97468/a4e711e56b114afaace001a03afd1c63/): The entire module was revisited to help set up the app and ensure CRUD functionality across the site.
+
 * [Materialize](https://materializecss.com): Code from this page was used and adapted to create various features across the site, including the navbar, footer, cards for different sections of pages and floating action buttons.
 
 * [Mini Tales](https://github.com/adampgiles/CI_PP3_MT): Code from this CI project used to create the like buttons functionality.
+
+* [Stack Overflow](https://stackoverflow.com/questions/29516093/how-to-redirect-to-a-external-404-page-python-flask): This thread was used to create the route for custon 404 page.
 
 * [W3Schools](https://www.w3schools.com/howto/howto_js_toggle_password.asp): Code used to show/hide password inputs from here.
 
