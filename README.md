@@ -458,10 +458,11 @@ Aria labels have been included for all links across the site with modals labelle
 
 ### Colours
 
-The colours across the site have been kept simple with 
+The colours have been kept simple with Materialize color styling implemented across the site. Various tones of only 3 different colors have been used along with simple black or white text based on the background it sits on to ensure readability.
 
 ### Fonts
 
+The font used for heading across the site is cursive, however this specific font has been chosen due to its easily readable form. Main text across the site has been kept simple and any small text or links featured have been given accent colors and wrapped in strong tags to ensure that they can still be easily seen.
 
 
 <sup><sub>[*Back to top*](#contents)</sup></sub>
@@ -635,7 +636,7 @@ Please see [testing.md](testing.md) for all testing elements of this site.
 
 ### Content
 
-
+* [ChatGPT](https://chat.openai.com): Used to generate sample posts on the community page.
 * [Melody Lisa](https://github.com/Melody-Lisa): All other content created by the developer.
 
 ### Media

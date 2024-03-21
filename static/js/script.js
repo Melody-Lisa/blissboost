@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+/* Code for toggle password visibility taken and edited from W3Schools */
 function visibility(event) {
   let element = event.target.parentNode.parentNode;
   let input = element.querySelector("input");

@@ -274,6 +274,7 @@ def edit_post(post_id):
     return render_template("edit_post.html", post=post, themes=themes)
 
 
+# Code taken and edited from Mini Tales
 @app.route("/like_post/<_id>", methods=["GET", "POST"])
 def like_post(_id):
     _id = _id
