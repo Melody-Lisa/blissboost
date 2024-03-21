@@ -476,7 +476,7 @@ The colours across the site have been kept simple with
 - CSS
 - Jquery
 - Javascript
-- Python - with jinja templating
+- Python
 
 ### Frameworks
 
