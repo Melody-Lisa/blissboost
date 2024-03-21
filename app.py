@@ -251,32 +251,52 @@ def add_post():
 
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
-    if request.method == "POST":
-        theme_data = request.form.get('theme_data').split('|')
-        theme_name = theme_data[0]
-        theme_image = theme_data[1]
-        submit = {
-            '$set': {
-                'theme_name': theme_name,
-                'theme_image': theme_image,
-                'post_title': request.form.get('post_title'),
-                'post_description': request.form.get('post_description'),
-                'post_date': datetime.now()
-            }
-        }
+    # Grab session user's username from the db
+    logged_in_username = session.get("user")
 
-        # Exclude 'created_by' field from the update operation
-        #Created_by does not get changed if an admin edits
-        if 'created_by' in session:
-            submit['$set']['created_by'] = session['user']
+    if logged_in_username:
+        # Retrieve the post from the database
+        post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+        
+        if post:
+            # Check if the logged-in user is the author of the post or an admin
+            if logged_in_username == post.get("created_by") or logged_in_username.lower() == "admin":
+                if request.method == "POST":
+                    theme_data = request.form.get('theme_data').split('|')
+                    theme_name = theme_data[0]
+                    theme_image = theme_data[1]
+                    submit = {
+                        '$set': {
+                            'theme_name': theme_name,
+                            'theme_image': theme_image,
+                            'post_title': request.form.get('post_title'),
+                            'post_description': request.form.get('post_description'),
+                        }
+                    }
 
-        mongo.db.posts.update_one({"_id": ObjectId(post_id)}, submit)
-        flash("Post Successfully Updated")
-        return redirect(url_for("get_posts"))
+                    # Exclude 'created_by' and 'post_date' fields from the update operation
+                    if logged_in_username != post.get("created_by"):
+                            submit['$set']['created_by'] = post.get("created_by")
+                            submit['$set']['post_date'] = post.get("post_date")
 
-    post = mongo.db.posts.find_one({"_id":ObjectId(post_id)})
-    themes = mongo.db.themes.find().sort("theme_name", 1)
-    return render_template("edit_post.html", post=post, themes=themes)
+                    mongo.db.posts.update_one({"_id": ObjectId(post_id)}, submit)
+                    flash("Post Successfully Updated")
+                    return redirect(url_for("get_posts"))
+
+                themes = mongo.db.themes.find().sort("theme_name", 1)
+                return render_template("edit_post.html", post=post, themes=themes)
+            else:
+                # User is not authorized to edit this post
+                flash("You are not authorized to edit this post.")
+                return redirect(url_for("get_posts"))
+        else:
+            # Post not found
+            flash("Post not found.")
+            return redirect(url_for("get_posts"))
+    else:
+        # User is not logged in
+        flash("Please log in to edit this post.")
+        return redirect(url_for("login"))
 
 
 # Code taken and edited from Mini Tales
@@ -324,14 +344,27 @@ def delete_post(post_id):
 # Routes relating to admin access
 @app.route("/get_themes")
 def get_themes():
-    themes = list(mongo.db.themes.find().sort("theme_name", 1))
-    return render_template("themes.html", themes=themes)
+    # Grab session user's username from the db
+    logged_in_username = session.get("user")
+
+    if logged_in_username:
+        # Check if the logged-in user is an admin
+        if logged_in_username.lower() == "admin":
+            themes = list(mongo.db.themes.find().sort("theme_name", 1))
+            return render_template("themes.html", themes=themes)
+        else:
+            flash("You are not authorized to view this page.")
+            return redirect(url_for("home"))
+    else:
+        flash("Please log in to view this page.")
+        return redirect(url_for("login"))
 
 
 @app.route("/add_theme", methods=["GET", "POST"])
 def add_theme():
     if request.method == "POST":
-        if session['user'].lower() == "admin":
+        # Check if user is logged in and is an admin
+        if 'user' in session and session['user'].lower() == "admin":
             theme = {
                 "theme_name": request.form.get("theme_name"),
                 "theme_image": request.form.get("theme_image")
@@ -348,28 +381,40 @@ def add_theme():
 
 @app.route("/edit_theme/<theme_id>", methods=["GET", "POST"])
 def edit_theme(theme_id):
-    if request.method == "POST":
-        submit = {
-            "theme_name": request.form.get("theme_name"),
-            "theme_image": request.form.get("theme_image")
-        }
-        mongo.db.themes.update_one({"_id": ObjectId(theme_id)}, {"$set": submit})
-        flash("Theme Successfully Updated")
-        return redirect(url_for("get_themes"))
+    # Check if the user is logged in and is an admin
+    if 'user' in session and session['user'].lower() == "admin":
+        if request.method == "POST":
+            submit = {
+                "theme_name": request.form.get("theme_name"),
+                "theme_image": request.form.get("theme_image")
+            }
+            mongo.db.themes.update_one({"_id": ObjectId(theme_id)}, {"$set": submit})
+            flash("Theme Successfully Updated")
+            return redirect(url_for("get_themes"))
 
-    theme = mongo.db.themes.find_one({"_id": ObjectId(theme_id)})
-
-    themes = mongo.db.themes.find()
-    
-    return render_template("edit_theme.html", theme=theme)
+        theme = mongo.db.themes.find_one({"_id": ObjectId(theme_id)})
+        
+        if theme:
+            themes = mongo.db.themes.find()
+            return render_template("edit_theme.html", theme=theme)
+        else:
+            flash("Theme not found.")
+            return redirect(url_for("get_themes"))
+    else:
+        flash("You are not authorized to edit themes.")
+        return redirect(url_for("home"))
 
 
 @app.route("/delete_theme/<theme_id>", methods=["GET", "POST"])
 def delete_theme(theme_id):
-    theme = mongo.db.themes.find_one({"_id": ObjectId(theme_id)})
-    if theme:
-        mongo.db.themes.delete_one({"_id": ObjectId(theme_id)})
-        flash("Theme Successfully Deleted")
+    # Check if the logged-in user is an admin
+    if 'user' in session and session['user'].lower() == "admin":
+        theme = mongo.db.themes.find_one({"_id": ObjectId(theme_id)})
+        if theme:
+            mongo.db.themes.delete_one({"_id": ObjectId(theme_id)})
+            flash("Theme Successfully Deleted")
+    else:
+        flash("You are not authorised to delete themes.")
     return redirect(url_for("get_themes"))
 
 
