@@ -412,12 +412,16 @@ Here users can view and search for posts that anyone has made on the site. Users
 <img src="static/documents/blissboost_edittheme.png" alt="Edit themes page for admin.">
 
 <img src="static/documents/blissboost_themeupdated.png" alt="Updated theme message for admin.">
+
+<img src="static/documents/blissboost_deletetheme.png" alt="Delete theme modal for admin.">
+
+<img src="static/documents/blissboost_themedeleted.png" alt="Deleted theme message for admin.">
 </details>
 
 ### 404 Page
 
 <details><summary>404 Page</summary>
-<img src="#" alt="The 404 page that is shown when the user types in an incorrect url.">
+<img src="static/documents/blissboost_404.png" alt="The 404 page that is shown when the user types in an incorrect url.">
 </details>
 
 The 404 page is a custom page that redirects the user to the main page if they type in an incorrect url.
