@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="center">Edit Profile</h1>
+<h1 class="center" aria-label="Edit Profile Heading">Edit Profile</h1>
 
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST"
@@ -14,7 +14,7 @@
                     <i class="fa-solid fa-signature prefix cyan-text text-darken-4"></i>
                     <input id="name" name="name" type="text" value="{{ user.name }}"
                      class="validate" minlength="0"
-                        maxlength="50" class="validate">
+                        maxlength="50" class="validate" aria-label="Name">
                     <label for="name">Name</label>
                 </div>
 
@@ -22,7 +22,7 @@
                 <div class="input-field col s12 m6">
                     <i class="fa-solid fa-calendar prefix cyan-text text-darken-4"></i>
                     <input id="dob" name="dob" type="text" value="{{ user.dob }}"
-                     class="datepicker">
+                     class="datepicker" aria-label="Date of Birth">
                     <label for="dob">Date of Birth</label>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                     <i class="fa-regular fa-address-card prefix cyan-text text-darken-4"></i>
                     <textarea id="about" name="about"
                      class="validate materialize-textarea" minlength="0"
-                        maxlength="500">{{ user.about }}</textarea>
+                        maxlength="500" aria-label="About">{{ user.about }}</textarea>
                     <label for="about">About</label>
                 </div>
             </div>
@@ -41,14 +41,14 @@
             <!-- Save Profile Info -->
             <div class="row">
                 <button type="submit"
-                 class="col s6 offset-s3 btn-large cyan darken-4 text-shadow">
+                 class="col s6 offset-s3 btn-large cyan darken-4 text-shadow" aria-label="Save Profile Button">
                     Save <i class="fa-solid fa-check"></i>
                 </button>
             </div>
 
             <!-- Cancel -->
             <a href="{{ url_for('profile', user=session['user']) }}"
-             class="deep-orange-text text-lighten-2 text-shadow hoverable right" >
+             class="deep-orange-text text-lighten-2 text-shadow hoverable right" aria-label="Cancel Edit">
                 <strong>Cancel</strong>
             </a>
 

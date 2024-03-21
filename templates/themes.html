@@ -5,7 +5,8 @@
 
 <div class="row">
     <div class="col s12 center-align">
-        <a href="{{ url_for('add_theme') }}" class="btn-large cyan darken-3 text-shadow">
+        <a href="{{ url_for('add_theme') }}"
+         class="btn-large cyan darken-3 text-shadow" aria-label="Add Theme Button">
             Add Theme <i class="fas fa-plus-square white-text right"></i>
         </a>
     </div>
@@ -17,10 +18,12 @@
             <div class="card cyan darken-3 text-shadow center-align">
                 <div class="card-content white-text">
                     <span class="card-title">{{ theme.theme_name }}</span>
-                    <img class="theme_preview" src="{{ theme.theme_image }}" alt="{{ theme.theme_name }}" style="max-width: 100%;">
+                    <img class="theme_preview" src="{{ theme.theme_image }}" alt="{{ theme.theme_name }}"
+                     aria-label="{{ theme.theme_name }} Preview" style="max-width: 100%;">
                 </div>
                 <div class="card-action">
-                    <a href="{{ url_for('edit_theme', theme_id=theme._id) }}" class="btn deep-orange lighten-2 hoverable">
+                    <a href="{{ url_for('edit_theme', theme_id=theme._id) }}"
+                     class="btn deep-orange lighten-2 hoverable" aria-label="Edit Theme Button">
                         <i class="fa-solid fa-pen-to-square"></i>
                     </a>
                 </div>

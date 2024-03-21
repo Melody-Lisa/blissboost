@@ -5,7 +5,7 @@
 
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST"
-     action="{{ url_for('add_post') }}">
+     action="{{ url_for('add_post') }}" aria-labelledby="add-post-heading">
 
         <div class="card-panel">
 
@@ -15,7 +15,7 @@
                     <i class="fa-solid fa-pen prefix cyan-text text-darken-4"></i>
                     <input id="post_title" name="post_title" type="text"
                      class="validate" minlength="0"
-                        maxlength="25" class="validate" required>
+                        maxlength="25" class="validate" required aria-label="Post Title">
                     <label for="post_title">Title</label>
                 </div>
             </div>
@@ -24,7 +24,7 @@
 			<div class="row">
 				<div class="input-field col s12">
                     <i class="fas fa-folder-open prefix cyan-text text-darken-4"></i>
-					<select id="theme_name" name="theme_data" class="validate" required>
+					<select id="theme_name" name="theme_data" class="validate" required aria-label="Post Theme">
                         <option value="" disabled selected>Choose Theme</option>
                         {% for theme in themes %}
                             <option value="{{ theme.theme_name }}|{{ theme.theme_image }}">
@@ -42,7 +42,7 @@
                     <i class="fa-solid fa-align-justify prefix cyan-text text-darken-4"></i>
                     <textarea id="post_description" name="post_description"
                      class="validate materialize-textarea" minlength="0"
-                        maxlength="500" required></textarea>
+                        maxlength="500" required aria-label="Post Description"></textarea>
                     <label for="post_description">Your Post Here</label>
                 </div>
             </div>
@@ -50,14 +50,14 @@
             <!-- Save Post -->
             <div class="row">
                 <button type="submit"
-                 class="col s6 offset-s3 btn-large cyan darken-4 text-shadow">
+                 class="col s6 offset-s3 btn-large cyan darken-4 text-shadow" aria-label="Save Post">
                     Save Post <i class="fa-solid fa-check"></i>
                 </button>
             </div>
 
             <!-- Cancel -->
             <a href="{{ url_for('get_posts') }}"
-            class="deep-orange-text text-lighten-2 text-shadow hoverable right" >
+            class="deep-orange-text text-lighten-2 text-shadow hoverable right" aria-label="Cancel">
             <strong>Cancel</strong>
            </a>
 

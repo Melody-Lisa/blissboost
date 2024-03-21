@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h1 class="center-align">Edit Theme</h1>
+    <h1 class="center-align" aria-label="Edit Theme Heading">Edit Theme</h1>
 
     <div class="container">
         <div class="row center-align">
@@ -12,35 +12,36 @@
                         <div class="input-field">
                             <i class="fas fa-folder-open prefix cyan-text text-darken-4"></i>
                             <input id="theme_name" name="theme_name" minlength="3" maxlength="25" type="text"
-                                class="validate" value="{{ theme.theme_name }}" required>
+                                class="validate" value="{{ theme.theme_name }}" required aria-label="Theme Name">
                             <label for="theme_name">Theme Name</label>
                         </div>
     
                         <!-- Theme Image -->
                         <div class="input-field">
                             <i class="fa-solid fa-image prefix cyan-text text-darken-4"></i>
-                            <input type="text" id="theme_image" name="theme_image" value="{{ theme.theme_image }}" required>
+                            <input type="text" id="theme_image" name="theme_image" value="{{ theme.theme_image }}" required aria-label="Image URL">
                             <label for="theme_image">Image URL</label>
                         </div>
 
-                        <img class="theme_preview" src="{{ theme.theme_image }}" alt="{{ theme.theme_name }}" style="max-width: 100%;">
-    
-                        <!-- submit button -->
+                        <!-- Theme Preview Image -->
+                        <img class="theme_preview" src="{{ theme.theme_image }}" alt="{{ theme.theme_name }}" style="max-width: 100%;" aria-label="Theme Preview">
+
+                        <!-- Submit button -->
                         <div class="center-align">
-                            <button type="submit" class="btn-large text-shadow">
+                            <button type="submit" class="btn-large text-shadow" aria-label="Edit Theme Button">
                                 Edit Theme <i class="fas fa-plus-square right"></i>
                             </button>
                         </div>
 
                         <!-- Delete Theme -->
                         <a data-target="delete_theme"
-                         class="modal-trigger red-text text-darken-3 text-shadow hoverable left">
+                         class="modal-trigger red-text text-darken-3 text-shadow hoverable left" aria-label="Delete Theme Link">
                             <strong>Delete</strong>
                         </a>
 
                         <!-- Cancel -->
                         <a href="{{ url_for('get_themes') }}"
-                        class="deep-orange-text text-lighten-2 text-shadow hoverable right" >
+                        class="deep-orange-text text-lighten-2 text-shadow hoverable right" aria-label="Cancel Link">
                            <strong>Cancel</strong>
                        </a>
                     </form>
@@ -57,12 +58,12 @@
         <form method="POST"
          action="{{ url_for('delete_theme', theme_id=theme._id) }}" class="center-align">
             <input type="submit" value="Delete"
-             class="red hoverable text-shadow">
+             class="red hoverable text-shadow" aria-label="Delete Theme Button">
         </form>
     </div>
     <div class="modal-footer cyan darken-4">
         <a href="#!"
-         class="modal-close waves-effect waves-green btn-flat white-text">
+         class="modal-close waves-effect waves-green btn-flat white-text" aria-label="Cancel Delete Action">
             Cancel
         </a>
     </div>

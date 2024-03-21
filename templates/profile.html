@@ -1,18 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-
 <div class="row">
     <div class="col s12 m4">
         <div class="card">
             <div class="card-image">
                 {% if user.profile_pic_url %}
-                <img class="profile-pic" src="{{ user.profile_pic_url }}"
-                 alt="Profile Picture">
+                <img class="profile-pic" src="{{ user.profile_pic_url }}" alt="Profile Picture">
                 {% else %}
-                <img class="profile-pic"
-                 src="{{ url_for('static', filename='images/default_user.webp') }}"
-                    alt="Profile Picture">
+                <img class="profile-pic" src="{{ url_for('static', filename='images/default_user.webp') }}" alt="Default Profile Picture">
                 {% endif %}
             </div>
 
@@ -51,27 +47,22 @@
                             <div class="collapsible-header cyan darken-3 white-text">
                                 <!-- Liked Post Title -->
                                 {{ post.post_title }}
-
                                 <!-- Render liked heart icon if the post is liked -->
-                                <a href="{{ url_for('like_post', _id=post._id) }}">
-                                    <i class="right fa-solid fa-trash-can deep-orange-text
-                                     text-lighten-2 hoverable"></i>
+                                <a href="{{ url_for('like_post', _id=post._id) }}" aria-label="Unlike Post">
+                                    <i class="right fa-solid fa-trash-can deep-orange-text text-lighten-2 hoverable" alt="Unlike Post"></i>
                                 </a>
                             </div>
-                            
                             <div class="collapsible-body collapsible-main">
                                 <div class="image-container">
                                     <img class="collapsible-img" src="{{ post.theme_image }}" alt="Theme image">
                                     <div class="overlay">
-                                        <span class="post-description">
-                                            {{ post.post_description }}</span>
+                                        <span class="post-description">{{ post.post_description }}</span>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         {% endfor %}
                     </ul>
- 
                 </div>
             </div>
         </div>
@@ -79,29 +70,27 @@
 </div>
 
 <!-- Floating Action Button -->
-<div class="fixed-action-btn">
+<div class="fixed-action-btn" aria-label="Actions">
     <a class="btn-floating btn-large deep-orange lighten-2 hoverable">
         <i class="fa-solid fa-ellipsis"></i>
     </a>
     <ul>
         <!-- Edit Profile -->
         <li>
-            <a href="{{ url_for('edit_profile', user=session['user']) }}"
-             class="btn-floating hoverable">
-                <i class="fa-solid fa-user-pen"></i>
+            <a href="{{ url_for('edit_profile', user=session['user']) }}" class="btn-floating hoverable" aria-label="Edit Profile">
+                <i class="fa-solid fa-user-pen" alt="Edit Profile"></i>
             </a>
         </li>
         <!-- Upload Image -->
         <li>
-            <a data-target="pic_upload" class="btn-floating modal-trigger hoverable">
-                <i class="fa-solid fa-image"></i>
+            <a data-target="pic_upload" class="btn-floating modal-trigger hoverable" aria-label="Upload Image">
+                <i class="fa-solid fa-image" alt="Upload Image"></i>
             </a>
         </li>
         <!-- Delete User -->
         <li>
-            <a data-target="delete_user"
-             class="btn-floating modal-trigger red darken-3 hoverable">
-                <i class="fa-solid fa-trash white-text"></i>
+            <a data-target="delete_user" class="btn-floating modal-trigger red darken-3 hoverable" aria-label="Delete User">
+                <i class="fa-solid fa-trash white-text" alt="Delete User"></i>
             </a>
         </li>
     </ul>
@@ -111,17 +100,14 @@
 <div id="pic_upload" name="pic_upload" class="modal cyan darken-3">
     <div class="modal-content center-align">
         <h4 class="center white-text">Upload Photo URL</h4>
-
         <form method="POST" action="{{ url_for('upload_pics') }}">
             <div class="input-field">
-                <input type="text" id="profile_pic_url" name="profile_pic_url" required>
+                <input type="text" id="profile_pic_url" name="profile_pic_url" required aria-label="Image URL">
                 <label for="profile_pic_url">Image URL</label>
             </div>
-
             <input type="submit" value="Upload" class="btn deep-orange hoverable">
         </form>
     </div>
-
     <div class="modal-footer cyan darken-4">
         <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text">
             <strong>Cancel</strong>
@@ -136,14 +122,16 @@
 
         <p class="center white-text">This action cannot be reversed.</p>
 
+        <!-- Form for deleting user account -->
         <form method="POST" action="{{ url_for('delete_user', user_id=user._id) }}"
-         class="center-align">
-            <input type="submit" value="Delete" class="red hoverable text-shadow">
+         class="center-align" aria-label="Delete User Form">
+            <input type="submit" value="Delete" class="red hoverable text-shadow" aria-label="Delete Account Button">
         </form>
     </div>
 
     <div class="modal-footer cyan darken-4">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text">
+        <!-- Cancel button -->
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text" aria-label="Cancel Deletion">
             <strong>Cancel</strong>
         </a>
     </div>

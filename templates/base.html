@@ -28,9 +28,9 @@
     <!-- Navigation bar -->
     <nav>
       <div class="nav-wrapper cyan darken-3">
-        <a href="{{ url_for('home') }}" class="brand-logo center"><img
+        <a href="{{ url_for('home') }}" class="brand-logo center" aria-label="BlissBoost logo"><img
             src="{{ url_for('static', filename='images/blissboost_logo.png') }}"></a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger" aria-label="Toggle navigation">
           <i class="fa-solid fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
           {% if session.user %}
@@ -50,7 +50,7 @@
     </nav>
 
     <!-- Side Nav -->
-    <ul class="sidenav cyan darken-4" id="mobile-demo">
+    <ul class="sidenav cyan darken-4" id="mobile-demo" aria-label="Mobile Navigation Menu">
       <a href="#!" onclick="closeNav()">
         <h2 class="white-text nav-shadow center">Blissboost</h2></a>
         <div class="center-line"></div>
@@ -70,12 +70,12 @@
   </header>
 
   <!-- flash-banner -->
-  <section class="flash-banner">
+  <section class="flash-banner" aria-label="Flash Messages">
     {% with messages = get_flashed_messages() %}
       {% if messages %}
         {% for message in messages %}
           <div class="row flashes">
-            <p class="center-align deep-orange lighten-2">
+            <p class="center-align deep-orange lighten-2" aria-label="Flash Message">
               <strong>{{ message }}</strong></p>
           </div>
         {% endfor %}
@@ -98,10 +98,10 @@
         </span>
         <!-- Socials -->
         <div class="socials right-align">
-          <a class="linked" target="_blank" aria-label="linkedin"
+          <a class="linked" target="_blank" aria-label="LinkedIn"
            href="http://www.linkedin.com/in/melodyshutt"><i
               class="fa-brands fa-linkedin"></i></a>
-          <a class="git" target="_blank" aria-label="github"
+          <a class="git" target="_blank" aria-label="GitHub"
            href="https://github.com/Melody-Lisa"><i
               class="fa-brands fa-github"></i></a>
         </div>

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="row center">Log In</h1>
+<h1 class="row center" aria-label="Log In Heading">Log In</h1>
 
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
@@ -24,7 +24,7 @@
                     <i class="fa-regular fa-face-smile prefix cyan-text text-darken-4"></i>
                     <input id="username" name="username" type="text"
                      class="validate" minlength="5" maxlength="15"
-                        pattern="^[a-zA-Z0-9]{5-15}" class="validate" required>
+                        pattern="^[a-zA-Z0-9]{5-15}" class="validate" required aria-label="Username">
                     <label for="username">Username</label>
                 </div>
             </div>
@@ -35,17 +35,17 @@
                     <i class="fa-solid fa-lock prefix cyan-text text-darken-4"></i>
                     <input id="password" name="password" type="password"
                      class="validate" minlength="8"
-                        pattern="^[a-zA-Z0-9]{8-20}" class="validate" required>
+                        pattern="^[a-zA-Z0-9]{8-20}" class="validate" required aria-label="Password">
                     <label for="password">Password</label>
                 </div>
                 <div class="col s1">
-                    <i class="fa-solid fa-eye-slash fa-lg" id="eyeIcon" onclick="visibility(event)"></i>
+                    <i class="fa-solid fa-eye-slash fa-lg" id="eyeIcon" onclick="visibility(event)" aria-label="Toggle Password Visibility"></i>
                 </div>
             </div>
 
             <!-- Log In -->
             <div class="row">
-                <button type="submit" class="col s12 btn-large cyan darken-4 text-shadow">
+                <button type="submit" class="col s12 btn-large cyan darken-4 text-shadow" aria-label="Log In Button">
                     Log In <i class="fas fa-sign-in-alt"></i>
                 </button>
             </div>
