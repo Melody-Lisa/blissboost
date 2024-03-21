@@ -432,6 +432,14 @@ The 404 page is a custom page that redirects the user to the main page if they t
 
 ## Future Implementations
 
+Due to the nature of the site there are many features that can be added that cannot be implemented in the time frame required for the project. The next steps that can be added to the site have been identified as follows:
+
+- The database has been set up to catch the date users join the site, this will be shown on users' profile pages.
+
+- Allow users to view each other's profile pages.
+
+- Allow users to comment on each other's posts.
+
 
 
 <sup><sub>[*Back to top*](#contents)</sup></sub>
