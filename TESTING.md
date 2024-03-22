@@ -12,8 +12,8 @@ Manual testing was conducted continuously throughout the development process to 
 
 * [AUTOMATED TESTING](#automated-testing)
   * [W3C Validator](#w3c-validator)
-  * [JavaScript Validator](#javascript-validator)
-  * [Python Validator](#python-validator)
+  * [JavaScript Validator](#javascript-validation)
+  * [Python Validator](#python-validation)
   * [Lighthouse](#lighthouse)
   * [WAVE Testing](#wave-testing)
 * [MANUAL TESTING](#manual-testing)
@@ -95,10 +95,18 @@ In the community posts page the validator flagged up a possible misuse of aria l
 <img src="static/documents/w3validated_css.png" alt="No errors.">
 </details>
 
-### Javascript Validator
+### Javascript Validation
 
 [JS Hint](https://jshint.com) has been used to test the vanilla javascript on the site. This flagged no major errors, but there were some warnings for undefined and unused variables. Both undefined variable errors are from code that has been copied from Materialize and all variables have been used within HTML files.
 
 <details><summary>Vanilla Javascript</summary>
 <img src="static/documents/blissboost_jshint.png" alt="Javascript Validation with js hint">
+</details>
+
+### Python Validation
+
+[CI Python Linter](https://pep8ci.herokuapp.com) has been used to validate all python code on the site and ensure it is pep8 compliant. This has flagged no errors with the current code.
+
+<details><summary>Python</summary>
+<img src="static/documents/blissboost_pythonvalidation.png" alt="Javascript Validation with js hint">
 </details>
