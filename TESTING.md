@@ -29,7 +29,7 @@ Manual testing was conducted continuously throughout the development process to 
 
 ### W3C Validator
 
-[W3C](https://validator.w3.org/) was used to validate the HTML on all pages of the site along with validation of CSS. I have checked the HTML via url input of the deployed site so as not to flag errors within the jinja templating and the CSS has been tested by direct input.
+[W3C](https://validator.w3.org/) was used to validate the HTML on all pages of the site along with validation of CSS. I have checked the HTML via url input of the deployed site, so as not to flag errors within the jinja templating, and the CSS has been tested by direct input.
 
 <details><summary>Index HTML</summary>
 <img src="static/documents/w3validated_index.png" alt="No Errors found.">
@@ -93,4 +93,12 @@ In the community posts page the validator flagged up a possible misuse of aria l
 
 <details><summary>CSS</summary>
 <img src="static/documents/w3validated_css.png" alt="No errors.">
+</details>
+
+### Javascript Validator
+
+[JS Hint](https://jshint.com) has been used to test the vanilla javascript on the site. This flagged no major errors, but there were some warnings for undefined and unused variables. Both undefined variable errors are from code that has been copied from Materialize and all variables have been used within HTML files.
+
+<details><summary>Vanilla Javascript</summary>
+<img src="static/documents/blissboost_jshint.png" alt="Javascript Validation with js hint">
 </details>
