@@ -73,26 +73,30 @@
 </div>
 
 <!-- Floating Action Button -->
-<div class="fixed-action-btn click-to-toggle" role="menu" aria-haspopup="true" aria-expanded="false" aria-label="Actions">
+<div class="fixed-action-btn click-to-toggle tooltipped"
+ data-position="top" data-tooltip="Menu" role="menu" aria-haspopup="true" aria-expanded="false" aria-label="Actions">
     <a class="btn-floating btn-large deep-orange lighten-2 hoverable">
         <i class="fa-solid fa-ellipsis"></i>
     </a>
     <ul>
         <!-- Edit Profile -->
         <li>
-            <a href="{{ url_for('edit_profile', user=session['user']) }}" class="btn-floating hoverable" aria-label="Edit Profile">
+            <a href="{{ url_for('edit_profile', user=session['user']) }}"
+             class="btn-floating hoverable tooltipped" data-position="top" data-tooltip="Edit Profile" aria-label="Edit Profile">
                 <i class="fa-solid fa-user-pen"></i>
             </a>
         </li>
         <!-- Upload Image -->
         <li>
-            <a data-target="pic_upload" class="btn-floating modal-trigger hoverable" aria-label="Upload Image">
+            <a data-target="pic_upload" class="btn-floating modal-trigger hoverable tooltipped"
+             data-position="top" data-tooltip="Upload Photo" aria-label="Upload Image">
                 <i class="fa-solid fa-image"></i>
             </a>
         </li>
         <!-- Delete User -->
         <li>
-            <a data-target="delete_user" class="btn-floating modal-trigger red darken-3 hoverable" aria-label="Delete User">
+            <a data-target="delete_user" class="btn-floating modal-trigger red darken-3 hoverable tooltipped"
+            data-position="top" data-tooltip="Delete Account" aria-label="Delete User">
                 <i class="fa-solid fa-trash white-text"></i>
             </a>
         </li>

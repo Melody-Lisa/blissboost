@@ -89,15 +89,16 @@
 </div>
 
 <!-- Floating Action Button -->
-<div class="fixed-action-btn click-to-toggle" role="menu" aria-haspopup="true"
+<div class="fixed-action-btn click-to-toggle tooltipped"
+ data-position="top" data-tooltip="Menu" role="menu" aria-haspopup="true"
  aria-expanded="false" aria-label="Actions">
     <a class="btn-floating btn-large deep-orange lighten-2">
         <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
     </a>
     <ul>
         <li>
-            <a href="{{ url_for('add_post') }}" class="btn-floating hoverable"
-             aria-label="Add Post">
+            <a href="{{ url_for('add_post') }}" class="btn-floating hoverable tooltipped"
+             data-position="top" data-tooltip="Create Post" aria-label="Add Post">
                 <i class="fa-solid fa-user-pen" aria-hidden="true"></i>
             </a>
         </li>

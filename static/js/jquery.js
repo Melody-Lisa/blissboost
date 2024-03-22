@@ -12,4 +12,5 @@
     });
     $('.modal').modal();
     $('select').formSelect();
+    $('.tooltipped').tooltip();
   });
