@@ -137,7 +137,8 @@ def profile(user):
             # Fetch the details of the liked posts
             liked_posts = []
             for post_id in liked_post_ids:
-                post_details = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+                post_details = mongo.db.posts.find_one(
+                    {"_id": ObjectId(post_id)})
                 if post_details:
                     liked_posts.append(post_details)
 
