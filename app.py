@@ -126,25 +126,29 @@ def logout():
 # Routes relating to CRUD user's profiles
 @app.route("/profile/<user>", methods=["GET", "POST"])
 def profile(user):
-    # Fetch user data based on the provided username
-    user_data = mongo.db.users.find_one({"username": user})
+    if 'user' in session:
+        # Fetch user data based on the provided username
+        user_data = mongo.db.users.find_one({"username": user})
 
-    if user_data:
-        # Retrieve the liked post ObjectIds
-        liked_post_ids = user_data.get("post_likes", [])
+        if user_data:
+            # Retrieve the liked post ObjectIds
+            liked_post_ids = user_data.get("post_likes", [])
 
-        # Fetch the details of the liked posts
-        liked_posts = []
-        for post_id in liked_post_ids:
-            post_details = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
-            if post_details:
-                liked_posts.append(post_details)
+            # Fetch the details of the liked posts
+            liked_posts = []
+            for post_id in liked_post_ids:
+                post_details = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+                if post_details:
+                    liked_posts.append(post_details)
 
-        return render_template("profile.html",
-                               user=user_data, liked_posts=liked_posts)
+            return render_template("profile.html",
+                                   user=user_data, liked_posts=liked_posts)
+        else:
+            flash("User not found")
+            return redirect(url_for("home"))
     else:
-        flash("User not found")
-        return redirect(url_for("home"))
+        flash("Please log in to view this page.")
+        return redirect(url_for("login"))
 
 
 @app.route("/upload_pics", methods=["POST"])
@@ -217,10 +221,15 @@ def delete_user(user_id):
 # All Routes relating to CRUD community posts
 @app.route("/get_posts")
 def get_posts():
-    posts = list(mongo.db.posts.find())
+    # Grab session user's username from the db
+    logged_in_username = session.get("user")
 
-    return render_template(
-        'posts.html', posts=posts)
+    if logged_in_username:
+        posts = list(mongo.db.posts.find())
+        return render_template('posts.html', posts=posts)
+    else:
+        flash("Please log in to view this page.")
+        return redirect(url_for("login"))
 
 
 @app.route("/search", methods=["GET", "POST"])
