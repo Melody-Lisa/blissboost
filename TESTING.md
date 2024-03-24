@@ -95,6 +95,12 @@ In the community posts page the validator flagged up a possible misuse of aria l
 <img src="static/documents/w3validated_css.png" alt="No errors.">
 </details>
 
+>Note:
+> The 404 page was also tested via manual input and returned no errors outside of the jinja templating.
+><details><summary>Code input for 404 here.</summary>
+><img src="static/documents/w3validated_404.png" alt="Jinja templating warnings.">
+></details>
+
 ### Javascript Validation
 
 [JS Hint](https://jshint.com) has been used to test the vanilla javascript on the site. This flagged no major errors, but there were some warnings for undefined and unused variables. Both undefined variable errors are from code that has been copied from Materialize and all variables have been used within HTML files.
@@ -235,6 +241,17 @@ The lighthouse tool within the chrome developer tools has been used to test perf
 | :---: | :---: | :---: | :---: | :---: |
 | Desktop | 94 | 95 | 96 | 90 |
 | Mobile | 70 | 95 | 96 | 92 |
+
+<details><summary>404 Page</summary>
+<img src="static/documents/lighthouse_404_desktop.png" alt="Desktop test for 404 page">
+
+<img src="static/documents/lighthouse_404_mobile.png" alt="Mobile test for 404 page">
+</details>
+
+| | Performance | Accessibility | Best Practice | SEO |
+| :---: | :---: | :---: | :---: | :---: |
+| Desktop | 100 | 100 | 93 | 90 |
+| Mobile | 88 | 100 | 93 | 92 |
 
 > Notes for Lighthouse Testing:
 >
