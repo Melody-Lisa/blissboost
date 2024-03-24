@@ -110,3 +110,136 @@ In the community posts page the validator flagged up a possible misuse of aria l
 <details><summary>Python</summary>
 <img src="static/documents/blissboost_pythonvalidation.png" alt="Javascript Validation with js hint">
 </details>
+
+### Lighthouse
+
+The lighthouse tool within the chrome developer tools has been used to test performance, best practices, accessibility, and SEO. Desktop and mobile tests have been run for each page.
+
+<details><summary>Index</summary>
+<img src="static/documents/lighthouse_index_desktop.png" alt="Desktop test for index page">
+
+<img src="static/documents/lighthouse_index_mobile.png" alt="Mobile test for index page">
+</details>
+
+| | Performance | Accessibility | Best Practice | SEO |
+| :---: | :---: | :---: | :---: | :---: |
+| Desktop | 99 | 100 | 96 | 100 |
+| Mobile | 96 | 100 | 96 | 100 |
+
+<details><summary>Register</summary>
+<img src="static/documents/lighthouse_register_desktop.png" alt="Desktop test for register page">
+
+<img src="static/documents/lighthouse_register_mobile.png" alt="Mobile test for register page">
+</details>
+
+| | Performance | Accessibility | Best Practice | SEO |
+| :---: | :---: | :---: | :---: | :---: |
+| Desktop | 100 | 95 | 96 | 100 |
+| Mobile | 96 | 95 | 96 | 92 |
+
+<details><summary>Log In</summary>
+<img src="static/documents/lighthouse_login_desktop.png" alt="Desktop test for log in page">
+
+<img src="static/documents/lighthouse_login_mobile.png" alt="Mobile test for log in page">
+</details>
+
+| | Performance | Accessibility | Best Practice | SEO |
+| :---: | :---: | :---: | :---: | :---: |
+| Desktop | 99 | 95 | 96 | 100 |
+| Mobile | 97 | 95 | 96 | 100 |
+
+<details><summary>Profile</summary>
+<img src="static/documents/lighthouse_profile_desktop.png" alt="Desktop test for profile page">
+
+<img src="static/documents/lighthouse_profile_mobile.png" alt="Mobile test for profile page">
+</details>
+
+| | Performance | Accessibility | Best Practice | SEO |
+| :---: | :---: | :---: | :---: | :---: |
+| Desktop | 94 | 100 | 74 | 90 |
+| Mobile | 86 | 100 | 96 | 92 |
+
+<details><summary>Edit Profile</summary>
+<img src="static/documents/lighthouse_editprofile_desktop.png" alt="Desktop test for edit profile page">
+
+<img src="static/documents/lighthouse_editprofile_mobile.png" alt="Mobile test for edit profile page">
+</details>
+
+| | Performance | Accessibility | Best Practice | SEO |
+| :---: | :---: | :---: | :---: | :---: |
+| Desktop | 100 | 95 | 96 | 100 |
+| Mobile | 93 | 95 | 96 | 100 |
+
+<details><summary>Community Posts</summary>
+<img src="static/documents/lighthouse_communityposts_desktop.png" alt="Desktop test for community posts page">
+
+<img src="static/documents/lighthouse_communityposts_mobile.png" alt="Mobile test for community posts page">
+</details>
+
+| | Performance | Accessibility | Best Practice | SEO |
+| :---: | :---: | :---: | :---: | :---: |
+| Desktop | 84 | 96 | 96 | 90 |
+| Mobile | 62 | 96 | 96 | 92 |
+
+<details><summary>Add Post</summary>
+<img src="static/documents/lighthouse_addpost_destktop.png" alt="Desktop test for add post page">
+
+<img src="static/documents/lighthouse_addpost_mobile.png" alt="Mobile test for add post page">
+</details>
+
+| | Performance | Accessibility | Best Practice | SEO |
+| :---: | :---: | :---: | :---: | :---: |
+| Desktop | 91 | 90 | 96 | 100 |
+| Mobile | 91 | 90 | 96 | 100 |
+
+<details><summary>Edit Post</summary>
+<img src="static/documents/lighthouse_editpost_desktop.png" alt="Desktop test for edit post page">
+
+<img src="static/documents/lighthouse_editpost_mobile.png" alt="Mobile test for edit post page">
+</details>
+
+| | Performance | Accessibility | Best Practice | SEO |
+| :---: | :---: | :---: | :---: | :---: |
+| Desktop | 90 | 90 | 96 | 90 |
+| Mobile | 88 | 90 | 96 | 92 |
+
+<details><summary>Manage Themes</summary>
+<img src="static/documents/lighthouse_managethemes_desktop.png" alt="Desktop test for manage themes page">
+
+<img src="static/documents/lighthouse_managethemes_mobile.png" alt="Mobile test for manage themes page">
+</details>
+
+| | Performance | Accessibility | Best Practice | SEO |
+| :---: | :---: | :---: | :---: | :---: |
+| Desktop | 90 | 100 | 93 | 100 |
+| Mobile | 72 | 100 | 96 | 100 |
+
+<details><summary>Add Theme</summary>
+<img src="static/documents/lighthouse_addtheme_desktop.png" alt="Desktop test for add theme page">
+
+<img src="static/documents/lighthouse_addtheme_mobile.png" alt="Mobile test for add theme page">
+</details>
+
+| | Performance | Accessibility | Best Practice | SEO |
+| :---: | :---: | :---: | :---: | :---: |
+| Desktop | 95 | 95 | 96 | 100 |
+| Mobile | 86 | 95 | 96 | 100 |
+
+<details><summary>Edit Theme</summary>
+<img src="static/documents/lighthouse_edittheme_desktop.png" alt="Desktop test for edit theme page">
+
+<img src="static/documents/lighthouse_edittheme_mobile.png" alt="Mobile test for edit theme page">
+</details>
+
+| | Performance | Accessibility | Best Practice | SEO |
+| :---: | :---: | :---: | :---: | :---: |
+| Desktop | 94 | 95 | 96 | 90 |
+| Mobile | 70 | 95 | 96 | 92 |
+
+> Notes for Lighthouse Testing:
+>
+>* Best practices has been pulled down to 96 across the site due to the site logo being in png. The logo was originally converted to webp but presented issues with rendering correctly and therefore has been left as it for the time being. Future versions of the site may either find a fix for the formatting issue, or a new logo.
+>
+>* Accessibility score is pulled down on all pages with forms due to poor contrast on form labels using materialize's default form styling. Further exploration with styling frameworks may be required.
+>
+>* Performance and best practices is pulled down on all pages with images that have been uploaded to the site via url upload. Future versions of the site look to implement image file uploads and compare performance with current results.
