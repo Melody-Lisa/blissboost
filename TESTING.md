@@ -350,3 +350,14 @@ Parts of the site have been tested for accessibility with [WAVE](https://wave.we
 | Enter details as you wish | Details updated in profile and flash message for success | Enter details in some fields | Flash message appears and details updated | __PASS__ |
 | Cancel edit | Return to profile page | Click cancel link | Returned to profile | __PASS__ |
 | Only edit your own profile | Flash unauthorized message and redirect to profile | Entered another username in url | Flash message appears and redirected | __PASS__ |
+
+#### Community Posts
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Search Posts | Show posts based on title, theme or author | Entered various titles, themes and users into search bar | Relevant posts appear | __PASS__ |
+| Clear search | Return to view all posts on page | Clicked clear search button | All posts return | __PASS__ |
+| View post description | Show post description on click | Click card action or theme image | Post description appears | __PASS__ |
+| Like post | Heart icon changes and add one to like count | Click heart icon | Icon and like count change | __PASS__ |
+| Add post | Directs to add post page | Click FAB icon | Derected to add post page | __PASS__ |
+| Edit post | Icon appears only on your posts, directs to edit post page | Click edit icon | Directed to edit post page | __PASS__ |
