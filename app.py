@@ -406,13 +406,13 @@ def add_theme():
     if 'user' in session:
         if session['user'].lower() == "admin":
             if request.method == "POST":
-                    theme = {
+                theme = {
                         "theme_name": request.form.get("theme_name"),
                         "theme_image": request.form.get("theme_image")
                     }
-                    mongo.db.themes.insert_one(theme)
-                    flash("New Theme Added")
-                    return redirect(url_for("get_themes"))
+                mongo.db.themes.insert_one(theme)
+                flash("New Theme Added")
+                return redirect(url_for("get_themes"))
         else:
             flash("You are not authorized to add themes.")
             return redirect(url_for("home"))
