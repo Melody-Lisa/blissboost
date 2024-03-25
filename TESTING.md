@@ -311,6 +311,23 @@ Parts of the site have been tested for accessibility with [WAVE](https://wave.we
 
 ### Full Testing
 
+Full testing was performed on the following devices:
+
+* Laptop
+  * Lenovo IDEAPAD Flex 5i
+
+* Mobile
+  * Samsung Galaxy S20 FE 5G
+ 
+ Desktop device tested the site using the following browsers:
+ 
+ * Google Chrome
+ * Mozilla Firefox
+ * Opera
+ * Microsoft Edge
+
+Additional testing has been carried out by friends and colleagues including on apple devices and safari.
+
 #### Site-Wide
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
@@ -446,3 +463,20 @@ Parts of the site have been tested for accessibility with [WAVE](https://wave.we
 ### Accessibility Testing
 
 Accessibility has been tested via narrator for windows and talkback on android. This has highlighted issues with focusing on the floating action button on mobile. Alternative hidden nav links have been added to the navbar for editing profile and adding posts to enable talkback users to access the site fully without impacting the original styling of the site until a solution can be found.
+
+## Bugs
+
+### Solved Bugs
+
+| # | Issue | Details | What was done | Fixed? |
+| --- | --- | --- | --- | --- |
+| 1 | Unlike Post icons on profile not rendering | When viewing the liked posts collapsible on the profile page, the icons for removing the posts would not appear on the page | Removed "{% if post._id\|string in session["liked] %}" from above the icons. This would have been redundant code as the post has to be liked in order for it to be viewed on the profile. | __YES__ |
+| 2 | Upload image files | The site was originally going to allow users to upload image files to use for their profile page. The functionality appeared to work but the image would not render on the page. |  This has now been moved to the future features section to be explored later. | __REMOVED__ |
+| 3 | Searching by post title | When using the search bar on the community page, posts were not being found when a search was conducted for specific post titles | The issue seemed to resolve itself after a day. | __???__ |
+
+### Known Bugs
+
+| # | Issue | Details | Next Steps |
+| --- | --- | --- | --- |
+| 1 | Like post icons | When liking posts on the community page the icon changes and the like count goes up, however, if a user leaves the site and returns the like post icons return to unliked status until the user likes another post. The like count remains correct. This appears to be a random occurance that does not happen every time. | This issue may be linked to the solved issue of rendering unlike icons on the profile page. The next steps in addressing this is to explore possible alternatives to the if statement within the jinja templating and test for any caching issues in the browser. |
+| 2 | Floating action buttons can not be focused on in talkback | When testing accessibility features on mobile, it was brought to my attention that the floating action buttons could not be focused on by the talkback feature. Hidden navbar links have been added to enable users to access the add post and edit profile pages but further refactoring is needed to ensure full functionality with the use of accessibility tools. | Conduct further research into floating action buttons and accessibility issues and explore alternative layouts to ensure full accessibility. |
