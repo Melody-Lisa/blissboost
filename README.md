@@ -473,7 +473,9 @@ Due to the nature of the site there are many features that can be added that can
 
 - The database has been set up to catch the date users join the site, this will be shown on users' profile pages.
 
-- Allow users to view each other's profile pages.
+- The site originally intended for users to be able to upload image files. This is a feature to explore in future.
+
+- Allow users to view each other's profile pages without being able to unlike other's favourited posts or access any edit functionality.
 
 - Allow users to comment on each other's posts.
 
