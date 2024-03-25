@@ -368,3 +368,16 @@ Parts of the site have been tested for accessibility with [WAVE](https://wave.we
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Must be logged in to view this page | Flash message log in to continue, redirect to login | Access by url entry | Flash message appears, redirected to log in | __PASS__ |
+| Form Validation | Tooltip appears to inform you to input into all fields | Tried posting with empty fields | Tooltip appears | __PASS__ |
+| Cancel add post | Return to community page | Click cancel link | Returned to posts page | __PASS__ |
+| Add Post | Post added to community page with flash message | Input correctly and click add post button | Post added and flash message appears | __PASS__ |
+
+#### Edit Post
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Must be logged in to view this page | Flash message log in to continue, redirect to login | Access by url entry | Flash message appears, redirected to log in | __PASS__ |
+| Must be the author to edit post | Flash unauthorized message, redirect to community page | Access by url entry | Message flashed and redirected | __PASS__ |
+| Form Validation | Tooltip appears to inform you to input into all fields | Tried updating with empty fields | Tooltip appears | __PASS__ |
+| Cancel Edit post | Return to community page | Click cancel link | Returned to posts page | __PASS__ |
+| Edit Post | Post updated to community page with flash message | Input correctly and click add post button | Post updated and flash message appears | __PASS__ |
