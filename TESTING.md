@@ -335,3 +335,17 @@ Parts of the site have been tested for accessibility with [WAVE](https://wave.we
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
+| View Liked posts | Collapsible expands to view posts details | Click collapsible | Post details appear | __PASS__ |
+| Unlike posts from collapsible | Post is removed | Click orange bin icon | Post is removed | __PASS__ |
+| Only view your own profile | Flash message "you can not view this page" | Enter another user in url | Flash message appears | __PASS__ |
+| Upload Photo | Opens upload modal | Click FAB icon | Modal appears | __PASS__ |
+| Upload Photo | Photo appears on profile | Enter photo url in modal | Photo uploads | __PASS__ |
+| Edit profile | Taken to edit profile page | Click FAB icon | Redirected to edit profile page | __PASS__ |
+
+#### Edit Profile
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Enter details as you wish | Details updated in profile and flash message for success | Enter details in some fields | Flash message appears and details updated | __PASS__ |
+| Cancel edit | Return to profile page | Click cancel link | Returned to profile | __PASS__ |
+| Only edit your own profile | Flash unauthorized message and redirect to profile | Entered another username in url | Flash message appears and redirected | __PASS__ |
