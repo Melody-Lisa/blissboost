@@ -258,10 +258,7 @@ def search():
 
 @app.route("/add_post", methods=["GET", "POST"])
 def add_post():
-        # Grab session user's username from the db
-    logged_in_username = session.get("user")
-
-    if logged_in_username:
+    if "user" in session:
         if request.method == "POST":
             theme_data = request.form.get('theme_data').split('|')
             theme_name = theme_data[0]

@@ -355,6 +355,7 @@ Parts of the site have been tested for accessibility with [WAVE](https://wave.we
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
+| Must be logged in to view this page | Flash message log in to continue, redirect to login | Access by url entry | Flash message appears, redirected to log in | __PASS__ |
 | Search Posts | Show posts based on title, theme or author | Entered various titles, themes and users into search bar | Relevant posts appear | __PASS__ |
 | Clear search | Return to view all posts on page | Clicked clear search button | All posts return | __PASS__ |
 | View post description | Show post description on click | Click card action or theme image | Post description appears | __PASS__ |
@@ -366,3 +367,4 @@ Parts of the site have been tested for accessibility with [WAVE](https://wave.we
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
+| Must be logged in to view this page | Flash message log in to continue, redirect to login | Access by url entry | Flash message appears, redirected to log in | __PASS__ |
