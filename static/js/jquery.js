@@ -13,4 +13,7 @@
     $('.modal').modal();
     $('select').formSelect();
     $('.tooltipped').tooltip();
+    $('li[id^="select-options"]').on('touchend', function (e) {
+      e.stopPropagation();
+    })
   });
