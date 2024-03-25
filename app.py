@@ -402,19 +402,24 @@ def get_themes():
 
 @app.route("/add_theme", methods=["GET", "POST"])
 def add_theme():
-    if request.method == "POST":
-        # Check if user is logged in and is an admin
-        if 'user' in session and session['user'].lower() == "admin":
-            theme = {
-                "theme_name": request.form.get("theme_name"),
-                "theme_image": request.form.get("theme_image")
-            }
-            mongo.db.themes.insert_one(theme)
-            flash("New Theme Added")
-            return redirect(url_for("get_themes"))
+    # Check if the user is logged in and is an admin
+    if 'user' in session:
+        if session['user'].lower() == "admin":
+            if request.method == "POST":
+                    theme = {
+                        "theme_name": request.form.get("theme_name"),
+                        "theme_image": request.form.get("theme_image")
+                    }
+                    mongo.db.themes.insert_one(theme)
+                    flash("New Theme Added")
+                    return redirect(url_for("get_themes"))
+        else:
+            flash("You are not authorized to add themes.")
+            return redirect(url_for("home"))
 
-        flash("You are not authorised to add themes.")
-        return redirect(url_for("home"))
+    else:
+        flash("Please log in to view this page")
+        return redirect(url_for("login"))
 
     return render_template("add_theme.html")
 
@@ -422,28 +427,32 @@ def add_theme():
 @app.route("/edit_theme/<theme_id>", methods=["GET", "POST"])
 def edit_theme(theme_id):
     # Check if the user is logged in and is an admin
-    if 'user' in session and session['user'].lower() == "admin":
-        if request.method == "POST":
-            submit = {
-                "theme_name": request.form.get("theme_name"),
-                "theme_image": request.form.get("theme_image")
-            }
-            mongo.db.themes.update_one(
-                {"_id": ObjectId(theme_id)}, {"$set": submit})
-            flash("Theme Successfully Updated")
-            return redirect(url_for("get_themes"))
+    if 'user' in session:
+        if session['user'].lower() == "admin":
+            if request.method == "POST":
+                submit = {
+                    "theme_name": request.form.get("theme_name"),
+                    "theme_image": request.form.get("theme_image")
+                }
+                mongo.db.themes.update_one(
+                    {"_id": ObjectId(theme_id)}, {"$set": submit})
+                flash("Theme Successfully Updated")
+                return redirect(url_for("get_themes"))
 
-        theme = mongo.db.themes.find_one({"_id": ObjectId(theme_id)})
+            theme = mongo.db.themes.find_one({"_id": ObjectId(theme_id)})
 
-        if theme:
-            themes = mongo.db.themes.find()
-            return render_template("edit_theme.html", theme=theme)
+            if theme:
+                themes = mongo.db.themes.find()
+                return render_template("edit_theme.html", theme=theme)
+            else:
+                flash("Theme not found.")
+                return redirect(url_for("get_themes"))
         else:
-            flash("Theme not found.")
-            return redirect(url_for("get_themes"))
+            flash("You are not authorized to edit themes.")
+            return redirect(url_for("home"))
     else:
-        flash("You are not authorized to edit themes.")
-        return redirect(url_for("home"))
+        flash("Please log in to view this page")
+        return redirect(url_for("login"))
 
 
 @app.route("/delete_theme/<theme_id>", methods=["GET", "POST"])
