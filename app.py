@@ -258,21 +258,28 @@ def search():
 
 @app.route("/add_post", methods=["GET", "POST"])
 def add_post():
-    if request.method == "POST":
-        theme_data = request.form.get('theme_data').split('|')
-        theme_name = theme_data[0]
-        theme_image = theme_data[1]
-        post = {
-            'theme_name': theme_name,
-            'theme_image': theme_image,
-            'post_title': request.form.get('post_title'),
-            'post_description': request.form.get('post_description'),
-            'post_date': datetime.now(),
-            'created_by': session["user"]
-        }
-        mongo.db.posts.insert_one(post)
-        flash("Post Successfully Added")
-        return redirect(url_for("get_posts"))
+        # Grab session user's username from the db
+    logged_in_username = session.get("user")
+
+    if logged_in_username:
+        if request.method == "POST":
+            theme_data = request.form.get('theme_data').split('|')
+            theme_name = theme_data[0]
+            theme_image = theme_data[1]
+            post = {
+                'theme_name': theme_name,
+                'theme_image': theme_image,
+                'post_title': request.form.get('post_title'),
+                'post_description': request.form.get('post_description'),
+                'post_date': datetime.now(),
+                'created_by': session["user"]
+            }
+            mongo.db.posts.insert_one(post)
+            flash("Post Successfully Added")
+            return redirect(url_for("get_posts"))
+    else:
+        flash("Please log in to view this page.")
+        return redirect(url_for("login"))
 
     themes = mongo.db.themes.find().sort("theme_name", 1)
     return render_template("add_post.html", themes=themes)

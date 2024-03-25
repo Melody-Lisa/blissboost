@@ -360,4 +360,9 @@ Parts of the site have been tested for accessibility with [WAVE](https://wave.we
 | View post description | Show post description on click | Click card action or theme image | Post description appears | __PASS__ |
 | Like post | Heart icon changes and add one to like count | Click heart icon | Icon and like count change | __PASS__ |
 | Add post | Directs to add post page | Click FAB icon | Derected to add post page | __PASS__ |
-| Edit post | Icon appears only on your posts, directs to edit post page | Click edit icon | Directed to edit post page | __PASS__ |
+| Edit post | Icon appears only on users' own posts (Admin can edit all posts), directs to edit post page | Click edit icon | Directed to edit post page | __PASS__ |
+
+#### Add Post
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
