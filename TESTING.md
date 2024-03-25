@@ -386,6 +386,7 @@ Parts of the site have been tested for accessibility with [WAVE](https://wave.we
 | Form Validation | Tooltip appears to inform you to input into all fields | Tried updating with empty fields | Tooltip appears | __PASS__ |
 | Cancel Edit post | Return to community page | Click cancel link | Returned to posts page | __PASS__ |
 | Edit Post | Post updated to community page with flash message | Input correctly and click add post button | Post updated and flash message appears | __PASS__ |
+| Edit Any Post - Admin | Post updated to community page with flash message | Input correctly and click add post button | Post updated and flash message appears | __PASS__ |
 | Delete Post - modal | Modal opens for confirmation | Click delete link | Modal opens | __PASS__ |
 | Delete Post - cancel | Modal closes without deletion | Click cancel link | Modal closes | __PASS__ |
 | Delete Post | Post deleted from database and no longer appears in community page | Click delete button | Post is deleted and does not appear | __PASS__ |
@@ -396,6 +397,8 @@ Parts of the site have been tested for accessibility with [WAVE](https://wave.we
 | --- | --- | --- | --- | --- |
 | Must be logged in to view this page | Flash message log in to continue, redirect to login | Access by url entry | Flash message appears, redirected to log in | __PASS__ |
 | Must be Admin to view this page | Flash unauthorized message, redirect to profile page | Access by url entry | Message flashed and redirected | __PASS__ |
+| Add Theme | Directed to add theme page | Click add theme button | Directed to add theme page | __PASS__ |
+| Edit Theme | Directed to edit theme page | Click edit theme button | Directed to edit theme page | __PASS__ |
 
 #### Add Theme
 
