@@ -295,3 +295,38 @@ Parts of the site have been tested for accessibility with [WAVE](https://wave.we
 | Delete personal account when no longer in use. | Users can delete their account from the profile page | <img src="static/documents/blissboost_deleteaccount.png" style="width: 400px; height: auto;"> |
 | Edit or delete any post from the community page. | Admin can edit or delete any post from the community page | <img src="static/documents/blissboost_adminposts.png" style="width: 400px; height: auto;"> |
 | Add, edit or delete post themes from the theme management page. | Admin can access the themes page in order to manage themes users can post under | <img src="static/documents/blissboost_getthemes.png" style="width: 400px; height: auto;">
+
+### Full Testing
+
+#### Site-Wide
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Navbar Links | View Different navbar links based on logged out/logged in user/logged in admin | Viewed site based on different logged in status | Links appear based on each status | __PASS__ |
+| Footer Links | Links open in new tabs to github and linked in | Clicked links | Links open in new tabs to github and linked in | __PASS__ |
+
+#### Index Home
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Register Button in call to action | To be taken to the register page | Clicked button | Taken to register page | __PASS__ |
+| Log in Button in call to action | To be taken to the log in page | Clicked button | Taken to log in page | __PASS__ |
+
+#### Register Page
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Form validation | Tooltip appears if input doesn't match the requested format | Input incorrect format | Tooltip appears and suggests longer password if too short | __PASS__ |
+| Password Confirmation | Flash message if passwords do not match | input unmatched passwords | Flash message appears | __PASS__ |
+| View password input | Password becomes visible | Click eye icons with password input | Passwords become visible | __PASS__ |
+| Username exists | Flash message in username exists | Enter existing username | Flash message appears | __PASS__ |
+| Register account | Flash message indicating success and redirect to profile | Register account | Flash message appears and redirected to profile | __PASS__ |
+
+#### Log In Page
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Form validation | Tooltip appears if input doesn't match the requested format | Input incorrect format | Tooltip appears and suggests longer password if too short | __PASS__ |
+| View password input | Password becomes visible | Click eye icon with password input | Password become visible | __PASS__ |
+| Incorrect username or password | Flash message incorrect username or password | Enter incorrect username and password | Flash message appears | __PASS__ |
+| Log in | Flash message indicating success and redirect to profile | Log in correctly | Flash message appears and redirected to profile | __PASS__ |
