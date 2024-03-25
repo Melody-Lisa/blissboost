@@ -336,12 +336,17 @@ Parts of the site have been tested for accessibility with [WAVE](https://wave.we
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
+| User must exist | Flash message user not found if incorrect user and redirected home | Enter incorrect user into url | Message flashes user is directed to their profile if logged in or index if logged out | __PASS__ | 
 | View Liked posts | Collapsible expands to view posts details | Click collapsible | Post details appear | __PASS__ |
 | Unlike posts from collapsible | Post is removed | Click orange bin icon | Post is removed | __PASS__ |
 | Only view your own profile | Flash message "you can not view this page" | Enter another user in url | Flash message appears | __PASS__ |
-| Upload Photo | Opens upload modal | Click FAB icon | Modal appears | __PASS__ |
+| Upload Photo - modal | Opens upload modal | Click FAB icon | Modal appears | __PASS__ |
+| Upload Photo - cancel | Closes modal | Click cancel link | Modal closes | __PASS__ |
 | Upload Photo | Photo appears on profile | Enter photo url in modal | Photo uploads | __PASS__ |
 | Edit profile | Taken to edit profile page | Click FAB icon | Redirected to edit profile page | __PASS__ |
+| Delete Profile -modal | Modal opens to confirm deletion | Click FAB icon | Modal opens | __PASS__ |
+| Delete Profile - cancel | Closes modal and returns to profile | Click cancel link | Modal closes | __PASS__ |
+| Delete profile | Deleted user from the database and returns to home | Click delete button | User is deleted and redirected home | __PASS__ |
 
 #### Edit Profile
 
@@ -381,3 +386,43 @@ Parts of the site have been tested for accessibility with [WAVE](https://wave.we
 | Form Validation | Tooltip appears to inform you to input into all fields | Tried updating with empty fields | Tooltip appears | __PASS__ |
 | Cancel Edit post | Return to community page | Click cancel link | Returned to posts page | __PASS__ |
 | Edit Post | Post updated to community page with flash message | Input correctly and click add post button | Post updated and flash message appears | __PASS__ |
+| Delete Post - modal | Modal opens for confirmation | Click delete link | Modal opens | __PASS__ |
+| Delete Post - cancel | Modal closes without deletion | Click cancel link | Modal closes | __PASS__ |
+| Delete Post | Post deleted from database and no longer appears in community page | Click delete button | Post is deleted and does not appear | __PASS__ |
+
+#### Get Themes
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Must be logged in to view this page | Flash message log in to continue, redirect to login | Access by url entry | Flash message appears, redirected to log in | __PASS__ |
+| Must be Admin to view this page | Flash unauthorized message, redirect to profile page | Access by url entry | Message flashed and redirected | __PASS__ |
+
+#### Add Theme
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Must be logged in to view this page | Flash message log in to continue, redirect to login | Access by url entry | Flash message appears, redirected to log in | __PASS__ |
+| Must be Admin to view this page | Flash unauthorized message, redirect to profile page | Access by url entry | Message flashed and redirected | __PASS__ |
+| Form Validation | Tooltip appears to inform you to input into all fields | Tried updating with empty fields | Tooltip appears | __PASS__ |
+| Cancel Add Theme | Return to themes page | Click cancel link | Returned to themes page | __PASS__ |
+| Add Theme | Theme added to themes page with flash message | Input correctly and click add post button | Theme updated and flash message appears | __PASS__ |
+
+#### Edit Theme
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Must be logged in to view this page | Flash message log in to continue, redirect to login | Access by url entry | Flash message appears, redirected to log in | __PASS__ |
+| Must be Admin to view this page | Flash unauthorized message, redirect to profile page | Access by url entry | Message flashed and redirected | __PASS__ |
+| Form Validation | Tooltip appears to inform you to input into all fields | Tried updating with empty fields | Tooltip appears | __PASS__ |
+| Cancel Edit Theme | Return to themes page | Click cancel link | Returned to themes page | __PASS__ |
+| Edit Theme | Theme updated to themes page with flash message | Input correctly and click add post button | Theme updated and flash message appears | __PASS__ |
+| Delete Theme - modal | Modal appears for confirmation | Click delete link | Modal appears | __PASS__ |
+| Delete Theme - cancel | Modal closes without deletion | Click cancel link | Modal closes | __PASS__ |
+| Delete Theme | Theme is deleted from the database and no longer appears on theme page | Click delete button | Theme is deleted and no longer appears | __PASS__ |
+
+#### 404 Page
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Appears when incorrect url entered | View 404 page | Input incorrect url path | Page appears | __PASS__ |
+| Home button | User is returned to index if logged out or their profile if logged in | Click Home button | Redirected accordingly | __PASS__ |
