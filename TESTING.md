@@ -330,3 +330,8 @@ Parts of the site have been tested for accessibility with [WAVE](https://wave.we
 | View password input | Password becomes visible | Click eye icon with password input | Password become visible | __PASS__ |
 | Incorrect username or password | Flash message incorrect username or password | Enter incorrect username and password | Flash message appears | __PASS__ |
 | Log in | Flash message indicating success and redirect to profile | Log in correctly | Flash message appears and redirected to profile | __PASS__ |
+
+#### Profile
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |

@@ -127,23 +127,31 @@ def logout():
 @app.route("/profile/<user>", methods=["GET", "POST"])
 def profile(user):
     if 'user' in session:
+        # Get the username of the logged-in user
+        logged_in_user = session['user']
+
         # Fetch user data based on the provided username
         user_data = mongo.db.users.find_one({"username": user})
 
         if user_data:
-            # Retrieve the liked post ObjectIds
-            liked_post_ids = user_data.get("post_likes", [])
+            if user == logged_in_user:  # Compare usernames
+                # Retrieve the liked post ObjectIds
+                liked_post_ids = user_data.get("post_likes", [])
 
-            # Fetch the details of the liked posts
-            liked_posts = []
-            for post_id in liked_post_ids:
-                post_details = mongo.db.posts.find_one(
-                    {"_id": ObjectId(post_id)})
-                if post_details:
-                    liked_posts.append(post_details)
+                # Fetch the details of the liked posts
+                liked_posts = []
+                for post_id in liked_post_ids:
+                    post_details = mongo.db.posts.find_one(
+                        {"_id": ObjectId(post_id)})
+                    if post_details:
+                        liked_posts.append(post_details)
 
-            return render_template("profile.html",
-                                   user=user_data, liked_posts=liked_posts)
+                return render_template("profile.html",
+                                       user=user_data, liked_posts=liked_posts)
+            else:
+                flash("You can't view this page right now")
+                return redirect(url_for(
+                        "profile", user=session["user"]))
         else:
             flash("User not found")
             return redirect(url_for("home"))
