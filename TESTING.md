@@ -19,6 +19,19 @@ Manual testing was conducted continuously throughout the development process to 
 * [MANUAL TESTING](#manual-testing)
   * [Testing User Stories](#testing-user-stories)
   * [Full Testing](#full-testing)
+    * [Site Wide](#site-wide)
+    * [Index Home](#index-home)
+    * [Register Page](#register-page)
+    * [Log In Page](#log-in-page)
+    * [Profile](#profile)
+    * [Edit Profile](#edit-profile)
+    * [Community Posts](#community-posts)
+    * [Add Post](#add-post)
+    * [Edit Post](#edit-post)
+    * [Get Themes](#get-themes)
+    * [Add Theme](#add-theme)
+    * [Edit Theme](#edit-theme)
+    * [404 Page](#404-page)
 * [BUGS](#bugs)
   * [Solved Bugs](#solved-bugs)
   * [Known Bugs](#known-bugs)
@@ -429,3 +442,7 @@ Parts of the site have been tested for accessibility with [WAVE](https://wave.we
 | --- | --- | --- | --- | --- |
 | Appears when incorrect url entered | View 404 page | Input incorrect url path | Page appears | __PASS__ |
 | Home button | User is returned to index if logged out or their profile if logged in | Click Home button | Redirected accordingly | __PASS__ |
+
+### Accessibility Testing
+
+Accessibility has been tested via narrator for windows and talkback on android. This has highlighted issues with focusing on the floating action button on mobile. Alternative hidden nav links have been added to the navbar for editing profile and adding posts to enable talkback users to access the site fully without impacting the original styling of the site until a solution can be found.
