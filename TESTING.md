@@ -260,3 +260,38 @@ The lighthouse tool within the chrome developer tools has been used to test perf
 >* Accessibility score is pulled down on all pages with forms due to poor contrast on form labels using materialize's default form styling. Further exploration with styling frameworks may be required.
 >
 >* Performance and best practices is pulled down on all pages with images that have been uploaded to the site via url upload. Future versions of the site look to implement image file uploads and compare performance with current results.
+
+### WAVE Testing
+
+Parts of the site have been tested for accessibility with [WAVE](https://wave.webaim.org), however, areas of the site that require log in details would return the log in page only. The index, register, and log in pages returned no errors, but picked up the same contrasting issues on the materialize form labels as lighthouse.
+
+## Manual Testing
+
+### Testing User Stories
+
+>#### User Goals
+>
+>- Create an account on the site.
+>- Add personal details and information onto a personal profile.
+>- View and create posts on the community page.
+>- Edit or delete personal posts.
+>- Like posts from the community page to view on their profile.
+>- Delete personal account when no longer in use.
+>
+>#### Site Admin Goals
+>
+>In addition to user goals:
+>
+>- Edit or delete any post from the community page.
+>- Add, edit or delete post themes from the theme management page.
+
+| Goal | Implementation | Image |
+| :---: | :---: | :---: |
+| Create an account on the site. | Users can create an account with the register page | <img src="static/documents/blissboost_register.png" style="width: 400px; height: auto;"> |
+| Add personal details and information onto a personal profile. | Users can edit their profile from the edit profile page | <img src="static/documents/blissboost_editprofile.png" style="width: 400px; height: auto;"> |
+| View and create posts on the community page. | Users can view all posts on the community page and add their own using the FAB | <img src="static/documents/blissboost_communityposts.png" style="width: 400px; height: auto;"> |
+| Edit or delete personal posts. | Users can edit their own post from the community page | <img src="static/documents/blissboost_editpost.png" style="width: 400px; height: auto;"> |
+| Like posts from the community page to view on their profile. | Users can like any post from the community page and view them on their profile |  <img src="static/documents/blissbooost_liked.png" style="width: 400px; height: auto;"> |
+| Delete personal account when no longer in use. | Users can delete their account from the profile page | <img src="static/documents/blissboost_deleteaccount.png" style="width: 400px; height: auto;"> |
+| Edit or delete any post from the community page. | Admin can edit or delete any post from the community page | <img src="static/documents/blissboost_adminposts.png" style="width: 400px; height: auto;"> |
+| Add, edit or delete post themes from the theme management page. | Admin can access the themes page in order to manage themes users can post under | <img src="static/documents/blissboost_getthemes.png" style="width: 400px; height: auto;">
