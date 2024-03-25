@@ -204,7 +204,7 @@ All wireframes have been created with [Figma](https://figma.com/).
 <details><summary>BlissBoost Profile Wireframes</summary>
 <img src="static/documents/blissboost_profile_desktop.png" alt="Desktop profile wireframe made with figma">
 <img src="static/documents/blissboost_profile_tablet.png" alt="Tablet profile wireframe made with figma">
-<img src="static/documents/blissboost_profile_tablet.png" alt="Mobile profile wireframe made with figma">
+<img src="static/documents/blissboost_profile_mobile.png" alt="Mobile profile wireframe made with figma">
 </details>
 
 <details><summary>BlissBoost Community Posts Wireframes</summary>
@@ -223,6 +223,7 @@ All wireframes have been created with [Figma](https://figma.com/).
 <img src="static/documents/blissboost_addeditpost_desktop.png" alt="Desktop add edit post wireframe made with figma">
 <img src="static/documents/blissboost_addeditpost_tablet.png" alt="Tablet add edit post wireframe made with figma">
 <img src="static/documents/blissboost_addeditpost_mobile.png" alt="Mobile add edit post wireframe made with figma">
+
 The add and edit post pages will be almost identical, with just the addition of "Delete" link in edit post page.
 </details>
 
@@ -371,7 +372,7 @@ On this page users can input their username and password to log in. A message wi
 </details>
 
 <details><summary>Delete Profile</summary>
-<img src="static/documents/blissboost_deleteaccount" alt="Blissboost edit profile page.">
+<img src="static/documents/blissboost_deleteaccount.png" alt="Blissboost edit profile page.">
 </details>
 
 Here users can view their profile. Using the floating action button they can edit their profile, upload a profile picture url and delete their account. Users are flashed a message when they successfully edit their profile or upload a photo. The liked posts section shows the user which posts they have liked, with an option to unlike and remove them from their profile. When selecting the button to delete their profile, a modal appears asking the user to confirm deletion. 
@@ -445,6 +446,14 @@ The 404 page is a custom page that redirects the user to the main page if they t
 ### Defensive Programming
 
 Because there are aspects of the site where certain users cannot access, defensive programming has been put into place throughout the various routes on the site to ensure that anyone with a link cannot edit other users' posts unless they are an admin, or access any admin areas. Conditional checks have been put into place to ensure that a user is the creator of their own post or an admin before allowing access. If users don't have access to a certain page or if they are not logged in, they are redirected either to their profile page or the home page.
+
+<details><summary>User not Logged in</summary>
+<img src="static/documents/pleaselogin.png" alt="The please log in message.">
+</details>
+
+<details><summary>Unauthorised Profile View</summary>
+<img src="static/documents/notyourprofile.png" alt="The unauthorised profile view message.">
+</details>
 
 <details><summary>Unauthorised Post Edit</summary>
 <img src="static/documents/blissboost_notyourpost.png" alt="The unauthorised post edit message.">
