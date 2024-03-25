@@ -1,5 +1,11 @@
 # BlissBoost Testing
 
+<div style="text-align: right;">
+
+[Back to README.md](README.md)
+
+</div>
+
 <img src="static/documents/blissboost_responsive.png" alt="An image representing how the site looks across different devices of varying size.">
 
 [View the live project here.](https://blissboost-079490cc3274.herokuapp.com)
@@ -32,11 +38,14 @@ Manual testing was conducted continuously throughout the development process to 
     * [Add Theme](#add-theme)
     * [Edit Theme](#edit-theme)
     * [404 Page](#404-page)
+  * [Accessibility Testing](#accessibility-testing)
 * [BUGS](#bugs)
   * [Solved Bugs](#solved-bugs)
   * [Known Bugs](#known-bugs)
 
-  --------
+<sup><sub>[*Back to top*](#contents)</sup></sub>
+
+-----
 
 ## AUTOMATED TESTING
 
@@ -114,6 +123,10 @@ In the community posts page the validator flagged up a possible misuse of aria l
 ><img src="static/documents/w3validated_404.png" alt="Jinja templating warnings.">
 ></details>
 
+<sup><sub>[*Back to top*](#contents)</sup></sub>
+
+-----
+
 ### Javascript Validation
 
 [JS Hint](https://jshint.com) has been used to test the vanilla javascript on the site. This flagged no major errors, but there were some warnings for undefined and unused variables. Both undefined variable errors are from code that has been copied from Materialize and all variables have been used within HTML files.
@@ -122,6 +135,10 @@ In the community posts page the validator flagged up a possible misuse of aria l
 <img src="static/documents/blissboost_jshint.png" alt="Javascript Validation with js hint">
 </details>
 
+<sup><sub>[*Back to top*](#contents)</sup></sub>
+
+-----
+
 ### Python Validation
 
 [CI Python Linter](https://pep8ci.herokuapp.com) has been used to validate all python code on the site and ensure it is pep8 compliant. This has flagged no errors with the current code.
@@ -129,6 +146,10 @@ In the community posts page the validator flagged up a possible misuse of aria l
 <details><summary>Python</summary>
 <img src="static/documents/blissboost_pythonvalidation.png" alt="Javascript Validation with js hint">
 </details>
+
+<sup><sub>[*Back to top*](#contents)</sup></sub>
+
+-----
 
 ### Lighthouse
 
@@ -274,9 +295,17 @@ The lighthouse tool within the chrome developer tools has been used to test perf
 >
 >* Performance and best practices is pulled down on all pages with images that have been uploaded to the site via url upload. Future versions of the site look to implement image file uploads and compare performance with current results.
 
+<sup><sub>[*Back to top*](#contents)</sup></sub>
+
+-----
+
 ### WAVE Testing
 
 Parts of the site have been tested for accessibility with [WAVE](https://wave.webaim.org), however, areas of the site that require log in details would return the log in page only. The index, register, and log in pages returned no errors, but picked up the same contrasting issues on the materialize form labels as lighthouse.
+
+<sup><sub>[*Back to top*](#contents)</sup></sub>
+
+-----
 
 ## Manual Testing
 
@@ -308,6 +337,10 @@ Parts of the site have been tested for accessibility with [WAVE](https://wave.we
 | Delete personal account when no longer in use. | Users can delete their account from the profile page | <img src="static/documents/blissboost_deleteaccount.png" style="width: 400px; height: auto;"> |
 | Edit or delete any post from the community page. | Admin can edit or delete any post from the community page | <img src="static/documents/blissboost_adminposts.png" style="width: 400px; height: auto;"> |
 | Add, edit or delete post themes from the theme management page. | Admin can access the themes page in order to manage themes users can post under | <img src="static/documents/blissboost_getthemes.png" style="width: 400px; height: auto;">
+
+<sup><sub>[*Back to top*](#contents)</sup></sub>
+
+-----
 
 ### Full Testing
 
@@ -460,9 +493,17 @@ Additional testing has been carried out by friends and colleagues including on a
 | Appears when incorrect url entered | View 404 page | Input incorrect url path | Page appears | __PASS__ |
 | Home button | User is returned to index if logged out or their profile if logged in | Click Home button | Redirected accordingly | __PASS__ |
 
+<sup><sub>[*Back to top*](#contents)</sup></sub>
+
+-----
+
 ### Accessibility Testing
 
 Accessibility has been tested via narrator for windows and talkback on android. This has highlighted issues with focusing on the floating action button on mobile. Alternative hidden nav links have been added to the navbar for editing profile and adding posts to enable talkback users to access the site fully without impacting the original styling of the site until a solution can be found.
+
+<sup><sub>[*Back to top*](#contents)</sup></sub>
+
+-----
 
 ## Bugs
 
@@ -474,9 +515,17 @@ Accessibility has been tested via narrator for windows and talkback on android. 
 | 2 | Upload image files | The site was originally going to allow users to upload image files to use for their profile page. The functionality appeared to work but the image would not render on the page. |  This has now been moved to the future features section to be explored later. | __REMOVED__ |
 | 3 | Searching by post title | When using the search bar on the community page, posts were not being found when a search was conducted for specific post titles | The issue seemed to resolve itself after a day. | __???__ |
 
+<sup><sub>[*Back to top*](#contents)</sup></sub>
+
+-----
+
 ### Known Bugs
 
 | # | Issue | Details | Next Steps |
 | --- | --- | --- | --- |
 | 1 | Like post icons | When liking posts on the community page the icon changes and the like count goes up, however, if a user leaves the site and returns the like post icons return to unliked status until the user likes another post. The like count remains correct. This appears to be a random occurance that does not happen every time. | This issue may be linked to the solved issue of rendering unlike icons on the profile page. The next steps in addressing this is to explore possible alternatives to the if statement within the jinja templating and test for any caching issues in the browser. |
 | 2 | Floating action buttons can not be focused on in talkback | When testing accessibility features on mobile, it was brought to my attention that the floating action buttons could not be focused on by the talkback feature. Hidden navbar links have been added to enable users to access the add post and edit profile pages but further refactoring is needed to ensure full functionality with the use of accessibility tools. | Conduct further research into floating action buttons and accessibility issues and explore alternative layouts to ensure full accessibility. |
+
+<sup><sub>[*Back to top*](#contents)</sup></sub>
+
+-----

@@ -646,7 +646,7 @@ You can clone the repository by following these steps:
 
 ## Testing
 
-Please see [testing.md](testing.md) for all testing elements of this site.
+Please see [TESTING.md](TESTING.md) for all testing elements of this site.
 
 <sup><sub>[*Back to top*](#contents)</sup></sub>
 
@@ -662,7 +662,7 @@ Please see [testing.md](testing.md) for all testing elements of this site.
 
 * [Mini Tales](https://github.com/adampgiles/CI_PP3_MT): Code from this CI project used to create the like buttons functionality.
 
-* [Stack Overflow](https://stackoverflow.com/questions/29516093/how-to-redirect-to-a-external-404-page-python-flask): This thread was used to create the route for custon 404 page.
+* [Stack Overflow](https://stackoverflow.com/questions/29516093/how-to-redirect-to-a-external-404-page-python-flask): This thread was used to create the route for custom 404 page.
 
 * [W3Schools](https://www.w3schools.com/howto/howto_js_toggle_password.asp): Code used to show/hide password inputs from here.
 
@@ -673,7 +673,7 @@ Please see [testing.md](testing.md) for all testing elements of this site.
 
 ### Media
 
-* [Bing Create](https://www.bing.com/images/create): This image generator was used to create the site's logo and background image.
+* [Bing Create](https://www.bing.com/images/create): This image generator was used to create the site's logo, background image and default profile image.
 
 * [UI.dev](https://ui.dev/amiresponsive): Used to generate images that showcase the responsive design within the readme file.
 
@@ -681,7 +681,7 @@ Please see [testing.md](testing.md) for all testing elements of this site.
 
 * Amy Richardson - Cohort Facilitator: For providing great resources to help with everyone's projects through weekly stand ups.
  
-* Class June 2023: Everyone in my class channel on slack who is involved with the stand ups and group chat for contributing to the great atmosphere and supportive environment.
+* Class of June 2023: Everyone in my class channel on slack who is involved with the stand ups and group chat for contributing to the great atmosphere and supportive environment.
  
 * The wider slack community: For quick responses to various issues and questions I had at all stages of the project.
  
