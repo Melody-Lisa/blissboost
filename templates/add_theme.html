@@ -1,44 +1,44 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h1 class="header center-align" id="add-theme-heading">Add Theme</h1>
+<h1 class="header center-align" id="add-theme-heading">Add Theme</h1>
 
-    <div class="container">
-        <div class="row center-align">
-            <div class="col s12">
-                <div class="card-panel">
-                    <form method="POST" action="{{ url_for('add_theme') }}" aria-labelledby="add-theme-heading">
-                        <!-- Theme Name -->
-                        <div class="input-field">
-                            <i class="fas fa-folder-open prefix cyan-text text-darken-4"></i>
-                            <input id="theme_name" name="theme_name" minlength="3" maxlength="25" type="text"
-                                class="validate" required aria-label="Theme Name">
-                            <label for="theme_name">Theme Name</label>
-                        </div>
-    
-                        <!-- Theme Image -->
-                        <div class="input-field">
-                            <i class="fa-solid fa-image prefix cyan-text text-darken-4"></i>
-                            <input type="text" id="theme_image" name="theme_image" required aria-label="Image URL">
-                            <label for="theme_image">Image URL</label>
-                        </div>
-    
-                        <!-- submit button -->
-                        <div class="center-align">
-                            <button type="submit" class="btn-large text-shadow" aria-label="Add Theme">
-                                Add Theme <i class="fas fa-plus-square right"></i>
-                            </button>
-                        </div>
+<div class="container">
+    <div class="row center-align">
+        <div class="col s12">
+            <div class="card-panel">
+                <form method="POST" action="{{ url_for('add_theme') }}" aria-labelledby="add-theme-heading">
+                    <!-- Theme Name -->
+                    <div class="input-field">
+                        <i class="fas fa-folder-open prefix cyan-text text-darken-4"></i>
+                        <input id="theme_name" name="theme_name" minlength="3" maxlength="25" type="text"
+                            class="validate" required aria-label="Theme Name">
+                        <label for="theme_name">Theme Name</label>
+                    </div>
 
-                        <!-- Cancel -->
-                        <a href="{{ url_for('get_themes') }}"
-                         class="deep-orange-text text-lighten-2 text-shadow hoverable right" aria-label="Cancel">
-                                <strong>Cancel</strong>
-                        </a>
-                    </form>
-                </div>
+                    <!-- Theme Image -->
+                    <div class="input-field">
+                        <i class="fa-solid fa-image prefix cyan-text text-darken-4"></i>
+                        <input type="text" id="theme_image" name="theme_image" required aria-label="Image URL">
+                        <label for="theme_image">Image URL</label>
+                    </div>
+
+                    <!-- submit button -->
+                    <div class="center-align">
+                        <button type="submit" class="btn-large text-shadow" aria-label="Add Theme">
+                            Add Theme <i class="fas fa-plus-square right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Cancel -->
+                    <a href="{{ url_for('get_themes') }}"
+                        class="deep-orange-text text-lighten-2 text-shadow hoverable right" aria-label="Cancel">
+                        <strong>Cancel</strong>
+                    </a>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
 {% endblock %}

@@ -6,11 +6,11 @@
         <div class="card">
             <div class="card-image">
                 {% if user.profile_pic_url %}
-                <img class="profile-pic" src="{{ user.profile_pic_url }}" alt="Profile Picture">
+                    <img class="profile-pic" src="{{ user.profile_pic_url }}" alt="Profile Picture">
                 {% else %}
-                <img class="profile-pic"
-                 src="{{ url_for('static', filename='images/default_user.webp') }}"
-                  alt="Default Profile Picture">
+                    <img class="profile-pic"
+                     src="{{ url_for('static', filename='images/default_user.webp') }}"
+                     alt="Default Profile Picture">
                 {% endif %}
             </div>
 
@@ -18,12 +18,12 @@
                 <span class="card-title">{{ user.username.capitalize() }}'s Profile</span>
                 <p>
                     {% if user.name %}
-                    {{ user.name.capitalize() }}
+                        {{ user.name.capitalize() }}
                     {% endif %}
                 </p>
                 <p>
                     {% if user.dob %}
-                    {{ user.dob }}
+                        {{ user.dob }}
                     {% endif %}
                 </p>
             </div>
@@ -45,25 +45,25 @@
                     <h3 class="center">Liked Posts</h3>
                     <ul class="collapsible cyan darken-4">
                         {% for post in liked_posts %}
-                        <li>
-                            <div class="collapsible-header cyan darken-3 white-text">
-                                <!-- Liked Post Title -->
-                                {{ post.post_title }}
-                                <!-- Render unlike icon if the post is liked -->
-                                <a href="{{ url_for('like_post', _id=post._id) }}" aria-label="Unlike Post">
-                                    <i class="right fa-solid fa-trash-can deep-orange-text text-lighten-2 hoverable">
-                                    </i>
-                                </a>
-                            </div>
-                            <div class="collapsible-body collapsible-main">
-                                <div class="image-container">
-                                    <img class="collapsible-img" src="{{ post.theme_image }}" alt="Theme image">
-                                    <div class="overlay">
-                                        <span class="post-description">{{ post.post_description }}</span>
+                            <li>
+                                <div class="collapsible-header cyan darken-3 white-text">
+                                    <!-- Liked Post Title -->
+                                    {{ post.post_title }}
+                                    <!-- Render unlike icon if the post is liked -->
+                                    <a href="{{ url_for('like_post', _id=post._id) }}" aria-label="Unlike Post">
+                                        <i class="right fa-solid fa-trash-can deep-orange-text text-lighten-2 hoverable">
+                                        </i>
+                                    </a>
+                                </div>
+                                <div class="collapsible-body collapsible-main">
+                                    <div class="image-container">
+                                        <img class="collapsible-img" src="{{ post.theme_image }}" alt="Theme image">
+                                        <div class="overlay">
+                                            <span class="post-description">{{ post.post_description }}</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
+                            </li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -74,7 +74,8 @@
 
 <!-- Floating Action Button -->
 <div class="fixed-action-btn click-to-toggle tooltipped"
- data-position="top" data-tooltip="Menu" role="menu" aria-haspopup="true" aria-expanded="false" aria-label="Actions">
+ data-position="top" data-tooltip="Menu" role="menu" aria-haspopup="true" aria-expanded="false"
+ aria-label="Actions">
     <a class="btn-floating btn-large deep-orange lighten-2 hoverable">
         <i class="fa-solid fa-ellipsis"></i>
     </a>
@@ -82,7 +83,8 @@
         <!-- Edit Profile -->
         <li>
             <a href="{{ url_for('edit_profile', user=session['user']) }}"
-             class="btn-floating hoverable tooltipped" data-position="top" data-tooltip="Edit Profile" aria-label="Edit Profile">
+             class="btn-floating hoverable tooltipped" data-position="top"
+             data-tooltip="Edit Profile" aria-label="Edit Profile">
                 <i class="fa-solid fa-user-pen"></i>
             </a>
         </li>
@@ -96,7 +98,7 @@
         <!-- Delete User -->
         <li>
             <a data-target="delete_user" class="btn-floating modal-trigger red darken-3 hoverable tooltipped"
-            data-position="top" data-tooltip="Delete Account" aria-label="Delete User">
+             data-position="top" data-tooltip="Delete Account" aria-label="Delete User">
                 <i class="fa-solid fa-trash white-text"></i>
             </a>
         </li>
@@ -128,7 +130,6 @@
 <div id="delete_user" class="modal cyan darken-3" aria-labelledby="delete_user_title">
     <div class="modal-content">
         <h4 id="delete_user_title" class="center white-text">Delete Account?</h4>
-
         <p class="center white-text">This action cannot be reversed.</p>
 
         <!-- Form for deleting user account -->

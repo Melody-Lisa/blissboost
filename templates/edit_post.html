@@ -4,18 +4,15 @@
 <h1 class="center" aria-label="Edit Post Heading">Edit Post</h1>
 
 <div class="row">
-    <form class="col s12 m8 offset-m2" method="POST"
-     action="{{ url_for('edit_post', post_id=post._id) }}">
-
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_post', post_id=post._id) }}">
         <div class="card-panel">
 
             <!-- Post Title -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-pen prefix cyan-text text-darken-4"></i>
-                    <input id="post_title" name="post_title" type="text"
-                     class="validate" minlength="0" maxlength="25"
-                      value="{{ post.post_title }}" required aria-label="Post Title">
+                    <input id="post_title" name="post_title" type="text" class="validate" minlength="0" maxlength="25"
+                        value="{{ post.post_title }}" required aria-label="Post Title">
                     <label for="post_title">Title</label>
                 </div>
             </div>
@@ -26,81 +23,76 @@
                     <i class="fas fa-folder-open prefix cyan-text text-darken-4"></i>
                     <select id="theme_name" name="theme_data" class="validate" required aria-label="Post Theme">
                         <option value="" disabled>Choose Theme</option>
-                            {% for theme in themes %}
-                                {% if theme.theme_name == post.theme_name %}
-                                    <option value="{{ theme.theme_name }}|{{ theme.theme_image }}"
-                                     selected aria-selected="true">
-                                        {{- theme.theme_name.capitalize() -}}
-                                    </option>
-                                {% else %}
-                                    <option value="{{ theme.theme_name }}|{{ theme.theme_image }}" aria-selected="false">
-                                        {{- theme.theme_name.capitalize() -}}
-                                    </option>
-                                {% endif %}
-                            {% endfor %}
+                        {% for theme in themes %}
+                            {% if theme.theme_name == post.theme_name %}
+                                <option value="{{ theme.theme_name }}|{{ theme.theme_image }}" selected aria-selected="true">
+                                    {{- theme.theme_name.capitalize() -}}
+                                </option>
+                            {% else %}
+                                <option value="{{ theme.theme_name }}|{{ theme.theme_image }}" aria-selected="false">
+                                    {{- theme.theme_name.capitalize() -}}
+                                </option>
+                            {% endif %}
+                        {% endfor %}
                     </select>
                     <label for="theme_name">Post Theme</label>
                 </div>
             </div>
 
-                <!-- Post Description -->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fa-solid fa-align-justify
-                         prefix cyan-text text-darken-4"></i>
-                        <textarea id="post_description" name="post_description"
-                         class="validate materialize-textarea"
-                            minlength="0" maxlength="500" required aria-label="Post Description">
+            <!-- Post Description -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fa-solid fa-align-justify
+                     prefix cyan-text text-darken-4"></i>
+                    <textarea id="post_description" name="post_description" class="validate materialize-textarea"
+                        minlength="0" maxlength="500" required aria-label="Post Description">
                         {{- post.post_description -}}
-                        </textarea>
-                        <label for="post_description">Your Post Here</label>
-                    </div>
+                    </textarea>
+                    <label for="post_description">Your Post Here</label>
                 </div>
-
-                <!-- Edit Post -->
-                <div class="row">
-                    <div class="col s12 center-align">
-                        <!-- Submit -->
-                        <button type="submit"
-                         class="btn-large cyan darken-4 text-shadow center-align" aria-label="Edit Post Button">
-                            Edit <i class="fa-solid fa-pen-to-square"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Delete Post -->
-                <a data-target="delete_post"
-                 class="modal-trigger red-text text-darken-3 text-shadow hoverable left" aria-label="Delete Post Link">
-                    <strong>Delete</strong>
-                </a>
-
-                <!-- Cancel -->
-                <a href="{{ url_for('get_posts') }}"
-                 class="deep-orange-text text-darken-3 text-shadow hoverable right" aria-label="Cancel Link">
-                    <strong>Cancel</strong>
-                </a>
-
             </div>
+
+            <!-- Edit Post -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <!-- Submit -->
+                    <button type="submit" class="btn-large cyan darken-4 text-shadow center-align"
+                     aria-label="Edit Post Button">
+                        Edit <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Delete Post -->
+            <a data-target="delete_post" class="modal-trigger red-text text-darken-3 text-shadow hoverable left"
+             aria-label="Delete Post Link">
+                <strong>Delete</strong>
+            </a>
+
+            <!-- Cancel -->
+            <a href="{{ url_for('get_posts') }}" class="deep-orange-text text-darken-3 text-shadow hoverable right"
+             aria-label="Cancel Link">
+                <strong>Cancel</strong>
+            </a>
+
+        </div>
     </form>
 </div>
 
 <!-- Delete Post Modal -->
 <div id="delete_post" class="modal cyan darken-3" aria-labelledby="delete_post_title">
     <div class="modal-content">
-        
         <h4 id="delete_post_title" class="center white-text">Delete Post?</h4>
         <p class="center white-text">This action cannot be reversed.</p>
 
-        <form method="POST"
-         action="{{ url_for('delete_post', post_id=post._id) }}" class="center-align">
-            <input type="submit" value="Delete"
-             class="red hoverable text-shadow" aria-label="Delete Post Button">
+        <form method="POST" action="{{ url_for('delete_post', post_id=post._id) }}" class="center-align">
+            <input type="submit" value="Delete" class="red hoverable text-shadow" aria-label="Delete Post Button">
         </form>
+
     </div>
     <div class="modal-footer cyan darken-4">
-        <a href="#!"
-         class="modal-close waves-effect waves-green btn-flat white-text" aria-label="Cancel Delete Action">
-            Cancel
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text" aria-label="Cancel Delete Action">
+            <strong>Cancel</strong>
         </a>
     </div>
 </div>

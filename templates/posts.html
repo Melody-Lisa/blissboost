@@ -9,96 +9,97 @@
         <div class="row valign-wrapper center-align">
             <div class="input-field col s6 offset-s3">
                 <div class="search">
-                <i class="fas fa-search prefix cyan-text text-darken-4" aria-hidden="true"></i>
-                <input id="query" name="query" type="text" class="center validate" required aria-label="Search Posts">
-                <label for="query" class="center-align black-text">Search Posts</label>
+                    <i class="fas fa-search prefix cyan-text text-darken-4" aria-hidden="true"></i>
+                    <input id="query" name="query" type="text" class="center validate" required
+                        aria-label="Search Posts">
+                    <label for="query" class="center-align black-text">Search Posts</label>
                 </div>
 
-                <button type="submit" class="btn-small" aria-label="Submit Search"><i class="fas fa-search" aria-hidden="true"></i></button>
-                <a href="{{ url_for('get_posts') }}" class="btn-small deep-orange lighten-2" aria-label="Reset Search"><i class="fas fa-repeat" aria-hidden="true"></i></a>
+                <button type="submit" class="btn-small" aria-label="Submit Search"><i class="fas fa-search"
+                        aria-hidden="true"></i></button>
+                <a href="{{ url_for('get_posts') }}" class="btn-small deep-orange lighten-2"
+                    aria-label="Reset Search"><i class="fas fa-repeat" aria-hidden="true"></i></a>
             </div>
         </div>
     </form>
 </div>
 
 <div class="row">
-
     {% for post in posts %}
-    <div class="col s12 m4">
-        <div class="card sticky-action medium mt-5 mb-3 shadow cyan darken-3">
-            <div class="card-image post-image waves-effect waves-block waves-light">
-                {% if session["user"] == post.created_by or session["user"] == "admin" %}
-                <!-- Render edit button for the post owner -->
-                <a href="{{ url_for('edit_post', post_id=post._id) }}" aria-label="Edit Post">
-                    <i class="edit-button fa-solid fa-pen-to-square
-                     deep-orange-text text-lighten-2 hoverable"></i>
-                </a>
-                {% endif %}
-                <img class="hoverable activator" src="{{ post.theme_image }}"
-                 alt="{{ post.theme_name }}" aria-label="Theme Image. Expand post details.">
-            </div>
-
-            <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">
-                    {{ post.post_title.capitalize() }}
-                    <i class="hoverable right fa-solid fa-ellipsis-vertical"></i>
-                </span>
-                <p>{{ post.theme_name.capitalize() }}</p>
-            </div>
-
-            <div class="card-action">
-                <span>Created by: <strong>{{ post.created_by.capitalize() }}</strong>
-                     on: {{ post.post_date.strftime("%d %B, %Y") }}
-                </span>
-
-                <span class="right-align">
-                    <!-- Liked posts code taken and edited from Mini Tales Project -->
-                    {% if post._id|string in session["liked"] %}
-                        <!-- Render liked heart icon if the post is liked -->
-                        <a href="{{ url_for('like_post', _id=post._id) }}"  aria-label="Unlike Post">
-                            <i class="right fa-solid fa-heart deep-orange-text text-lighten-2 hoverable">
-                            </i>
-                            <!-- Display the total likes count -->
-                            <span class="right">{{ post.post_likes }}</span>
-                        </a>
-                    {% else %}
-                        <!-- Render unliked heart icon if the post is not liked -->
-                        <a href="{{ url_for('like_post', _id=post._id) }}" aria-label="Like Post">
-                            <i class="right fa-regular fa-heart deep-orange-text text-lighten-2 hoverable">
-                            </i>
-                            <!-- Display the total likes count -->
-                            <span class="right">{{ post.post_likes }}</span>
+        <div class="col s12 m4">
+            <div class="card sticky-action medium mt-5 mb-3 shadow cyan darken-3">
+                <div class="card-image post-image waves-effect waves-block waves-light">
+                    {% if session["user"] == post.created_by or session["user"] == "admin" %}
+                        <!-- Render edit button for the post owner -->
+                        <a href="{{ url_for('edit_post', post_id=post._id) }}" aria-label="Edit Post">
+                            <i class="edit-button fa-solid fa-pen-to-square
+                             deep-orange-text text-lighten-2 hoverable"></i>
                         </a>
                     {% endif %}
-                </span>
+                    <img class="hoverable activator" src="{{ post.theme_image }}" alt="{{ post.theme_name }}"
+                     aria-label="Theme Image. Expand post details.">
+                </div>
 
-            </div>
-
-            <div class="card-reveal">
-                <span class="card-title activator grey-text text-darken-4"
-                 aria-label="Close Post Details">
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">
                         {{ post.post_title.capitalize() }}
-                    <i class="hoverable right fa-solid fa-ellipsis-vertical">
-                    </i>
-                </span>
-                <p>{{ post.post_description }}</p>
+                        <i class="hoverable right fa-solid fa-ellipsis-vertical"></i>
+                    </span>
+                    <p>{{ post.theme_name.capitalize() }}</p>
+                </div>
+
+                <div class="card-action">
+                    <span>Created by: <strong>{{ post.created_by.capitalize() }}</strong>
+                        on: {{ post.post_date.strftime("%d %B, %Y") }}
+                    </span>
+
+                    <span class="right-align">
+                        <!-- Liked posts code taken and edited from Mini Tales Project -->
+                        {% if post._id|string in session["liked"] %}
+                            <!-- Render liked heart icon if the post is liked -->
+                            <a href="{{ url_for('like_post', _id=post._id) }}" aria-label="Unlike Post">
+                                <i class="right fa-solid fa-heart deep-orange-text text-lighten-2 hoverable">
+                                </i>
+                            <!-- Display the total likes count -->
+                            <span class="right">{{ post.post_likes }}</span>
+                            </a>
+                        {% else %}
+                            <!-- Render unliked heart icon if the post is not liked -->
+                            <a href="{{ url_for('like_post', _id=post._id) }}" aria-label="Like Post">
+                                <i class="right fa-regular fa-heart deep-orange-text text-lighten-2 hoverable">
+                                </i>
+                            </a>
+                            <!-- Display the total likes count -->
+                            <span class="right">{{ post.post_likes }}</span>
+                        {% endif %}
+                    </span>
+                </div>
+
+                <div class="card-reveal">
+                    <span class="card-title activator grey-text text-darken-4" aria-label="Close Post Details">
+                        {{ post.post_title.capitalize() }}
+                        <i class="hoverable right fa-solid fa-ellipsis-vertical">
+                        </i>
+                    </span>
+                    <p>{{ post.post_description }}</p>
+                </div>
             </div>
         </div>
-    </div>
-{% endfor %}
+    {% endfor %}
 </div>
 
 <!-- Floating Action Button -->
-<div class="fixed-action-btn click-to-toggle tooltipped"
- data-position="top" data-tooltip="Menu" role="menu" aria-haspopup="true"
- aria-expanded="false" aria-label="Actions">
+<div class="fixed-action-btn click-to-toggle tooltipped" data-position="top"
+ data-tooltip="Menu" role="menu"
+ aria-haspopup="true" aria-expanded="false" aria-label="Actions">
     <a class="btn-floating btn-large deep-orange lighten-2">
         <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
     </a>
     <ul>
         <li>
             <a href="{{ url_for('add_post') }}" class="btn-floating hoverable tooltipped"
-             data-position="top" data-tooltip="Create Post" aria-label="Add Post">
+             data-position="top"
+             data-tooltip="Create Post" aria-label="Add Post">
                 <i class="fa-solid fa-user-pen" aria-hidden="true"></i>
             </a>
         </li>

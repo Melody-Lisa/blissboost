@@ -12,7 +12,7 @@
                 <div class="col s12">
                     <p class="center-align">Already have an account?
                         <a href="{{ url_for('login') }}"
-                          class="deep-orange-text text-darken-4 hoverable">
+                         class="deep-orange-text text-darken-4 hoverable">
                             <strong>Log In!</strong>
                         </a>
                     </p>
@@ -25,8 +25,7 @@
                     <i class="fa-regular fa-face-smile prefix cyan-text text-darken-4"></i>
                     <input id="username" name="username"
                      type="text" class="validate" minlength="5" maxlength="15"
-                        pattern="^[a-zA-Z0-9]{5,15}$"
-                         required aria-label="Username">
+                     pattern="^[a-zA-Z0-9]{5,15}$" required aria-label="Username">
                     <label for="username">Username</label>
                 </div>
             </div>
@@ -35,9 +34,8 @@
             <div class="row">
                 <div class="input-field col s11">
                     <i class="fa-solid fa-lock prefix cyan-text text-darken-4"></i>
-                    <input id="password" name="password"
-                     type="password" class="validate" minlength="8"
-                        pattern="^[a-zA-Z0-9]{5,15}$" required aria-label="Password">
+                    <input id="password" name="password" type="password" class="validate"
+                     minlength="8" pattern="^[a-zA-Z0-9]{5,15}$" required aria-label="Password">
                     <label for="password">Password</label>
                 </div>
                 <div class="col s1">
@@ -49,9 +47,8 @@
             <div class="row">
                 <div class="input-field col s11">
                     <i class="fas fa-check prefix cyan-text text-darken-4"></i>
-                    <input id="confirm_password" name="confirm_password"
-                     type="password" minlength="8" class="validate"
-                        required aria-label="Confirm Password">
+                    <input id="confirm_password" name="confirm_password" type="password"
+                     minlength="8" class="validate" required aria-label="Confirm Password">
                     <label for="confirm_password">Confirm Password</label>
                 </div>
                 <div class="col s1">
@@ -70,8 +67,7 @@
                 <strong>* Usernames and passwords must only contain letters
                     and/or numbers.</strong></small>
         </div>
-</form>
-
+    </form>
 </div>
 
 {% endblock %}
