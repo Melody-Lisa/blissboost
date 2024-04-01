@@ -171,7 +171,9 @@ The navigation bar for the site will take users to all main sections of the site
 
 For this site I will be using Mongodb to create a non-relational database. I have chosen a non-relational database for this project to allow for more dynamic and varied inputs across collections. 
 
-Spreadsheet of the mongodb database collections can be found [here](https://docs.google.com/spreadsheets/d/1tQVm6duxeJwsIqALswBb9VE8SlT_YRSchutHp_KZWYw/edit?usp=sharing).
+First draft of the mongodb database collections can be found [here](https://docs.google.com/spreadsheets/d/1tQVm6duxeJwsIqALswBb9VE8SlT_YRSchutHp_KZWYw/edit?usp=sharing).
+
+<img src="static/documents/blissboost_database_model.png" style="width: 600px; height: auto;" alt="View of the database schema.">
 
 <sup><sub>[*Back to top*](#contents)</sup></sub>
 
