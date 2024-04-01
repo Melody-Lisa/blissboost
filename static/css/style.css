@@ -53,6 +53,10 @@ h1, h2, h3, h4, .card-title {
     line-height: 75px;
 }
 
+.custom-btn {
+    width: 100%;
+}
+
 /* Cards and content */
 .card, .card-content, .card-panel, .btn-large,
  .card-image, .card-image img.profile-pic,
