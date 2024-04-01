@@ -60,8 +60,6 @@
                             <a href="{{ url_for('like_post', _id=post._id) }}" aria-label="Unlike Post">
                                 <i class="right fa-solid fa-heart deep-orange-text text-lighten-2 hoverable">
                                 </i>
-                            <!-- Display the total likes count -->
-                            <span class="right">{{ post.post_likes }}</span>
                             </a>
                         {% else %}
                             <!-- Render unliked heart icon if the post is not liked -->
@@ -69,9 +67,9 @@
                                 <i class="right fa-regular fa-heart deep-orange-text text-lighten-2 hoverable">
                                 </i>
                             </a>
-                            <!-- Display the total likes count -->
-                            <span class="right">{{ post.post_likes }}</span>
                         {% endif %}
+                        <!-- Display the total likes count -->
+                        <span class="deep-orange-text text-lighten-2 right">{{ post.post_likes }}</span>
                     </span>
                 </div>
 
