@@ -255,6 +255,8 @@ The add and edit post pages will be almost identical, with just the addition of 
 
 ### Surface
 
+Much of the design of the site is based on using [Materialize](https://materializecss.com) styling across the site. This framework was chosen due to its introduction in the learning materials for this module, providing an opportunity to explore a new framework. Additionally, opting for Materialize allowed me to practice and delve into the functionalities of a fresh resource, aiding in broadening my skill set.
+
 #### Typography
 
 Fonts have been imported from [Google Fonts](https://fonts.google.com/).
